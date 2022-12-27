@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
+import Tasks from "./components/Tasks";
 
 const App = () => {
   const [authorizedUser,setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"))
@@ -46,6 +47,8 @@ const App = () => {
       {authorizedUser ? (
         <>
           <p>Authorized user</p>
+          <h1>Tasks</h1>
+          <Tasks token={sessionStorage.getItem("accessToken")}/>
           <button onClick={logoutUser}>Logout Button</button>
         </>
       ): (
