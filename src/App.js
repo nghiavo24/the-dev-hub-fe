@@ -1,7 +1,9 @@
-import React from 'react'
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import React, {useState} from 'react'
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 
 const App = () => {
+  const [authorizedUser,setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"))
+
   const provider = new GoogleAuthProvider();
   provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
@@ -25,10 +27,32 @@ const App = () => {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
-  }
+    }
+
+    const logoutUser = () => {
+      signOut(auth).then(() => {      
+        // clear session storage
+        sessionStorage.clear();
+        setAuthorizedUser(false);
+        // window.location.replace("/");
+        alert('Logged Out Successfully');
+      }).catch((error) => {
+        // An error happened.
+        alert(error);
+      });
+    }
   return (
     <div>
-      <button onClick={signInwithGoogle}>Google Sign In</button>
+      {authorizedUser ? (
+        <>
+          <p>Authorized user</p>
+          <button onClick={logoutUser}>Logout Button</button>
+        </>
+      ): (
+        <>
+      <button onClick={signInwithGoogle}>SignWithGoogle</button>
+        </>
+      )}
     </div>
   )
 }
