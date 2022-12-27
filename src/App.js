@@ -3,11 +3,12 @@ import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/
 import Tasks from "./components/Tasks";
 
 const App = () => {
-  const [authorizedUser,setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"))
 
   const provider = new GoogleAuthProvider();
   provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
+
+  const [authorizedUser,setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"))
 
   const signInwithGoogle = () => {
     signInWithPopup(auth, provider)
@@ -17,6 +18,13 @@ const App = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
+        if(user){
+          user.getIdToken().then((tkn)=>{
+            // set access token in session storage
+            sessionStorage.setItem("accessToken", tkn);
+            setAuthorizedUser(true);
+          })
+        }
         console.log(user);
       })
       .catch((error) => {
@@ -45,16 +53,16 @@ const App = () => {
   return (
     <div>
       {authorizedUser ? (
-        <>
+        <div>
           <p>Authorized user</p>
           <h1>Tasks</h1>
           <Tasks token={sessionStorage.getItem("accessToken")}/>
           <button onClick={logoutUser}>Logout Button</button>
-        </>
+        </div>
       ): (
-        <>
+        <div>
       <button onClick={signInwithGoogle}>SignWithGoogle</button>
-        </>
+        </div>
       )}
     </div>
   )
