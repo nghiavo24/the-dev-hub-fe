@@ -1,5 +1,5 @@
 import React from 'react'
-
+ 
 const MyHub = () => {
   return (
     <div className='myhub'>
@@ -8,6 +8,9 @@ const MyHub = () => {
             {/* link will be added here to take this to applicationcreate */}
             <button>Create a job post</button>
             {/* Link tag ends here */}
+        </div>
+        <div>
+            {/* want to do a postings.map of some sort to be able to list out all the postings that have been created by this user. */}
         </div>
     </div>
   )
