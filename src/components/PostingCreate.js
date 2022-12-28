@@ -1,10 +1,12 @@
 import React from "react";
 
-function PostingCreate() {
+export default function PostingCreate() {
+    
+
 
     return(
         <div>
-            
+            Here we will create the PostingCreate
         </div>
     )
 }
