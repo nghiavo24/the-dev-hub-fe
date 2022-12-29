@@ -68,7 +68,7 @@ const App = () => {
         </div>
       )}
       <Routes>
-        <Route path='/appdetail/create' element={<ApplicationCreate/>}></Route>
+        <Route path='/appdetail' element={<ApplicationDetails/>}></Route>
       </Routes>
     </div>
   )

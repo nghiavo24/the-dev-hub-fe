@@ -22,13 +22,21 @@ useEffect(() =>{
 }, [])
 
 if (allApps === undefined) return;
+if (allNotes === undefined) return;
 
+  const noteData = allNotes.map((note, index) => {
+    return(
+      <div key ={index}>
+        <p>{note.date}</p>
+        <p>{note.content}</p>
+      </div>
+    )
+  })
 
 return(
   <div>
-    <div>{allApps.title}
-    </div>
-    <div></div>
+    <div>{allApps.title}</div>
+    <div>{noteData}</div>
   </div>
 )
 
