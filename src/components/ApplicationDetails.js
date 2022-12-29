@@ -42,10 +42,15 @@ if (allNotes === undefined) return;
   }
 return(
   <div>
-    <div>{allApps.title}</div>
+    <div>
+      <div>
+        <button>Update Application</button>
+        <button>Delete Application</button>
+      </div>
+      {allApps.title}
+    </div>
     <div>{noteData}
-    <button>Create a note</button>
-    
+    <button>Add a note</button>
     </div>
   </div>
 )
