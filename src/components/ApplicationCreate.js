@@ -1,7 +1,18 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import userEvent from '@testing-library/user-event';
 
 const ApplicationCreate = () => {
+    const[newApp, setNewApp] = useState({
+        title: "",
+        company: "",
+        applied: "",
+        hiring_manager: "",
+        compentsation: "",
+        work_site: "",
+        location: "",
+        url:""
+    })
   return (
     <div>
         <div>Create New Application</div>
