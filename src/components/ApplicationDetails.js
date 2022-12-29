@@ -16,6 +16,8 @@ const ApplicationDetails = () => {
     axios.get(`url/notes/${id}`)
     .then((res) => {setAllNotes(res.data)})
   }
+
+  
 useEffect(() =>{
   getAllApp();
   getNotes();
@@ -29,19 +31,24 @@ if (allNotes === undefined) return;
       <div key ={index}>
         <p>{note.date}</p>
         <p>{note.content}</p>
+        <button onClick={() => deleteNote(note._id)}>Delete a note</button>
       </div>
     )
   })
 
+  const deleteNote = (noteId) => {
+    axios.delete(`url/notes/delete/${noteId}`)
+    .then((res) => {window.location.reload()})
+  }
 return(
   <div>
     <div>{allApps.title}</div>
-    <div>{noteData}</div>
+    <div>{noteData}
+    <button>Create a note</button>
+    
+    </div>
   </div>
 )
-
-
-    
 }
 
 export default ApplicationDetails
