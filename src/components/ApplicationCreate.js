@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import userEvent from '@testing-library/user-event';
+
 
 const ApplicationCreate = () => {
     const[newApp, setNewApp] = useState({
@@ -14,7 +14,14 @@ const ApplicationCreate = () => {
         url:""
     })
 
-
+    const createNewApp = async (e) => {
+        e.preventDefault();
+        try{
+            await axios.post('/application/add')
+        } catch(err){
+            console.log(err)
+        }
+    }
 
     const handleAppCreate = (e) => {
         e.preventDefault()
@@ -26,7 +33,7 @@ const ApplicationCreate = () => {
   return (
     <div>
         <div>Create New Application</div>
-        <form>
+        <form onSubmit={createNewApp}>
         <input placeholder='Job title' name='title' value={newApp.title} onChange={handleAppCreate} required />
         <input placeholder='Company' name='company' value={newApp.company} onChange={handleAppCreate} required />
         <input placeholder='Date applied' name='applied' value={newApp.applied} onChange={handleAppCreate} />
