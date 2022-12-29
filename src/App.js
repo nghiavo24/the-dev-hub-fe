@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
+import { Link, Route, Routes } from "react-router-dom";
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import Tasks from "./components/Tasks";
+import MainHub from './components/MainHub';
 
 const App = () => {
 
@@ -64,6 +66,9 @@ const App = () => {
       <button onClick={signInwithGoogle}>SignWithGoogle</button>
         </div>
       )}
+      <Routes>
+        <Route path='/mainhub' element={<MainHub />} />
+      </Routes>
     </div>
   )
 }
