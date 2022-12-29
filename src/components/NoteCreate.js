@@ -3,9 +3,21 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const NoteCreate = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
     const[newNote, setNewNote] = useState({
-        content:""
+        content:"",
+        application: id
     })
+
+    const createNewNote = asynce (e) => {
+        e.preventDefault();
+        try{
+            await axios.post(`url/note/add/${id}`, newNote)
+        } catch (err){
+            console.log(err)
+        }
+    }
 
     const handleInput = (e) => {
         e.preventDefault()
@@ -13,7 +25,6 @@ const NoteCreate = () => {
         newNoteInput[e.target.name] = e.target.value
         setNewNote(newNoteInput)
     }
-
 
   return (
     <div>
