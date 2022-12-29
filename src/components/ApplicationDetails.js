@@ -1,19 +1,35 @@
 import React, { useEffect, useState} from 'react'
+import axios, { all } from 'axios';
 
 const ApplicationDetails = () => {
 const[allApplications, setAllApplications] = useState();
 
   const getAllApplication = () => {
-    axios.get('http://localhost:8080/thedevhub/application/')
+    axios.get('https://online-store.herokuapp.com/api/online-store/items/')
     .then((res) => { setAllApplications(res.data)})
   }
 useEffect(() =>{
   getAllApplication();
 }, [])
 
-    return (
-    <div>ApplicationDetails</div>
+if (allApplications === undefined) return;
+
+console.log(allApplications)
+
+let applicationData = Object.values(allApplications)
+const listApplications = applicationData.map((application, index) => {
+  return (
+    <div key={index}>{application.title}</div>
   )
+})
+return(
+  <div>
+    {listApplications}
+  </div>
+)
+
+
+    
 }
 
 export default ApplicationDetails
