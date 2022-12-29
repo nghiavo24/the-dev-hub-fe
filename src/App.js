@@ -68,7 +68,6 @@ const App = () => {
         </div>
       )}
       <Routes>
-        <Route path='/appdetail' element={<ApplicationDetails/>}></Route>
       </Routes>
     </div>
   )

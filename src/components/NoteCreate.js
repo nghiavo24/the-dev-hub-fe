@@ -10,7 +10,7 @@ const NoteCreate = () => {
         application: id
     })
 
-    const createNewNote = asynce (e) => {
+    const createNewNote = async (e) => {
         e.preventDefault();
         try{
             await axios.post(`url/note/add/${id}`, newNote)
@@ -29,12 +29,12 @@ const NoteCreate = () => {
   return (
     <div>
         <div>Create a note</div>
-        <form>
+        <form onSubmit={createNewNote}>
             <input placeholder='Content' name='content' value={newNote.content} onChange={handleInput} required/>
             <button>Submit</button>
         </form>
     </div>
   )
-}
+  }
 
 export default NoteCreate
