@@ -5,6 +5,7 @@ import Tasks from "./components/Tasks";
 import ApplicationDetails from './components/ApplicationDetails';
 import ApplicationCreate from './components/ApplicationCreate';
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 const App = () => {
 
@@ -70,6 +71,7 @@ const App = () => {
       )}
       <Routes>
         <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<SignUp />}/>
       </Routes>
     </div>
   )
