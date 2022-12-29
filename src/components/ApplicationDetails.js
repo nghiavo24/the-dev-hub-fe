@@ -24,6 +24,7 @@ const listApplications = applicationData.map((application, index) => {
 })
 return(
   <div>
+    <button>Create new application</button>
     {listApplications}
   </div>
 )
