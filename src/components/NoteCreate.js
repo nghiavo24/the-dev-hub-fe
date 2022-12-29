@@ -7,13 +7,19 @@ const NoteCreate = () => {
         content:""
     })
 
+    const handleInput = (e) => {
+        e.preventDefault()
+        const newNoteInput = {...newNote}
+        newNoteInput[e.target.name] = e.target.value
+        setNewNote(newNoteInput)
+    }
 
 
   return (
     <div>
         <div>Create a note</div>
         <form>
-            <input placeholder='Content' name='content' value='' onChange='' required/>
+            <input placeholder='Content' name='content' value={newNote.content} onChange={handleInput} required/>
             <button>Submit</button>
         </form>
     </div>
