@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState }  from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import PostingCreate from "./PostingCreate";
@@ -6,8 +6,8 @@ import PostingUpdate from "./PostingUpdate";
 import PostingDetails from "./PostingDetails";
 
 function MainHub(){
-    const [loading, setLoading] = useState(false);
-    const [posting, setPosting] = useState([]);
+    const [loading, setLoading] = useState();
+    const [posting, setPosting] = useState();
 
     const getPostings = {
         method: "GET",
@@ -31,7 +31,7 @@ function MainHub(){
             <Nav></Nav>
             <h1>MainHub</h1>
             <Routes>
-            <Route path="/mainhub" element={<Home topics={topics} setTopics={setTopics} />}/>
+            <Route path="/mainhub" element={<Home posting={posting} setPosting={setPosting} />}/>
             <Route path="/mainhub/:postingID" element={<PostingDetails posting={posting} />}/>
             <button><PostingCreate/></button>
             <button><PostingUpdate/></button>
