@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import Tasks from "./components/Tasks";
 import ApplicationDetails from './components/ApplicationDetails';
+import ApplicationCreate from './components/ApplicationCreate';
 
 const App = () => {
 
@@ -67,7 +68,7 @@ const App = () => {
         </div>
       )}
       <Routes>
-        <Route path='/appdetail' element={<ApplicationDetails/>}></Route>
+        <Route path='/appdetail/create' element={<ApplicationCreate/>}></Route>
       </Routes>
     </div>
   )
