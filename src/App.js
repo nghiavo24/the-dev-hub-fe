@@ -67,7 +67,7 @@ const App = () => {
         </div>
       )}
       <Routes>
-        <Route path='/mainhub' element={<MainHub />} />
+          <Route path='/mainhub' element= { <MainHub/>} />
       </Routes>
     </div>
   )

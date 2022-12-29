@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import axios from "axios";
+
 
 export default function PostingCreate() {
     
@@ -27,7 +30,52 @@ export default function PostingCreate() {
 
     return(
         <div>
-            Here we will create the PostingCreate
-        </div>
+        <form onSubmit={onSubmit}>
+          <div className="create-form">
+            <div className="create-form-vertical">
+              <h3 className="titleLine">
+                Create a <span className="create-topic">Topic</span>
+              </h3>
+              <div className="create-form-group">
+                <label htmlFor="topic">Topic</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="topic"
+                  value={form.topic}
+                  onChange={(e) => updateForm({ topic: e.target.value })}
+                  placeholder="add topic"
+                />
+              </div>
+              <div className="create-form-group">
+                <label htmlFor="comments">Comments</label>
+                <input
+                  type="text"
+                  id="comments"
+                  value={form.comments}
+                  onChange={(e) => updateForm({ comments: e.target.value })}
+                  placeholder="add comments"
+                />
+              </div>
+              <div className="create-form-group">
+                <label htmlFor="image">Image</label>
+  
+                <input
+                  type="text"
+                  id="image"
+                  value={form.image}
+                  onChange={(e) => updateForm({ image: e.target.value })}
+                  placeholder="upload image"
+                />
+              </div>
+            </div>
+            <div className="form-group">
+              <button className="create-button" type="submit">
+                Create Topic
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     )
 }

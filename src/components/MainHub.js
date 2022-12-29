@@ -1,42 +1,41 @@
 import React, { useEffect, useState }  from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from "axios";
 import PostingCreate from "./PostingCreate";
 import PostingUpdate from "./PostingUpdate";
 import PostingDetails from "./PostingDetails";
 
 function MainHub(){
-    const [loading, setLoading] = useState();
     const [posting, setPosting] = useState();
 
-    const getPostings = {
-        method: "GET",
-        url: "https://sports-discord.fly.dev/api/topics",
+    const getPostings =() => {
+            axios.get("https://sports-discord.fly.dev/api/topics")
+            .then((res) => {
+                setPosting(res.data)
+            })
       };
-      useEffect(() => {
-        axios
-          .request(getPostings)
-          .then(function (response) {
-            setPosting(response.data);
-            setLoading(true);
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
-      }, [posting]);
+      useEffect(() =>{
+        getPostings()
 
+      } ,[] )
+      if(posting === undefined) return;
+
+      console.log(posting)
+
+      const allPosting = posting.map((post) => {
+        return (
+          <div>
+              <h3 >{post.topic}</h3>
+          </div>
+        );
+      });
 
     return(
         <div>
-            <Nav></Nav>
             <h1>MainHub</h1>
-            <Routes>
-            <Route path="/mainhub" element={<Home posting={posting} setPosting={setPosting} />}/>
-            <Route path="/mainhub/:postingID" element={<PostingDetails posting={posting} />}/>
-            <button><PostingCreate/></button>
-            <button><PostingUpdate/></button>
-            <button><PostingUpdate/></button>
-            </Routes>
+            <div>{allPosting}</div>
+
+
 
 
         </div>
