@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const ApplicationCreate = () => {
+    const navigate = useNavigate()
     const[newApp, setNewApp] = useState({
         title: "",
         company: "",
@@ -18,6 +20,7 @@ const ApplicationCreate = () => {
         e.preventDefault();
         try{
             await axios.post('/application/add')
+            navigate('/appdetail')
         } catch(err){
             console.log(err)
         }

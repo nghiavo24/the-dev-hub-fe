@@ -1,31 +1,26 @@
 import React, { useEffect, useState} from 'react'
-import axios, { all } from 'axios';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const ApplicationDetails = () => {
-const[allApplications, setAllApplications] = useState();
+  const { id } = useParams();
+  const[allApps, setAllApps] = useState();
 
-  const getAllApplication = () => {
-    axios.get('https://online-store.herokuapp.com/api/online-store/items/')
-    .then((res) => { setAllApplications(res.data)})
+  const getAllApp = () => {
+    axios.get(`url/application/${id}`)
+    .then((res) => { setAllApps(res.data)})
   }
 useEffect(() =>{
-  getAllApplication();
+  getAllApp();
 }, [])
 
-if (allApplications === undefined) return;
+if (allApps === undefined) return;
 
-console.log(allApplications)
-
-let applicationData = Object.values(allApplications)
-const listApplications = applicationData.map((application, index) => {
-  return (
-    <div key={index}>{application.title}</div>
-  )
-})
 return(
   <div>
-    <button>Create new application</button>
-    {listApplications}
+    <div>{allApps.title}
+    </div>
+    <div></div>
   </div>
 )
 
