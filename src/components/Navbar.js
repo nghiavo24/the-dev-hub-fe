@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar = () => {
             <Link to= '/mainhub'>Main Hub</Link>
             <Link to='/myhub'>My Hub</Link>
             <Link to='application/add'>New Application</Link>
-            
+
         </div>
     </div>
     
