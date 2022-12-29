@@ -4,6 +4,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/
 import Tasks from "./components/Tasks";
 import ApplicationDetails from './components/ApplicationDetails';
 import ApplicationCreate from './components/ApplicationCreate';
+import Login from './components/Login';
 
 const App = () => {
 
@@ -68,6 +69,7 @@ const App = () => {
         </div>
       )}
       <Routes>
+        <Route path='/login' element={<Login />}/>
       </Routes>
     </div>
   )
