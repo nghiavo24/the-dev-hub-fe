@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ApplicationUpdate = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
     const[appUpdate, setAppUpdate] = useState({
         title: "",
         company: "",
@@ -18,6 +20,7 @@ const ApplicationUpdate = () => {
         e.preventDefault()
         try{
             await axios.put(`url/application/edit/${id}`, appUpdate)
+            navigate('/')
         } catch(err){
             console.log(err)
         }
