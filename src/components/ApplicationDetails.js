@@ -52,7 +52,7 @@ return(
     <div>
       <div>
         <button>Update Application</button>
-        <button>Delete Application</button>
+        <button onClick={deleteApp}>Delete Application</button>
       </div>
       {allApps.title}
     </div>
