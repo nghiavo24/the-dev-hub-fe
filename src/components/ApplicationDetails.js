@@ -1,8 +1,9 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const ApplicationDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const[allApps, setAllApps] = useState();
   const[allNotes, setAllNotes] = useState();
@@ -17,6 +18,10 @@ const ApplicationDetails = () => {
     .then((res) => {setAllNotes(res.data)})
   }
 
+  const deleteApp = () =>{
+    axios.delete(`url/application/delete/${id}`)
+    .then((res) => { navigate('/')})
+  }
   
 useEffect(() =>{
   getAllApp();
@@ -40,6 +45,8 @@ if (allNotes === undefined) return;
     axios.delete(`url/notes/delete/${noteId}`)
     .then((res) => {window.location.reload()})
   }
+
+
 return(
   <div>
     <div>
