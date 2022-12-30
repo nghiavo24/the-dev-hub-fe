@@ -15,11 +15,7 @@ const Login = () => {
 
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-        // Signed in 
         const user = userCredential.user;
-        // ...
-
-        console.log(user)
     })
     .catch((error) => {
         setError(true)

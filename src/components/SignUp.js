@@ -4,6 +4,8 @@ import {auth} from '../config/firebase-config';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 function SignUp() {
+    const navigate = useNavigate();
+    const[error, setError] = useState(false);
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
 
@@ -12,23 +14,20 @@ function SignUp() {
 
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-        // Signed in 
         const user = userCredential.user;
-        // ...
+        navigate('/login')
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // ..
-            console.log(error)
+            setError(true);
         });
     }
 
   return (
     <div>
     <form onSubmit={handleSignup}>
-        <input type="email" placeholder='email' onChange={e => setEmail(e.target.value)}/>
-        <input type="password" placeholder='password' onChange={e => setPassword(e.target.value)}/>
+        <input type="email" placeholder='email' onChange={e => setEmail(e.target.value)} required/>
+        <input type="password" placeholder='password' onChange={e => setPassword(e.target.value)} required minLength='6'/>
+        {error && <span>This email is already in use!</span>}
         <button type='submit'>Sign Up</button>
     </form>
 </div>
