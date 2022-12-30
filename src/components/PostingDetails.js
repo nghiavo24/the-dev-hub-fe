@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
+import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function PostingDetails() {
-    
+    const navigate = useNavigate();
+    const { param } = useParams();
+
+    const[postDetails, setPostDetails] = useState();
+
+    const getPostings = () => {
+        axios.get('')
+        .then((res) => { setPostDetails('/')})
+    }
+    const deletePost = () => {
+        axios.delete('')
+        .then((res) => (navigate('/mainhub')))
+    }
+    const updatePost = async(e) => {
+        e.preventDefault()
+        try{
+            await axios.put('', postDetails )
+            navigate('/mainhub')
+        } catch(err){
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        postDetails();
+    }, [])
+
 
 
     return(
         <div>
-            Here we will create the Posting Details function
+                {}
         </div>
     )
 }
