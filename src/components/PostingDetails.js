@@ -37,10 +37,10 @@ export default function PostingDetails() {
     return(
         <div>
             <div>
-
+                {individualPosting}
             </div>
                 <button onClick={updatePost}>Update Post</button>
-                <button oncClick={deletePost}></button>
+                <button oncClick={deletePost}>Delete a Post</button>
         </div>
     )
 }

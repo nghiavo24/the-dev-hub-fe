@@ -34,9 +34,9 @@ console.log(setPost);
                 <label>Title</label>
                 <input  name='title' value={post.title}  onChange={createAPost} placeholder="add job title"/>
                 <label>Company Name</label>
-                <input type="text" name="comments" value={post.comments} onChange={createAPost} placeholder="add company name" />
+                <input type="text" name="company" value={post.company} onChange={createAPost} placeholder="add company name" />
                 <label >Date Posted</label>
-                    {/* This should default to the date when person clicks submit */}
+                <input type="posted" name="posted" value={post.posted} onChange={createAPost} placeholder="date" />
                 <label>URL</label>
                 <input  type='text' name='url' value={post.url}  onChange={createAPost} placeholder="add job title"/>
                 <label>Note</label>

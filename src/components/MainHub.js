@@ -26,8 +26,6 @@ function MainHub(){
                 <h3 >{post.title}</h3>
                 <h3 >{post.company}</h3>
                 <h3 >{post.posted}</h3>
-
-
             </Link>
           </div>
         );
