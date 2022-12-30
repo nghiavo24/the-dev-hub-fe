@@ -6,6 +6,7 @@ import ApplicationDetails from './components/ApplicationDetails';
 import ApplicationCreate from './components/ApplicationCreate';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Homepage from './components/Homepage'
 
 const App = () => {
   const [authorizedUser,setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"))
@@ -28,19 +29,9 @@ const App = () => {
     }
   return (
     <div>
-      {authorizedUser ? (
-        <div>
-          <p>Authorized user</p>
-          <h1>Tasks</h1>
-          <Tasks token={sessionStorage.getItem("accessToken")}/>
-          <button onClick={logoutUser}>Logout Button</button>
-        </div>
-      ): (
-        <div>
-      
-        </div>
-      )}
+      <Homepage />
       <Routes>
+        <Route path='/' element={<Homepage />} />
         <Route path='/login' element={<Login setAuthorizedUser={setAuthorizedUser}/>}/>
         <Route path='/signup' element={<SignUp />}/>
       </Routes>
@@ -49,3 +40,12 @@ const App = () => {
 }
 
 export default App
+
+// {authorizedUser ? (
+//   <div>
+//     <p>Authorized user</p>
+//     <h1>Tasks</h1>
+//     <Tasks token={sessionStorage.getItem("accessToken")}/>
+//     <button onClick={logoutUser}>Logout Button</button>
+//   </div>
+// ):

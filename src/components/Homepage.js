@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Homepage = () => {
+const Homepage = () => {
   return (
     <div>
         <div>Main Hub</div>
@@ -9,3 +9,5 @@ export const Homepage = () => {
     </div>
   )
 }
+
+export default Homepage
