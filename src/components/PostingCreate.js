@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 export default function PostingCreate() {
-    const [post, setPost] = useState({ topic: "", comments: "", image: "", });
+    const [post, setPost] = useState({ title: "", company: "", posted: "", url: "",note: "" });
     const navigate = useNavigate();
     
 
@@ -19,7 +19,7 @@ export default function PostingCreate() {
 
 
       const createAPost = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const newPostInput = {...post};
         newPostInput[e.target.name] = e.target.value;
         setPost(newPostInput);
@@ -31,14 +31,17 @@ console.log(setPost);
         <form onSubmit={createNewPost}>
           <div>
                 <h3> Create a Posting</h3>
+                <label>Title</label>
+                <input  name='title' value={post.title}  onChange={createAPost} placeholder="add job title"/>
                 <label>Company Name</label>
-                <input  name='title' value={post.title}  onChange={createAPost} placeholder="add posting"/>
-                <label htmlFor="comments">Comments</label>
-                <input type="text" name="comments" value={post.comments} onChange={createAPost} placeholder="add comments" />
-                <label >Image</label>
-  
-                <input type="text" name="image" value={post.image} onChange={createAPost} placeholder="upload image" />
-              <button className="create-button" type="submit"> Create Topic </button>
+                <input type="text" name="comments" value={post.comments} onChange={createAPost} placeholder="add company name" />
+                <label >Date Posted</label>
+                    {/* This should default to the date when person clicks submit */}
+                <label>URL</label>
+                <input  type='text' name='url' value={post.url}  onChange={createAPost} placeholder="add job title"/>
+                <label>Note</label>
+                <input type="text" name="note" value={post.note} onChange={createAPost} placeholder="add company name" />
+              <button type="submit"> Create Topic </button>
           </div>
         </form>
       </div>
