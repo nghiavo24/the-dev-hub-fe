@@ -1,30 +1,53 @@
-import React from 'react'
-import axios from 'axios'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
-// can imiport things later like favicons and pictures when page is laid out better
-
-// Here we will need to add use state to create the form for users to submit a new application on their myHub
-// Need a handlesubmit
-
+import React, {useState} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const ApplicationCreate = () => {
-    const [title, setTitle] = useState('')
-    const [company, setCompany] = useState('')
-    const [applied, setApplied] = useState('')
-    const [hiringManager, setHiringManager] = useState('')
-    const [compensation, setCompensation] = useState('')
-    const [workSite, setWorkSite] = useState('')
-    const [location, setLocation] = useState('')
-    const [ url, setUrl] = useState('')
+    const navigate = useNavigate()
+    const[newApp, setNewApp] = useState({
+        title: "",
+        company: "",
+        applied: "",
+        hiring_manager: "",
+        compensation: "",
+        work_site: "",
+        location: "",
+        url:""
+    })
 
+    const createNewApp = async (e) => {
+        e.preventDefault();
+        try{
+            await axios.post('/application/add')
+            navigate('/appdetail')
+        } catch(err){
+            console.log(err)
+        }
+    }
+
+    const handleAppCreate = (e) => {
+        e.preventDefault()
+        const newAppInput = {...newApp};
+        newAppInput[e.target.name] = e.target.value;
+        setNewApp(newAppInput);
+    }
+
+    console.log(newApp)
   return (
-    <div>ApplicationCreate
-        <div>
-            <form></form>
-        </div>
+    <div>
+        <div>Create New Application</div>
+        <form onSubmit={createNewApp}>
+        <input placeholder='Job title' name='title' value={newApp.title} onChange={handleAppCreate} required />
+        <input placeholder='Company' name='company' value={newApp.company} onChange={handleAppCreate} required />
+        <input placeholder='Date applied' name='applied' value={newApp.applied} onChange={handleAppCreate} />
+        <input placeholder='Name of recruiter/hiring manager' name='hiring_manager' value={newApp.hiring_manager} onChange={handleAppCreate} required />
+        <input placeholder='Compensation' name='compensation' value={newApp.compensation} onChange={handleAppCreate} />
+        <input placeholder='Remote/In-person/Hybrid' name='work_site' value={newApp.work_site} onChange={handleAppCreate}  />
+        <input placeholder='Job location' name='location' value={newApp.location} onChange={handleAppCreate} />
+        <input placeholder='Job URL' name='url' value={newApp.url} onChange={handleAppCreate} />
+        <button>Submit</button>
+        </form>
     </div>
   )
 }

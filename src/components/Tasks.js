@@ -10,7 +10,7 @@ export default function Tasks({token}) {
             'Authorization': `Bearer ${token}`
         }
     });
-    setTasks(response.data.tasks)
+    setTasks(response.data)
     console.log(response.data);
   }
   useEffect(()=>{

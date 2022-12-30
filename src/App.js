@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
+import { Route, Routes } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import Tasks from "./components/Tasks";
+import ApplicationDetails from './components/ApplicationDetails';
+import ApplicationCreate from './components/ApplicationCreate';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 const App = () => {
 
@@ -64,6 +69,10 @@ const App = () => {
       <button onClick={signInwithGoogle}>SignWithGoogle</button>
         </div>
       )}
+      <Routes>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<SignUp />}/>
+      </Routes>
     </div>
   )
 }
