@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function PostingDetails() {
     const navigate = useNavigate();
-    const { param } = useParams();
+    const { postingID } = useParams();
 
     const[postDetails, setPostDetails] = useState();
 
@@ -26,6 +26,8 @@ export default function PostingDetails() {
         }
     }
 
+    const individualPosting = postDetails.find(({_id}) => _id === postingID)
+
     useEffect(() => {
         postDetails();
     }, [])
@@ -34,7 +36,11 @@ export default function PostingDetails() {
 
     return(
         <div>
-                {}
+            <div>
+
+            </div>
+                <button onClick={updatePost}>Update Post</button>
+                <button oncClick={deletePost}></button>
         </div>
     )
 }

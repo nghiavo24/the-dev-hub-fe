@@ -26,8 +26,11 @@ function MainHub(){
         return (
           <div>
             <Link to= {`/mainhub/posting/${post._id}`} >
-                <h3 >{post.topic}</h3>
-                
+                <h3 >{post.title}</h3>
+                <h3 >{post.company}</h3>
+                <h3 >{post.posted}</h3>
+
+
             </Link>
           </div>
         );
