@@ -7,32 +7,35 @@ import ApplicationCreate from './components/ApplicationCreate';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Homepage from './components/Homepage'
+ 
 
 const App = () => {
   const [authorizedUser,setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"))
-  
-  const requireAuth = ({children}) => {
-    return authorizedUser ? (children) : <Navigate to='/login' />
+  const isLoggedIn = false;
+  const RequireAuth = ({ children }) => {
+    return isLoggedIn ? children : <Navigate to='/login' />;
   }
 
-    const logoutUser = () => {
-      signOut(auth).then(() => {      
-        // clear session storage
-        sessionStorage.clear();
-        setAuthorizedUser(false);
-        // window.location.replace("/");
-        alert('Logged Out Successfully');
-      }).catch((error) => {
-        // An error happened.
-        alert(error);
-      });
-    }
+    // const logoutUser = () => {
+    //   signOut(auth).then(() => {      
+    //     // clear session storage
+    //     sessionStorage.clear();
+    //     setAuthorizedUser(false);
+    //     // window.location.replace("/");
+    //     alert('Logged Out Successfully');
+    //   }).catch((error) => {
+    //     // An error happened.
+    //     alert(error);
+    //   });
+    // }
+  console.log(isLoggedIn)
   return (
     <div>
-      <Homepage />
       <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path='/login' element={<Login setAuthorizedUser={setAuthorizedUser}/>}/>
+        <Route path='/'>
+          <Route index element={<RequireAuth><Homepage /></RequireAuth>} />
+          <Route path='login' element={<Login isLoggedIn={isLoggedIn} authorizedUser={authorizedUser}/>}/>
+        </Route>
         <Route path='/signup' element={<SignUp />}/>
       </Routes>
     </div>

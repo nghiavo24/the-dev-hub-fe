@@ -3,8 +3,9 @@ import {auth} from '../config/firebase-config'
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import {signInWithEmailAndPassword} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { GoogleButton} from 'react-google-button'
 
-const Login = ({setAuthorizedUser}) => {
+const Login = ({isLoggedIn, authorizedUser}) => {
     const navigate = useNavigate();
     const[error, setError] = useState(false);
     const[email, setEmail] = useState('');
@@ -20,10 +21,14 @@ const Login = ({setAuthorizedUser}) => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
+        isLoggedIn(true);
+        console.log(user);
+        navigate('/');
     })
     .catch((error) => {
         setError(true)
     });
+    navigate('/')
     }
 
     const signInwithGoogle = () => {
@@ -38,7 +43,8 @@ const Login = ({setAuthorizedUser}) => {
           user.getIdToken().then((tkn)=>{
             // set access token in session storage
             sessionStorage.setItem("accessToken", tkn);
-            setAuthorizedUser(true);
+            authorizedUser(true)
+            isLoggedIn(true)
           })
         }
         console.log(user);
@@ -59,10 +65,10 @@ const Login = ({setAuthorizedUser}) => {
         <form onSubmit={handleLogin}>
             <input type="email" placeholder='email' onChange={e => setEmail(e.target.value)}/>
             <input type="password" placeholder='password' onChange={e => setPassword(e.target.value)}/>
-            {error && <span> Wrong email or password!</span>}
+            {error && <span>Wrong email or password!</span>}
             <button type='submit'>Login</button>
         </form>
-        <button onClick={signInwithGoogle}>SignWithGoogle</button>
+        <div onClick={signInwithGoogle} className='max-w-[240px] m-auto py-4'><GoogleButton /></div>
     </div>
   )
 }
