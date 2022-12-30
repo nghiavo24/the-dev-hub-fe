@@ -25,7 +25,7 @@ function MainHub(){
       const allPosting = posting.map((post) => {
         return (
           <div>
-              <h3 >{post.topic}</h3>
+              <Link to= {`/mainhub/posting/${post._id}`} ><h3 >{post.topic}</h3></Link>
           </div>
         );
       });
@@ -34,6 +34,8 @@ function MainHub(){
         <div>
             <h1>MainHub</h1>
             <div>{allPosting}</div>
+            <Link to= '/mainhub/createPosting'>Create a Post</Link>
+
 
 
 
