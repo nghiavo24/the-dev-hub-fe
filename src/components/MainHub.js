@@ -1,9 +1,6 @@
 import React, { useEffect, useState }  from "react";
 import { Link} from "react-router-dom";
 import axios from "axios";
-import PostingCreate from "./PostingCreate";
-import PostingUpdate from "./PostingUpdate";
-import PostingDetails from "./PostingDetails";
 
 function MainHub(){
     const [posting, setPosting] = useState();
@@ -25,7 +22,7 @@ function MainHub(){
       const allPosting = posting.map((post) => {
         return (
           <div>
-            <Link to= {`/mainhub/posting/${post._id}`} >
+            <Link to= {`/mainhub/postingDetails/${post._id}`} >
                 <h3 >{post.title}</h3>
                 <h3 >{post.company}</h3>
                 <h3 >{post.posted}</h3>
