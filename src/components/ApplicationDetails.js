@@ -10,7 +10,7 @@ const ApplicationDetails = () => {
 
   const getAllApp = () => {
     axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/${id}`)
-    .then((res) => { setAllApps(res.data)})
+    .then((res) => {setAllApps(res.data)})
   }
 
   const getNotes = () => {
@@ -20,13 +20,10 @@ const ApplicationDetails = () => {
 
   const deleteApp = () =>{
     axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/delete/${id}`)
-    .then((res) => { navigate('/')})
+    .then((res) => { navigate('/myhub')})
   }
 
-  const deleteNote = (noteId) => {
-    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/delete/${noteId}`)
-    .then((res) => {window.location.reload()})
-  }
+  
   
 useEffect(() =>{
   getAllApp();
@@ -46,13 +43,15 @@ if (allNotes === undefined) return;
     )
   })
 
-  
-
+  const deleteNote = (noteId) => {
+    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/delete/${noteId}`)
+    .then((res) => {window.location.reload()})
+  }
 
 return(
   <div>
     <div className='flex flex-row row-span-2'>
-      <div className=''>
+      <div className='w-3/4'>
       <p>Job Title: <span>{allApps.title}</span></p>
       <p>Company: <span>{allApps.company}</span></p>
       <p>Date applied: <span>{allApps.applied}</span></p>
@@ -61,9 +60,10 @@ return(
       <p>Location: <span>{allApps.location}</span></p>
       <p>Link: <span>{allApps.url}</span></p>
         </div>
-      <div>
+      <div className='w-1/4'>
         <h1>Notes</h1>
-        {noteData}
+        <button>Add Note</button>
+        <div>{noteData}</div>
       </div>
     </div>
 
