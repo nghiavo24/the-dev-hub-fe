@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link} from 'react-router-dom';
 
 const ApplicationDetails = () => {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ return(
         </div>
       <div className='w-1/4'>
         <h1>Notes</h1>
-        <button>Add Note</button>
+        <button><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         <div>{noteData}</div>
       </div>
     </div>
