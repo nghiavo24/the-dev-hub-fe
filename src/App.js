@@ -5,6 +5,8 @@ import MyHub from './components/MyHub';
 import MainHub from './components/MainHub';
 import ApplicationDetail from './components/ApplicationDetails'
 import NoteCreate from './components/NoteCreate';
+import Navbar from './components/Navbar';
+import logo from './media/thedevhub.png'
 
 const App = () => {
   return (
