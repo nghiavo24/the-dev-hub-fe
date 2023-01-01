@@ -1,6 +1,7 @@
-import axios from 'axios'
+import axios, { all } from 'axios'
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import moment from 'moment'
  
 
 
@@ -18,7 +19,16 @@ useEffect(()=>{
 
 if (allApplications === undefined) return;
 
+const appList = allApplications.map((app, index) => {
+    return(
+        <div key={index}>
+            <div>{app.title}</div>
+            <div>{app.company}</div>
+            <div>{app.applied}</div>
 
+        </div>
+    )
+})
 
 
   return (
@@ -27,6 +37,8 @@ if (allApplications === undefined) return;
             <Link to='/application/add'>
            <button> Create a job post</button>
             </Link>
+
+           <div>{appList}</div>
     </div>
   )
 }
