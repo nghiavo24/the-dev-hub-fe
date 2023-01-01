@@ -4,6 +4,7 @@ import Homepage from './components/Homepage';
 import MyHub from './components/MyHub';
 import MainHub from './components/MainHub';
 import ApplicationDetail from './components/ApplicationDetails'
+import NoteCreate from './components/NoteCreate';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path='/mainhub' element={<MainHub />} />
           <Route path='/myhub' element={<MyHub />} />
           <Route path='/myhub/application/:id' element={<ApplicationDetail />} />
+          <Route path='/myhub/application/:id/note/add' element={<NoteCreate />}/>
       </Routes>
     </div>
   )
