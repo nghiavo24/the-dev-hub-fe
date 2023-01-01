@@ -9,18 +9,23 @@ const ApplicationDetails = () => {
   const[allNotes, setAllNotes] = useState();
 
   const getAllApp = () => {
-    axios.get(`url/application/${id}`)
+    axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/${id}`)
     .then((res) => { setAllApps(res.data)})
   }
 
   const getNotes = () => {
-    axios.get(`url/notes/${id}`)
+    axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/${id}`)
     .then((res) => {setAllNotes(res.data)})
   }
 
   const deleteApp = () =>{
-    axios.delete(`url/application/delete/${id}`)
+    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/delete/${id}`)
     .then((res) => { navigate('/')})
+  }
+
+  const deleteNote = (noteId) => {
+    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/delete/${noteId}`)
+    .then((res) => {window.location.reload()})
   }
   
 useEffect(() =>{
@@ -41,24 +46,27 @@ if (allNotes === undefined) return;
     )
   })
 
-  const deleteNote = (noteId) => {
-    axios.delete(`url/notes/delete/${noteId}`)
-    .then((res) => {window.location.reload()})
-  }
+  
 
 
 return(
   <div>
-    <div>
+    <div className='flex flex-row row-span-2'>
+      <div className=''>
+      <p>Job Title: <span>{allApps.title}</span></p>
+      <p>Company: <span>{allApps.company}</span></p>
+      <p>Date applied: <span>{allApps.applied}</span></p>
+      <p>Recruiter/Hiring Manager: <span>{allApps.hiring_manager}</span></p>
+      <p>Work Site: <span>{allApps.work_site}</span></p>
+      <p>Location: <span>{allApps.location}</span></p>
+      <p>Link: <span>{allApps.url}</span></p>
+        </div>
       <div>
-        <button>Update Application</button>
-        <button onClick={deleteApp}>Delete Application</button>
+        <h1>Notes</h1>
+        {noteData}
       </div>
-      {allApps.title}
     </div>
-    <div>{noteData}
-    <button>Add a note</button>
-    </div>
+
   </div>
 )
 }
