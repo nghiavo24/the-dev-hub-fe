@@ -11,7 +11,6 @@ const NoteCreate = () => {
     })
 
     const createNewNote = async (e) => {
-        e.preventDefault();
         try{
             await axios.post(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/create/${id}`, newNote)
         } catch (err){
