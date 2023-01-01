@@ -25,7 +25,10 @@ const appList = allApplications.map((app, index) => {
             <p className="text-sm text-gray-500">{app.company}</p>
             <p>{app.title}</p>
             <p>{app.applied}</p>
-            <button className="text-center text-sm bg-blue-500 rounded py-2 text-white mt-2">View details</button>
+            <button
+            className="text-center text-sm bg-blue-500 rounded py-2 text-white mt-2">
+            <Link to={`/myhub/application/${app._id}`}>View details</Link>
+            </button>
         </div>
     )
 })
