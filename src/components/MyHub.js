@@ -4,25 +4,22 @@ import { Link, useNavigate } from 'react-router-dom'
  
 
 
-const MyHub = ({token}) => {
+const MyHub = () => {
 const [allApplications, setAllApplications] = useState()
 
-const fetchData = async(token)=>{
-        const res = await axios.get('http://localhost:8080/thedevhub/application', {
-            headers:{
-                'Authorization': `Bearer ${token}`
-            }
-        })
+const fetchData = async () => {
+        const res = await axios.get('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application')
         setAllApplications(res.data)
-        console.log(res)
     }
-console.log(allApplications)
 
 useEffect(()=>{
-    if(token){
-     fetchData(token);
-    }
+    fetchData();
    },[]);
+
+if (allApplications === undefined) return;
+
+
+
 
   return (
     <div className='myhub'>
@@ -30,16 +27,6 @@ useEffect(()=>{
             <Link to='/application/add'>
            <button> Create a job post</button>
             </Link>
-        <div>
-            <ul>
-                {allApplications.map((application, id) => {
-                    return <li key={id}>
-                        {application.title} - {application.company} - {application.applied} - {application.hiring_managaer} - {application.work_site} - {application.location} - {application.url}
-                    {/* want to add functionality to be able to click on each application and take you to that speciifc appluication. Connect to application details */}
-                    </li>
-                })} 
-            </ul>
-        </div>
     </div>
   )
 }
