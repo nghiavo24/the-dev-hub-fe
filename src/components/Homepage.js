@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Homepage = () => {
   return (
     <div>
-        <div>Main Hub</div>
+        <Link to='/mainhub'></Link><div>Main Hub</div></Link>
         <Link to='/myhub'><div>Personal Hub</div></Link>
     </div>
   )
