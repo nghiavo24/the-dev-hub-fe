@@ -3,6 +3,7 @@ import { Route, Routes, } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import MyHub from './components/MyHub';
 import MainHub from './components/MainHub';
+import ApplicationDetail from './components/ApplicationDetails'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
           <Route path='/' element={<Homepage />} />
           <Route path='/mainhub' element={<MainHub />} />
           <Route path='/myhub' element={<MyHub />} />
+          <Route path='/myhub/application/:id' element={<ApplicationDetail />} />
       </Routes>
     </div>
   )
