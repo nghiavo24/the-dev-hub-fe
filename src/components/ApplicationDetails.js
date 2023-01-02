@@ -59,6 +59,11 @@ return(
       <p>Work Site: <span>{allApps.work_site}</span></p>
       <p>Location: <span>{allApps.location}</span></p>
       <p>Link: <span>{allApps.url}</span></p>
+      <button>
+        <Link to={`/myhub/application/${id}/update`}>
+        Update
+        </Link>
+      </button>
         </div>
       <div className='w-1/4'>
         <h1>Notes</h1>
