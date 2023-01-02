@@ -40,7 +40,7 @@ const ApplicationCreate = () => {
         <input placeholder='Job title' name='title' value={newApp.title} onChange={handleAppCreate} required />
         <input placeholder='Company' name='company' value={newApp.company} onChange={handleAppCreate} required />
         <input placeholder='Date applied' name='applied' value={newApp.applied} onChange={handleAppCreate} />
-        <input placeholder='Name of recruiter/hiring manager' name='hiring_manager' value={newApp.hiring_manager} onChange={handleAppCreate} required />
+        <input placeholder='Name of recruiter/hiring manager' name='hiring_manager' value={newApp.hiring_manager} onChange={handleAppCreate}/>
         <input placeholder='Compensation' name='compensation' value={newApp.compensation} onChange={handleAppCreate} />
         <input placeholder='Remote/In-person/Hybrid' name='work_site' value={newApp.work_site} onChange={handleAppCreate}  />
         <input placeholder='Job location' name='location' value={newApp.location} onChange={handleAppCreate} />
