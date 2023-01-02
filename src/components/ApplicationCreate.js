@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 const ApplicationCreate = () => {
     const navigate = useNavigate()
     const[newApp, setNewApp] = useState({
@@ -19,8 +18,8 @@ const ApplicationCreate = () => {
     const createNewApp = async (e) => {
         e.preventDefault();
         try{
-            await axios.post('/application/add')
-            navigate('/appdetail')
+            await axios.post('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/create', newApp)
+            navigate('/myhub')
         } catch(err){
             console.log(err)
         }
