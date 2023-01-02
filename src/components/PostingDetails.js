@@ -4,14 +4,24 @@ import axios from 'axios';
 
 export default function PostingDetails() {
       
-
     const navigate = useNavigate();
-    const { postingID } = useParams();
+    const { id } = useParams();
     const[postDetails, setPostDetails] = useState();
     const getPostings = () => {
-        axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/${postingID}`)
-        .then((res) => { setPostDetails(res.data)})
+        axios({
+        method: 'get',
+        url: `https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/${id}`
+    })
+        .then(res => {
+            setPostDetails(res.data)
+            console.log(res)
+        })
+        .catch(err => console.error(err))
     }
+    useEffect(() =>{
+        getPostings()
+      } ,[] )
+console.log(getPostings)
     // const deletePost = () => {
     //     axios.delete('')
     //     .then((res) => (navigate('/mainhub')))
@@ -26,11 +36,8 @@ export default function PostingDetails() {
     //     }
     // }
 
-    const individualPosting = postDetails.find(({_id}) => _id === postingID)
+    // const individualPosting = getPostings.find(({_id}) => _id === postingID)
 
-    useEffect(() => {
-        postDetails();
-    }, [])
 
 
 

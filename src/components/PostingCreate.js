@@ -33,7 +33,7 @@ console.log(post);
 console.log(setPost);
     return(
     <div>
-        <form onSubmit={createNewPost}>
+        <form class="flex flex-col" onSubmit={createNewPost}>
                 <h3> Create a Posting</h3>
                 <label>Title</label>
                 <input type="text" name='title' value={post.title}  onChange={createAPost} placeholder="add job title"/>
