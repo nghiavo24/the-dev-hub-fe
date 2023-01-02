@@ -22,15 +22,15 @@ if (allApplications === undefined) return;
 
 const appList = allApplications.map((app, index) => {
     return(
-        <div key={index} className="flex justify-around border-box p-2 flex-col">
-            <p className="text-lg text-gray-500 font-bold">{app.company}</p>
-            <p className="">{app.title}</p>
+        <div key={index} className="flex justify-around border-box p-2 flex-col border-black border-4">
+            <p className="text-lg text-gray-500 font-bold font-serif">{app.company}</p>
+            <p className="break-normal flex flex-wrap border-black border-4">{app.title}</p>
             <p>{app.applied}</p>
-            <button
-            className="text-center text-sm bg-blue-500 rounded py-2 text-white mt-2">
-            <Link to={`/myhub/application/${app._id}`}>View details</Link>
+            <button className="btn group flex items-center bg-black p-2 px-6 text-xl font-thin tracking-widest text-white">
+                <span className="relative pr-4 pb-1 text-black after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100">
+                </span>
+                <Link to={`/myhub/application/${app._id}`}>View details</Link>
             </button>
-            
         </div>
     )
 })
