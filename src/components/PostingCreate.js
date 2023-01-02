@@ -15,8 +15,9 @@ export default function PostingCreate() {
 
     const createNewPost = async (e) => {
     e.preventDefault();
+
     try{
-        await axios.post('https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/create')
+        await axios.post('https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/create', post)
         navigate("/mainhub");
     } catch(err){
         console.log(err)
@@ -29,11 +30,10 @@ export default function PostingCreate() {
         newPostInput[e.target.name] = e.target.value;
         setPost(newPostInput);
     }
-console.log(post);
-console.log(setPost);
+
     return(
     <div>
-        <form class="flex flex-col" onSubmit={createNewPost}>
+        <form  onSubmit={createNewPost}>
                 <h3> Create a Posting</h3>
                 <label>Title</label>
                 <input type="text" name='title' value={post.title}  onChange={createAPost} placeholder="add job title"/>
