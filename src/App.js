@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import PostingCreate from './components/PostingCreate';
 import ApplicationCreate from './components/ApplicationCreate';
 import ApplicationUpdate from './components/ApplicationUpdate';
+import About from './components/About';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Navbar />
         <Routes>
           <Route path='/' element={<Homepage />}/>
+          <Route path='/about' element={<About />} />
           <Route path='/mainhub' element={<MainHub />}/>
           <Route path='/mainhub/posting/create' element={<PostingCreate />}/> 
           <Route path='/myhub' element={<MyHub />} />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const About = () => {
+const About = () => {
   return (
 <div class="container my-24 px-6 mx-auto">
 
@@ -137,3 +137,5 @@ export const About = () => {
 
   )
 }
+
+export default About
