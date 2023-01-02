@@ -12,6 +12,7 @@ function MainHub(){
       };
       useEffect(() =>{
         getPostings()
+        
       } ,[] )
       if(posting === undefined) return;
       const allPosting = posting.map((post) => {

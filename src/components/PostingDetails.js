@@ -31,7 +31,7 @@ export default function PostingDetails() {
     
     const deletePost = () => {
         axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/delete/${id}` )
-        .then((res) => (navigate('/mainhub')))
+        navigate('/mainhub')
     }
 
     async function updatingPost(e) {
@@ -46,7 +46,7 @@ export default function PostingDetails() {
 
         try{
             await axios.put(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/update/${id}`, editedPost )
-            navigate('/mainhub')
+            window.location.reload()
         } catch(err){
             console.log(err)
         }
