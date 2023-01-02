@@ -4,9 +4,14 @@ import axios from "axios";
 
 
 export default function PostingCreate() {
-    const [post, setPost] = useState({ title: "", company: "", posted: "", url: "",note: "" });
+    const [post, setPost] = useState({ 
+        title: "", 
+        company: "", 
+        posted: "", 
+        url: "",
+        note: "" 
+    });
     const navigate = useNavigate();
-    
 
     const createNewPost = async (e) => {
     e.preventDefault();
@@ -29,20 +34,18 @@ console.log(setPost);
     return(
     <div>
         <form onSubmit={createNewPost}>
-          <div>
                 <h3> Create a Posting</h3>
                 <label>Title</label>
-                <input  name='title' value={post.title}  onChange={createAPost} placeholder="add job title"/>
+                <input type="text" name='title' value={post.title}  onChange={createAPost} placeholder="add job title"/>
                 <label>Company Name</label>
                 <input type="text" name="company" value={post.company} onChange={createAPost} placeholder="add company name" />
                 <label >Date Posted</label>
-                <input type="posted" name="posted" value={post.posted} onChange={createAPost} placeholder="date" />
+                <input type="date" name="posted" value={post.posted} onChange={createAPost} placeholder="date" />
                 <label>URL</label>
-                <input  type='text' name='url' value={post.url}  onChange={createAPost} placeholder="add job title"/>
+                <input  type='url' name='url' value={post.url}  onChange={createAPost} placeholder="url link"/>
                 <label>Note</label>
-                <input type="text" name="note" value={post.note} onChange={createAPost} placeholder="add company name" />
-              <button type="submit"> Create Topic </button>
-          </div>
+                <input type="text" name="note" value={post.note} onChange={createAPost} placeholder="notes" />
+              <button  type="submit"> Create Posting </button>
         </form>
       </div>
     )
