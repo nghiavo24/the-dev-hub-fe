@@ -2,6 +2,7 @@ import axios, { all } from 'axios'
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import moment from 'moment'
+import dlogo from '../assets/Dlogo.png'
  
 
 
@@ -21,7 +22,7 @@ if (allApplications === undefined) return;
 
 const appList = allApplications.map((app, index) => {
     return(
-        <div key={index} className="flex justify-around  border-box p-2 flex-col">
+        <div key={index} className="flex justify-around border-box p-2 flex-col">
             <p className="text-sm text-gray-500">{app.company}</p>
             <p>{app.title}</p>
             <p>{app.applied}</p>
@@ -29,6 +30,9 @@ const appList = allApplications.map((app, index) => {
             className="text-center text-sm bg-blue-500 rounded py-2 text-white mt-2">
             <Link to={`/myhub/application/${app._id}`}>View details</Link>
             </button>
+            <div>
+                <img src={dlogo} alt="" />
+            </div>
         </div>
     )
 })
