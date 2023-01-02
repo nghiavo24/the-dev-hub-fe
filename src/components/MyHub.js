@@ -38,9 +38,6 @@ const appList = allApplications.map((app, index) => {
   return (
     <div className='w-screen'>
         <h1 className='text-4xl text-center border-black border-4 mx-44'>MyHub</h1>
-        <div>
-            <img src={dlogo} alt="" className="flex justify-center items-center al h-32 w-auto border-black border-4 my-0 py-0"/>
-        </div>
             <Link to='/myhub/application/create'>
             <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
                 <div class="absolute inset-0 w-3 bg-blue-500 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
