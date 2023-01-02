@@ -21,7 +21,7 @@ if (allApplications === undefined) return;
 
 const appList = allApplications.map((app, index) => {
     return(
-        <div key={index} className="flex border-box p-2 flex-col">
+        <div key={index} className="flex justify-around  border-box p-2 flex-col">
             <p className="text-sm text-gray-500">{app.company}</p>
             <p>{app.title}</p>
             <p>{app.applied}</p>
