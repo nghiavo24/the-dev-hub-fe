@@ -12,6 +12,7 @@ import PostingCreate from './components/PostingCreate';
 const App = () => {
   return (
     <div>
+      <Navbar />
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/mainhub' element={<MainHub />} />
