@@ -6,19 +6,20 @@ import MainHub from './components/MainHub';
 import ApplicationDetail from './components/ApplicationDetails'
 import NoteCreate from './components/NoteCreate';
 import Navbar from './components/Navbar';
-import logo from './media/thedevhub.png'
 import PostingCreate from './components/PostingCreate';
+import ApplicationCreate from './components/ApplicationCreate';
 
 const App = () => {
   return (
     <div>
       <Navbar />
         <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path='/mainhub' element={<MainHub />} />
-          <Route path='/mainhub/posting/add' element={<PostingCreate />} /> 
+          <Route path='/' element={<Homepage />}/>
+          <Route path='/mainhub' element={<MainHub />}/>
+          <Route path='/mainhub/posting/add' element={<PostingCreate />}/> 
           <Route path='/myhub' element={<MyHub />} />
-          <Route path='/myhub/application/:id' element={<ApplicationDetail />} />
+          <Route path='/myhub/application/:id' element={<ApplicationDetail />}/>
+          <Route path='/myhub/application/create' element={<ApplicationCreate />}/>
           <Route path='/myhub/application/:id/note/add' element={<NoteCreate />}/>
       </Routes>
     </div>
