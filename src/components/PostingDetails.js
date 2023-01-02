@@ -65,7 +65,7 @@ export default function PostingDetails() {
     return(     
         <div>
             <h1 class="p-4">Posting Details</h1>
-            <div class="flex container">
+            <div class="flex content-center p-4">
                 {postDetails.company}
                 {postDetails.title}
                 {postDetails.posted}
