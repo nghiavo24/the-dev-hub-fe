@@ -6,7 +6,7 @@ function MainHub(){
     const [posting, setPosting] = useState();
 
     const getPostings =() => {
-            axios.get("https://sports-discord.fly.dev/api/topics")
+            axios.get("https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting")
             .then((res) => {
                 setPosting(res.data)
             })
@@ -21,7 +21,7 @@ function MainHub(){
 
       const allPosting = posting.map((post) => {
         return (
-          <div>
+          <div >
             <Link to= {`/mainhub/postingDetails/${post._id}`} >
                 <h3 >{post.title}</h3>
                 <h3 >{post.company}</h3>
@@ -32,10 +32,10 @@ function MainHub(){
       });
 
     return(
-        <div>
+        <div >
             <h1>MainHub</h1>
             <div>{allPosting}</div>
-            <Link to= '/mainhub/createPosting'>Create a Post</Link>
+            <Link to= '/mainhub/posting/add'>Create a Post</Link>
         </div>
     )
 }

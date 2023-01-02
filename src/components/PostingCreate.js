@@ -11,7 +11,7 @@ export default function PostingCreate() {
     const createNewPost = async (e) => {
     e.preventDefault();
     try{
-        await axios.post('')
+        await axios.post('https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/create')
         navigate("/mainhub");
     } catch(err){
         console.log(err)
