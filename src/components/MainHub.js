@@ -32,7 +32,7 @@ function MainHub(){
     return(
         <div >
             <div class="p-4">
-                <h1 className='text-4xl text-center border-black border-4 mx-44' >MainHub</h1>
+                <h1 className='text-4xl text-center mx-44' >MainHub</h1>
             </div>
 
             <Link to= '/mainhub/posting/add'>
