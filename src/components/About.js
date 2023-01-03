@@ -11,7 +11,7 @@ const About = () => {
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Team</h2>
-          <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
+          <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Group of aspiring engineers want to make a practical and useful web application to aid and facilitate the job searching process after the coding bootcamp.</p>
       </div> 
       <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
           <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
@@ -22,7 +22,7 @@ const About = () => {
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                       <a>Morgan Arancibia</a>
                   </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Full-stack Developer</span>
+                  <span class="text-gray-500 dark:text-gray-400">Full-stack Software Engineer</span>
                   <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Morgan drives the design and builds many core functionalities of this application.</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
@@ -46,7 +46,7 @@ const About = () => {
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                       <a>Jeffrey Koshy</a>
                   </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Full-stack Developer</span>
+                  <span class="text-gray-500 dark:text-gray-400">Full-stack Software Engineer</span>
                   <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Jeffrey collaborates with other developer to design and build many of essential components of this application.</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
@@ -70,7 +70,7 @@ const About = () => {
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                       <a>Nathan Vo</a>
                   </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Full-stack Developer</span>
+                  <span class="text-gray-500 dark:text-gray-400">Full-stack Software Engineer</span>
                   <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Nathan supports and collaborates with other developers on many aspects of this application.</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
