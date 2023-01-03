@@ -35,24 +35,64 @@ const ApplicationCreate = () => {
     console.log(newApp)
   return (
     <div>
-        <div>Create New Application</div>
-        <form onSubmit={createNewApp}className='border-3 border-gray-500 mx-7'>
+        <div className='text-4xl text-center mx-44'>Create New Application</div>
+        <form onSubmit={createNewApp} className='mx-7 my-4 px-3 py-2'>
             <input 
-            type='text' placeholder='Job title' name='title' value={newApp.title} onChange={handleAppCreate} required />
+                className='mx-7'
+                type='text' 
+                placeholder='Job title' 
+                name='title' value={newApp.title} 
+                onChange={handleAppCreate} required />
             <br />
-            <input type='text' placeholder='Company' name='company' value={newApp.company} onChange={handleAppCreate} required />
+            <input className='mx-7 my-3'
+                type='text' 
+                placeholder='Company' 
+                name='company' value={newApp.company} 
+                onChange={handleAppCreate} required />
             <br />
-            <input type='date' placeholder='Date applied' name='applied' value={newApp.applied} onChange={handleAppCreate} />
+            <input 
+                className='mx-7'
+                type='date' 
+                placeholder='Date applied' 
+                name='applied' 
+                value={newApp.applied} 
+                onChange={handleAppCreate} />
             <br />
-            <input type='text' placeholder='Name of recruiter/hiring manager' name='hiring_manager' value={newApp.hiring_manager} onChange={handleAppCreate}/>
+            <input 
+                className='mx-7 my-3'
+                type='text' 
+                placeholder='Name of recruiter/hiring manager' 
+                name='hiring_manager' value={newApp.hiring_manager} 
+                onChange={handleAppCreate}/>
             <br />
-            <input type='text' placeholder='Compensation' name='compensation' value={newApp.compensation} onChange={handleAppCreate} />
+            <input 
+                className='mx-7'
+                type='text' 
+                placeholder='Compensation' 
+                name='compensation' 
+                value={newApp.compensation} 
+                onChange={handleAppCreate} />
             <br />
-            <input type='text' placeholder='Remote/In-person/Hybrid' name='work_site' value={newApp.work_site} onChange={handleAppCreate}  />
+            <input 
+                className='mx-7 my-3'
+                type='text' 
+                placeholder='Remote/In-person/Hybrid' 
+                name='work_site' value={newApp.work_site} 
+                onChange={handleAppCreate}  />
             <br />
-            <input type='text' placeholder='Job location' name='location' value={newApp.location} onChange={handleAppCreate} />
+            <input 
+                className='mx-7'
+                type='text' 
+                placeholder='Job location' 
+                name='location' value={newApp.location} 
+                onChange={handleAppCreate} />
             <br />
-            <input type='url' placeholder='Job URL' name='url' value={newApp.url} onChange={handleAppCreate} />
+            <input 
+                className='mx-7 my-3'
+                type='url' 
+                placeholder='Job URL' 
+                name='url' value={newApp.url} 
+                onChange={handleAppCreate} />
             <br />
             <button>Submit</button>
         </form>
