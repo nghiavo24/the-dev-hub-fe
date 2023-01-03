@@ -12,7 +12,7 @@ import ApplicationCreate from './components/ApplicationCreate';
 import ApplicationUpdate from './components/ApplicationUpdate';
 import About from './components/About';
 import {GoogleButton} from 'react-google-button';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 
 const App = () => {
   const provider = new GoogleAuthProvider();
@@ -42,6 +42,17 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
       })
+  }
+
+  const logOutUser = () => {
+    signOut(auth).then(() => {
+      sessionStorage.clear();
+      setAuthorizedUser(false);
+      alert('Logged Out Successfully');
+    })
+    .catch((error) => {
+      alert(error);
+    })
   }
 
   return (
