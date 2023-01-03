@@ -106,7 +106,7 @@ const ApplicationCreate = () => {
                 name='url' value={newApp.url} 
                 onChange={handleAppCreate} />
             <br />
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
   )
