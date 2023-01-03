@@ -51,7 +51,8 @@ const ApplicationCreate = () => {
                 name='title' value={newApp.title} 
                 onChange={handleAppCreate} required />
             <br />
-            <input className='mx-7 my-3'
+            <input 
+                className='mx-7 my-3'
                 type='text' 
                 placeholder='Company' 
                 name='company' value={newApp.company} 
