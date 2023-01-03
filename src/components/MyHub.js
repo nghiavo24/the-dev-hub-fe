@@ -2,16 +2,22 @@ import axios, { all } from 'axios'
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const MyHub = () => {
+const MyHub = ({token}) => {
 const [allApplications, setAllApplications] = useState()
 
-const fetchData = async () => {
-        const res = await axios.get('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application')
+const fetchData = async (token) => {
+        const res = await axios.get('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application', {
+            headers:{
+                'Authorization': `Bearer ${token}`
+            }
+        })
         setAllApplications(res.data)
     }
 
 useEffect(()=>{
-    fetchData();
+    if(token){
+    fetchData(token);
+    }
    },[]);
 
 if (allApplications === undefined) return;
