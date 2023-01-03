@@ -65,18 +65,18 @@ export default function PostingDetails() {
     return(     
         <div>
             <h1 className='text-4xl text-center border-black border-4 mx-44'>Posting Details</h1>
-            <div class="flex flex-col row-span-2 content-center p-4">
+            <div class="max-w-md mx-10 py-4 px-8 bg-amber-100 shadow-lg rounded-lg my-20">
             
-               <p>Company: <span>{postDetails.company}</span></p> 
-               <p>Title: <span>{postDetails.title}</span></p> 
-               <p>Posted: <span>{postDetails.posted}</span></p> 
-               <p>Url: <span> {postDetails.url}</span></p> 
-               <p>Note: <span> {postDetails.note}</span></p> 
+               <p class="text-2xl">Company: <span class="text-base">{postDetails.company}</span></p> 
+               <p class="text-2xl">Title: < span class="text-base">{postDetails.title}</span></p> 
+               <p class="text-2xl">Posted: <span class="text-base">{postDetails.posted}</span></p> 
+               <p class="text-2xl">Url: <span class="text-base"> <a href={postDetails.url} target="_blank" >Click For Url</a></span></p> 
+               <p class="text-2xl">Note: <span class="text-base"> {postDetails.note}</span></p> 
             </div>
             <form class="p-10" updatingPost={updatingPost}>
-            <h3> Update this Posting</h3>
+            <h3 className='text-4xl text-center border-black border-4 mx-44'> Update this Posting</h3>
                 <label>Title</label>
-                <input type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="add job title"/>
+                <input  type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="add job title"/>
                 <label>Company Name</label>
                 <input type="text" name="company" value={postUpdate.company} onChange={updateAPost} placeholder="add company name" />
                 <label >Date Posted</label>
