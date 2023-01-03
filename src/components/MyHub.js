@@ -28,10 +28,10 @@ const appList = allApplications.map((app, index) => {
 })
   return (
     <div>
-        <h1 className='text-4xl text-center border-black border-4 mx-44'>MyHub</h1>
+        <h1 className='text-4xl text-center mx-44'>MyHub</h1>
             <Link to='/myhub/application/create'>
             <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
-                <div class="absolute inset-0 w-3 bg-blue-500 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                <div class="absolute inset-0 w-3 bg-blue-500 transition-all duration-[800ms] ease-out group-hover:w-full"></div>
                 <span class="relative text-black group-hover:text-white">Create application</span>
             </button>
             </Link>
