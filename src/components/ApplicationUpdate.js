@@ -35,7 +35,7 @@ const ApplicationUpdate = () => {
     
     return (
     <div>
-        <div>Update an Application</div>
+        <div className='text-4xl text-center mx-44'>Update an Application</div>
         <form onSubmit={appUpdateCall}>
         <input placeholder='Job title' name='title' value={appUpdate.title} onChange={handleAppUpdate}/>
         <input placeholder='Company' name='company' value={appUpdate.company} onChange={handleAppUpdate}/>
