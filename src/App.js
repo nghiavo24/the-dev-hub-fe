@@ -11,11 +11,15 @@ import PostingDetails from './components/PostingDetails';
 import ApplicationCreate from './components/ApplicationCreate';
 import ApplicationUpdate from './components/ApplicationUpdate';
 import About from './components/About';
+import {GoogleButton} from 'react-google-button'
 
 const App = () => {
   return (
     <div>
       <Navbar />
+      <div className='max-w-[240px] m-auto py-4'>
+        <GoogleButton />
+      </div>
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/about' element={<About />} />
