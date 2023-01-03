@@ -38,13 +38,21 @@ const ApplicationCreate = () => {
         <div>Create New Application</div>
         <form onSubmit={createNewApp}>
         <input placeholder='Job title' name='title' value={newApp.title} onChange={handleAppCreate} required />
+        <br />
         <input placeholder='Company' name='company' value={newApp.company} onChange={handleAppCreate} required />
+        <br />
         <input placeholder='Date applied' name='applied' value={newApp.applied} onChange={handleAppCreate} />
+        <br />
         <input placeholder='Name of recruiter/hiring manager' name='hiring_manager' value={newApp.hiring_manager} onChange={handleAppCreate}/>
+        <br />
         <input placeholder='Compensation' name='compensation' value={newApp.compensation} onChange={handleAppCreate} />
+        <br />
         <input placeholder='Remote/In-person/Hybrid' name='work_site' value={newApp.work_site} onChange={handleAppCreate}  />
+        <br />
         <input placeholder='Job location' name='location' value={newApp.location} onChange={handleAppCreate} />
+        <br />
         <input placeholder='Job URL' name='url' value={newApp.url} onChange={handleAppCreate} />
+        <br />
         <button>Submit</button>
         </form>
     </div>
