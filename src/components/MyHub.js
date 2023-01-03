@@ -18,21 +18,16 @@ if (allApplications === undefined) return;
 
 const appList = allApplications.map((app, index) => {
     return(
-        <div key={index} className="flex flex-wrap justify-around border-box p-2 flex-col">
-        
-            <p className="flex flex-wrap text-lg text-gray-500 font-bold font-serif">{app.company}</p>
-            <p className="flex flex-wrap break-normal border-black border-4">{app.title}</p>
-            <p className="flex flex-wrap">{app.applied}</p>
-            <button className="rounded-xl btn group flex items-center bg-slate-900 p-2 px-6 text-lg font-thin tracking-widest text-white">
-                <span className="relative pr-4 pb-1 text-white after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100">
-                </span>
+        <div key={index} className="flex flex-wrap px-9 py-7 flex-col border mx-5 my-5">
+            <p className="text-2xl font-bold text-blue-900">{app.company}</p>
+            <p>{app.title}</p>
+            <p>{app.applied}</p>
                 <Link to={`/myhub/application/${app._id}`}>View details</Link>
-            </button>
         </div>
     )
 })
   return (
-    <div className='w-screen'>
+    <div>
         <h1 className='text-4xl text-center border-black border-4 mx-44'>MyHub</h1>
             <Link to='/myhub/application/create'>
             <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
@@ -40,7 +35,7 @@ const appList = allApplications.map((app, index) => {
                 <span class="relative text-black group-hover:text-white">Create application</span>
             </button>
             </Link>
-           <div className="w-screen flex flex-row gap-x-8 h-min p-1 border-box bg-white rounded xl ">{appList}</div>
+           <div className="flex flex-wrap">{appList}</div>
     
     </div>
   )
