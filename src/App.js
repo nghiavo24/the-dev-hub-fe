@@ -19,11 +19,21 @@ const App = () => {
 
 provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
+
+  const[authorizedUser, setAuthorizedUser] = useState(falae || sessionStorage.getItem("accessToken"));
+
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
         const user = result.user;
+        if(user){
+          user.getIdToken().then((tkn) => {
+            sessionStorage.setItem("accessToken", tkn);
+            setAuthorizedUser(true);
+          })
+        }
         console.log(user);
       })
       .catch((error) => {
