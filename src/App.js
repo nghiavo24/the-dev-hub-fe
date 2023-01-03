@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes, } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import MyHub from './components/MyHub';
@@ -20,7 +20,7 @@ const App = () => {
 provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
 
-  const[authorizedUser, setAuthorizedUser] = useState(falae || sessionStorage.getItem("accessToken"));
+  const[authorizedUser, setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"));
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
