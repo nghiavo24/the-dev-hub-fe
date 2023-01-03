@@ -51,14 +51,15 @@ if (allNotes === undefined) return;
 return(
   <div>
     <div className='flex flex-row row-span-2'>
-      <div className='w-3/4'>
-      <p>Job Title: <span>{allApps.title}</span></p>
-      <p>Company: <span>{allApps.company}</span></p>
-      <p>Date applied: <span>{allApps.applied}</span></p>
-      <p>Recruiter/Hiring Manager: <span>{allApps.hiring_manager}</span></p>
-      <p>Work Site: <span>{allApps.work_site}</span></p>
-      <p>Location: <span>{allApps.location}</span></p>
-      <p>Link: <span>{allApps.url}</span></p>
+      <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg rounded-lg'>
+      <p className="text-2xl">Job Title: </p><span className="text-md">{allApps.title}</span>
+      <p className="text-2xl">Company: </p><span>{allApps.company}</span>
+      <p className="text-2xl">Date applied:</p> <span>{allApps.applied}</span>
+      <p className="text-2xl">Recruiter/Hiring Manager:</p> <span>{allApps.hiring_manager}</span>
+      <p className="text-2xl">Work Site:</p> <span>{allApps.work_site}</span>
+      <p className="text-2xl">Location:</p> <span>{allApps.location}</span>
+      <p className="text-2xl">Link:</p><a href={allApps.url} target="_blank">Click to view job!</a>
+      <br />
       <button>
         <Link to={`/myhub/application/${id}/update`}>
         Update
@@ -66,7 +67,7 @@ return(
       </button>
         </div>
       <div className='w-1/4'>
-        <h1>Notes</h1>
+        <h1 className="my-20 text-2xl">Notes</h1>
         <button><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         <div>{noteData}</div>
       </div>
