@@ -2,6 +2,7 @@ import React from 'react'
 import linkedin from '../media/linkedin.png';
 import morgan from '../media/morgan.jpg';
 import jeffrey  from '../media/jeffrey.jpeg'
+import nathan from '../media/nathan.png'
 
 
 const About = () => {
@@ -22,7 +23,7 @@ const About = () => {
                       <a>Morgan Arancibia</a>
                   </h3>
                   <span class="text-gray-500 dark:text-gray-400">Full-stack Developer</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Morgan drives the design and many core functionalities of this application.</p>
+                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Morgan drives the design and builds many core functionalities of this application.</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://github.com/mobrewer" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -46,7 +47,7 @@ const About = () => {
                       <a>Jeffrey Koshy</a>
                   </h3>
                   <span class="text-gray-500 dark:text-gray-400">Full-stack Developer</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Jeffrey is responsible for front-end design and many of essential components of this application.</p>
+                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Jeffrey collaborates with other developer to design and build many of essential components of this application.</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="https://github.com/koshy123" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -62,15 +63,15 @@ const About = () => {
               </div>
           </div> 
           <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-              <a href="#">
-                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Avatar"/>
+              <a>
+                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={nathan} alt="Nathan"/>
               </a>
               <div class="p-5">
                   <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a href="#">Michael Gough</a>
+                      <a>Nathan Vo</a>
                   </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Senior Front-end Developer</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Michael drives the technical strategy of the flowbite platform and brand.</p>
+                  <span class="text-gray-500 dark:text-gray-400">Full-stack Developer</span>
+                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Nathan supports and collaborates with other developers on many aspects of this application.</p>
                   <ul class="flex space-x-4 sm:mt-0">
                       <li>
                           <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
