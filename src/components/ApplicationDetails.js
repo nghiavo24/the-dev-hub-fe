@@ -52,12 +52,12 @@ return(
   <div>
     <div className='flex flex-row row-span-2'>
       <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg rounded-lg'>
-      <p className="text-2xl">Job Title: </p><span className="text-md">{allApps.title}</span>
-      <p className="text-2xl">Company: </p><span>{allApps.company}</span>
-      <p className="text-2xl">Date applied:</p> <span>{allApps.applied}</span>
-      <p className="text-2xl">Recruiter/Hiring Manager:</p> <span>{allApps.hiring_manager}</span>
-      <p className="text-2xl">Work Site:</p> <span>{allApps.work_site}</span>
-      <p className="text-2xl">Location:</p> <span>{allApps.location}</span>
+      <p className="text-2xl text-red-400">Job Title: </p><span className="text-base">{allApps.title}</span>
+      <p className="text-2xl">Company: </p><span className="text-base">{allApps.company}</span>
+      <p className="text-2xl">Date applied:</p> <span className="text-base">{allApps.applied}</span>
+      <p className="text-2xl">Recruiter/Hiring Manager:</p> <span className="text-base">{allApps.hiring_manager}</span>
+      <p className="text-2xl">Work Site:</p> <span className="text-base">{allApps.work_site}</span>
+      <p className="text-2xl">Location:</p> <span className="text-base">{allApps.location}</span>
       <p className="text-2xl">Link:</p><a href={allApps.url} target="_blank">Click to view job!</a>
       <br />
       <button>
@@ -67,9 +67,9 @@ return(
       </button>
         </div>
       <div className='w-1/4'>
-        <h1 className="my-20 text-2xl">Notes</h1>
+        <h1 className="my-20 text-2xl py-4 px-8 bg-amber-100 shadow-lg rounded-lg">Notes</h1>
         <button><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
-        <div>{noteData}</div>
+        <div className="py-4 px-8 bg-amber-100 shadow-lg rounded-lg">{noteData}</div>
       </div>
     </div>
 
