@@ -64,13 +64,14 @@ export default function PostingDetails() {
 
     return(     
         <div>
-            <h1 class="p-4">Posting Details</h1>
-            <div class="flex content-center p-4">
-                {postDetails.company}
-                {postDetails.title}
-                {postDetails.posted}
-                {postDetails.url}
-                {postDetails.note}
+            <h1 className='text-4xl text-center border-black border-4 mx-44'>Posting Details</h1>
+            <div class="flex flex-col row-span-2 content-center p-4">
+            
+               <p>Company: <span>{postDetails.company}</span></p> 
+               <p>Title: <span>{postDetails.title}</span></p> 
+               <p>Posted: <span>{postDetails.posted}</span></p> 
+               <p>Url: <span> {postDetails.url}</span></p> 
+               <p>Note: <span> {postDetails.note}</span></p> 
             </div>
             <form class="p-10" updatingPost={updatingPost}>
             <h3> Update this Posting</h3>
@@ -91,3 +92,4 @@ export default function PostingDetails() {
         </div>
     )
 }
+
