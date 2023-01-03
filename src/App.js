@@ -11,13 +11,35 @@ import PostingDetails from './components/PostingDetails';
 import ApplicationCreate from './components/ApplicationCreate';
 import ApplicationUpdate from './components/ApplicationUpdate';
 import About from './components/About';
-import {GoogleButton} from 'react-google-button'
+import {GoogleButton} from 'react-google-button';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
 const App = () => {
+  const provider = new GoogleAuthProvider();
+
+provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+  const auth = getAuth();
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      })
+  }
+
   return (
     <div>
       <Navbar />
-      <div className='max-w-[240px] m-auto py-4'>
+      <div 
+      onClick={signInWithGoogle}
+      className='max-w-[240px] m-auto py-4'>
         <GoogleButton />
       </div>
         <Routes>
