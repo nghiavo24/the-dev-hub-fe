@@ -37,8 +37,9 @@ const ApplicationCreate = () => {
         <div>
             <div className='text-4xl text-center mx-44'>Create New Application</div>
             <div className="flex justify-center">
-                <form onSubmit={createNewApp} className='w-3/5 my-4 px-3 flex flex-col'>
+                <form onSubmit={createNewApp} className='w-3/5 my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
                     <input
+                        className="mt-5"
                         type='text'
                         placeholder='Job title'
                         name='title' value={newApp.title}
@@ -92,7 +93,7 @@ const ApplicationCreate = () => {
                         name='url' value={newApp.url}
                         onChange={handleAppCreate} />
                     <br />
-                    <button type="submit" className="rounded-lg text-lg mt-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-10">Submit</button>
+                    <button type="submit" className="rounded-lg text-lg my-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-10">Submit</button>
                 </form>
             </div>
         </div>
