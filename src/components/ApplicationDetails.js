@@ -51,7 +51,7 @@ if (allNotes === undefined) return;
 return(
   <div>
     <div className='flex flex-row row-span-2'>
-      <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg rounded-lg'>
+      <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg rounded-lg border-air-blue border'>
       <p className="text-2xl text-red-400">Job Title: </p><span className="text-base">{allApps.title}</span>
       <p className="text-2xl">Company: </p><span className="text-base">{allApps.company}</span>
       <p className="text-2xl">Date applied:</p> <span className="text-base">{allApps.applied}</span>
@@ -67,7 +67,7 @@ return(
       </button>
         </div>
       <div className='w-1/4'>
-        <h1 className="my-20 text-2xl py-4 px-8 bg-white shadow-lg rounded-lg">Notes</h1>
+        <h1 className="my-20 text-2xl py-4 px-8 bg-white shadow-lg rounded-lg border-dark-salmon border">Notes</h1>
         <button><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         <div>{noteData}</div>
       </div>
