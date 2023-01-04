@@ -2,7 +2,8 @@ import axios from 'axios'
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const MyHub = () => {
+const MyHub = ({uid}) => {
+    console.log(uid)
 const [allApplications, setAllApplications] = useState();
 const token = sessionStorage.getItem("accessToken");
 const navigate = useNavigate();

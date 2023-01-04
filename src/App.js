@@ -20,6 +20,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
 
   const[authorizedUser, setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"));
+  const[uid, setUid] = useState('')
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
@@ -28,13 +29,14 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
         const token = credential.accessToken;
         const user = result.user;
         if(user){
-          user.getIdToken().then((tkn) => {
+          user.getIdToken().then((tkn, uid) => {
             sessionStorage.setItem("accessToken", tkn);
             setAuthorizedUser(true);
+            setUid(user.uid)
             console.log(user)
           })
         }
-        console.log(user);
+        setUid(user.uid)
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -82,7 +84,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
           <Route path='/mainhub' element={<MainHub />}/>
           <Route path='/mainhub/posting/create' element={<PostingCreate />}/> 
           <Route path='/mainhub/posting/:id' element={<PostingDetails />} /> 
-          <Route path='/myhub' element={<MyHub />} />
+          <Route path='/myhub' element={<MyHub uid={uid}/>} />
           <Route path='/myhub/application/:id' element={<ApplicationDetail />}/>
           <Route path='/myhub/application/create' element={<ApplicationCreate />}/>
           <Route path='/myhub/application/:id/update' element={<ApplicationUpdate />}/>
