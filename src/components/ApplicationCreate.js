@@ -33,13 +33,6 @@ const ApplicationCreate = () => {
     }
 
     console.log(newApp)
-
-    // const [sort, setSort] =useState()
-    // function filterWork(work) {
-    //     if(work === 'work_site'){
-    //         setSort()
-    //     }
-    // }
   return (
     <div>
         <div className='text-4xl text-center mx-44'>Create New Application</div>
@@ -81,7 +74,7 @@ const ApplicationCreate = () => {
                 value={newApp.compensation} 
                 onChange={handleAppCreate} />
             <br />
-            {/* <select 
+            <select 
                 className='mx-7 my-3'  
                 name='work_site' 
                 value={newApp.work_site}
@@ -90,7 +83,7 @@ const ApplicationCreate = () => {
                 <option value="In-person">In-person</option>
                 <option value="Hybrid">Hybrid</option>
                 
-            </select> */}
+            </select>
             <br />
             <input
                 className='mx-7'
