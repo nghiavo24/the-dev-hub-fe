@@ -47,7 +47,7 @@ const MyHub = ({ uid }) => {
 
   return (
     <div>
-        <h1 className='text-4xl text-center mx-44'>MyHub</h1>
+        <h1 className='text-4xl text-center mx-44'>My Hub</h1>
             <Link to='/myhub/application/create'>
             <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow mx-14">
                 <div class="absolute inset-0 w-3 bg-paolo-green transition-all duration-[800ms] ease-out group-hover:w-full"></div>

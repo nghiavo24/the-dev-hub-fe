@@ -68,14 +68,17 @@ return(
   <div>
     <div className='flex flex-row row-span-2'>
       <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
-      <p className="text-2xl text-air-blue">Job Title: </p><span className="text-base">{allApps.title}</span>
       <p className="text-2xl text-air-blue">Company: </p><span className="text-base">{allApps.company}</span>
+      <p className="text-2xl text-air-blue">Job Title: </p><span className="text-base">{allApps.title}</span>
       <p className="text-2xl text-air-blue">Date applied:</p> <span className="text-base">{allApps.applied}</span>
       <p className="text-2xl text-air-blue">Recruiter/Hiring Manager:</p> <span className="text-base">{allApps.hiring_manager}</span>
       <p className="text-2xl text-air-blue">Work Site:</p> <span className="text-base">{allApps.work_site}</span>
       <p className="text-2xl text-air-blue">Location:</p> <span className="text-base">{allApps.location}</span>
       <p className="text-2xl text-air-blue">Link:</p><a href={allApps.url} target="_blank"><button className="bg-air-blue text-white rounded-lg px-4 py-2 tracking-wider">Visit Site</button></a>
       <br />
+      <button className="bg-black text-white py-2 px-4 rounded-lg mt-5 tracking-wider mx-4">
+        <Link to='/myhub'>Back</Link>
+      </button>
       <button className="bg-paolo-green text-white py-2 px-4 rounded-lg mt-20 tracking-wider mx-14">
         <Link to={`/myhub/application/${id}/update`}>
         Update
@@ -92,7 +95,6 @@ return(
         <div className="">{noteData}</div>
       </div>
       </div>
-    
     </div>
 
   </div>
