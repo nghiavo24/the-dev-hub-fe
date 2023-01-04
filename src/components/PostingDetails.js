@@ -74,7 +74,7 @@ const PostingDetails= () => {
         <div>
             <h1 className='text-4xl text-center mx-44 mt-4 text-dark-salmon'>Posting Details</h1>
             <div class="flex justify-center">
-            <div class="max-w-md mx-10 py-8 px-16  shadow-lg shadow-air-blue rounded-lg my-20">
+            <div class="max-w-md mx-10 py-8 px-16 border-gray-300 border shadow-lg shadow-air-blue rounded-lg my-20">
                <p class="text-3xl my-4 text-air-blue">Company: <span class="text-xl text-black">{postDetails.company}</span></p> 
                <p class="text-3xl  text-air-blue">Title: < span class="text-xl  text-black">{postDetails.title}</span></p> 
                <p class="text-3xl my-4 text-air-blue">Posted: <span class="text-xl  text-black">{postDetails.posted}</span></p> 
