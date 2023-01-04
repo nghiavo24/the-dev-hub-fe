@@ -39,7 +39,7 @@ const NoteCreate = () => {
                         onChange={handleInput}
                         required />
                     <br />
-                    <button className="rounded-lg text-lg px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-44"><Link to={`/myhub/application/${id}`}>Back</Link></button>
+                    <button className="rounded-lg text-lg px-2 py-2 text-white tracking-wider bg-paolo-green outline-none mx-44"><Link to={`/myhub/application/${id}`}>Back</Link></button>
 
                     <button className="rounded-lg text-lg my-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-44">Submit</button>
                 </form>

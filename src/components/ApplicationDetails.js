@@ -38,7 +38,7 @@ if (allNotes === undefined) return;
       <div key ={index} className='bg-yellow-crayola py-4 px-4 mb-5 rounded-lg shadow-lg text-center'>
         <p>{note.date}</p>
         <p>{note.content}</p>
-        <button onClick={() => deleteNote(note._id)}>Delete a note</button>
+        <button onClick={() => deleteNote(note._id)} className="bg-dark-salmon text-white tracking-wider rounded-lg py-2 px-4 mt-8">Delete a note</button>
       </div>
     )
   })
@@ -65,10 +65,13 @@ return(
         Update
         </Link>
       </button>
+      <button className="bg-dark-salmon text-white py-2 px-4 rounded-lg mt-5 tracking-wider mx-4" onClick={deleteApp}>
+        Delete
+      </button>
         </div>
       <div className='w-1/4'>
-        <h1 className="my-20 text-2xl py-4 px-8 bg-white shadow-lg rounded-lg border-gray-300 border">Notes</h1>
-        <button className="bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
+        <h1 className="mt-20 text-2xl py-4 px-8 bg-white shadow-lg rounded-lg border-gray-300 border">Notes</h1>
+        <button className="bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         <div>{noteData}</div>
       </div>
     </div>
