@@ -33,7 +33,7 @@ export default function PostingCreate() {
 
     return(
     <div>
-        <h3 className='text-4xl text-center mx-44' > Create a Posting</h3>
+        <h3 className='text-4xl text-center mx-44 text-dark-salmon' > Create a Posting</h3>
 
         <div class="flex justify-center ">
         <form class="mx-4 my-4 px-3 flex flex-col w-3/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border"  onSubmit={createNewPost}>
