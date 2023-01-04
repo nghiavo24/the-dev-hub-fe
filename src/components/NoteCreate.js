@@ -13,7 +13,7 @@ const NoteCreate = () => {
 
     const createNewNote = async (e) => {
         try{
-            await axios.post(`http://localhost:8080/api/thedevhub/note/create/${id}`, newNote, {
+            await axios.post(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/create/${id}`, newNote, {
                 headers:{
                     'Authorization': `Bearer ${token}`
                 }

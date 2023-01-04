@@ -20,7 +20,7 @@ const ApplicationUpdate = () => {
     const appUpdateCall = async (e) => {
         e.preventDefault()
         try{
-            await axios.put(`http://localhost:8080/api/thedevhub/application/update/${id}`, appUpdate, {
+            await axios.put(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/update/${id}`, appUpdate, {
                 headers:{
                     'Authorization': `Bearer ${token}`
                 }

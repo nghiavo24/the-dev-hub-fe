@@ -7,7 +7,7 @@ const MainHub = () => {
     const token= sessionStorage.getItem("accessToken");
     const [posting, setPosting] = useState();
     const getPostings = async () => {
-            await axios.get("http://localhost:8080/api/thedevhub/posting", {
+            await axios.get("https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting", {
               headers:{
                   'Authorization': `Bearer ${token}`
               }

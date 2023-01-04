@@ -17,7 +17,7 @@ const PostingCreate = () => {
     const createNewPost = async (e) => {
       e.preventDefault();
       try{
-        await axios.post('http://localhost:8080/api/thedevhub/posting/create', post, {
+        await axios.post('https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/create', post, {
           headers:{
               'Authorization': `Bearer ${token}`
           }

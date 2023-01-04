@@ -8,7 +8,7 @@ const MyHub = ({ uid }) => {
     const navigate = useNavigate();
 
     const fetchData = async (token) => {
-            const res = await axios.get('http://localhost:8080/api/thedevhub/application', {
+            const res = await axios.get('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application', {
                 headers:{
                     'Authorization': `Bearer ${token}`
                 }

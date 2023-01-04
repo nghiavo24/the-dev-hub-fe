@@ -10,7 +10,7 @@ const ApplicationDetails = () => {
   const[allNotes, setAllNotes] = useState();
 
   const getAllApp = () => {
-    axios.get(`http://localhost:8080/api/thedevhub/application/${id}`, {
+    axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/${id}`, {
       headers:{
           'Authorization': `Bearer ${token}`
       }
@@ -19,7 +19,7 @@ const ApplicationDetails = () => {
   }
 
   const getNotes = () => {
-    axios.get(`http://localhost:8080/api/thedevhub/note/${id}`, {
+    axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/${id}`, {
       headers:{
           'Authorization': `Bearer ${token}`
       }
@@ -28,7 +28,7 @@ const ApplicationDetails = () => {
   }
 
   const deleteApp = () =>{
-    axios.delete(`http://localhost:8080/api/thedevhub/application/delete/${id}`, {
+    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/delete/${id}`, {
       headers:{
           'Authorization': `Bearer ${token}`
       }
@@ -56,7 +56,7 @@ if (allNotes === undefined) return;
   })
 
   const deleteNote = (noteId) => {
-    axios.delete(`http://localhost:8080/api/thedevhub/note/delete/${noteId}`, {
+    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/delete/${noteId}`, {
       headers:{
           'Authorization': `Bearer ${token}`
       }

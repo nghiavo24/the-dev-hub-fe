@@ -16,7 +16,7 @@ const PostingDetails= () => {
         note: "",
       });
     const getPostings = () => {
-        axios.get(`http://localhost:8080/api/thedevhub/posting/${id}`, {
+        axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/${id}`, {
             headers:{
                 'Authorization': `Bearer ${token}`
             }
@@ -33,7 +33,7 @@ const PostingDetails= () => {
     
     
     const deletePost = () => {
-        axios.delete(`http://localhost:8080/api/thedevhub/posting/delete/${id}`, {
+        axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/delete/${id}`, {
             headers:{
                 'Authorization': `Bearer ${token}`
             }
@@ -52,7 +52,7 @@ const PostingDetails= () => {
         };
 
         try{
-            await axios.put(`http://localhost:8080/api/thedevhub/posting/update/${id}`, editedPost, {
+            await axios.put(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/update/${id}`, editedPost, {
                 headers:{
                     'Authorization': `Bearer ${token}`
                 }
