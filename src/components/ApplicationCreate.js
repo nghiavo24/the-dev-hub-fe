@@ -31,8 +31,7 @@ const ApplicationCreate = () => {
         newAppInput[e.target.name] = e.target.value;
         setNewApp(newAppInput);
     }
-
-    console.log(newApp)
+    
   return (
     <div>
         <div>Create New Application</div>

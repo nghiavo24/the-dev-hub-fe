@@ -6,7 +6,7 @@ const MainHub = ({token, authorizedUser}) => {
     const navigate = useNavigate();
     const [posting, setPosting] = useState();
     const getPostings = async (token) => {
-            await axios.get("https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting", {
+            await axios.get("http://localhost:8080/api/thedevhub/posting", {
               headers:{
                   'Authorization': `Bearer ${token}`
               }
@@ -36,8 +36,6 @@ const MainHub = ({token, authorizedUser}) => {
         );
       });
 
-
-
     return(
         <div >
             <div class="p-4">
@@ -45,7 +43,7 @@ const MainHub = ({token, authorizedUser}) => {
             </div>
             <div class="flex container">{allPosting}</div>
             <div class="p-4">
-               <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow" > <Link to= '/mainhub/posting/add'>Create a Post</Link> </button>
+               <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow" ><Link to= '/mainhub/posting/create'>Create a Post</Link></button>
             </div>
         </div>
     )
