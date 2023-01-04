@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ const ApplicationUpdate = () => {
     const token= sessionStorage.getItem("accessToken"); 
     const { id } = useParams();
     const navigate = useNavigate();
-    const[appUpdate, setAppUpdate] = useState({
+    const [appUpdate, setAppUpdate] = useState({
         title: "",
         company: "",
         applied: "",
@@ -14,10 +14,10 @@ const ApplicationUpdate = () => {
         compensation: "",
         work_site: "",
         location: "",
-        url:""
+        url: "",
     })
-    
-    const appUpdateCall = async(e) => {
+
+    const appUpdateCall = async (e) => {
         e.preventDefault()
         try{
             await axios.put(`http://localhost:8080/api/thedevhub/application/update/${id}`, appUpdate, {
@@ -26,34 +26,95 @@ const ApplicationUpdate = () => {
                 }
             })
             navigate(`/myhub/application/${id}`)
-        } catch(err){
+        } catch (err) {
             console.log(err)
         }
     }
 
     const handleAppUpdate = (e) => {
         e.preventDefault()
-        const appUpdateInput = {...appUpdate}
+        const appUpdateInput = { ...appUpdate }
         appUpdateInput[e.target.name] = e.target.value;
         setAppUpdate(appUpdateInput);
     }
-    
+
     return (
-    <div>
-        <div>Update an Application</div>
-        <form onSubmit={appUpdateCall}>
-        <input placeholder='Job title' name='title' value={appUpdate.title} onChange={handleAppUpdate}/>
-        <input placeholder='Company' name='company' value={appUpdate.company} onChange={handleAppUpdate}/>
-        <input placeholder='Date applied' name='applied' value={appUpdate.applied} onChange={handleAppUpdate} />
-        <input placeholder='Name of recruiter/hiring manager' name='hiring_manager' value={appUpdate.hiring_manager} onChange={handleAppUpdate}/>
-        <input placeholder='Compensation' name='compensation' value={appUpdate.compensation} onChange={handleAppUpdate} />
-        <input placeholder='Remote/In-person/Hybrid' name='work_site' value={appUpdate.work_site} onChange={handleAppUpdate}  />
-        <input placeholder='Job location' name='location' value={appUpdate.location} onChange={handleAppUpdate} />
-        <input placeholder='Job URL' name='url' value={appUpdate.url} onChange={handleAppUpdate} />
-        <button>Submit</button>
-        </form>
-    </div>
-  )
+        <div>
+            <div className='text-4xl text-center mx-44'>Update an Application</div>
+            <div className="flex justify-center">
+            <form onSubmit={appUpdateCall} className='w-3/5 my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
+                <input
+                    className='mt-5'
+                    placeholder='Job title'
+                    type='text'
+                    name='title'
+                    value={appUpdate.title}
+                    onChange={handleAppUpdate}
+                    required />
+                <br />
+                <input
+                    placeholder='Company'
+                    type='text'
+                    name='company'
+                    value={appUpdate.company}
+                    onChange={handleAppUpdate} 
+                    required/>
+                <br />
+                <input
+                    placeholder='Date applied'
+                    type='date'
+                    name='applied'
+                    value={appUpdate.applied}
+                    onChange={handleAppUpdate} 
+                    required/>
+                <br />
+                <input
+                    placeholder='Name of recruiter/hiring manager'
+                    type='text'
+                    name='hiring_manager'
+                    value={appUpdate.hiring_manager}
+                    onChange={handleAppUpdate} 
+                    required/>
+                <br />
+                <input
+                    placeholder='Compensation'
+                    type='text'
+                    name='compensation'
+                    value={appUpdate.compensation}
+                    onChange={handleAppUpdate} 
+                    required/>
+                <br />
+                <select
+                    name='work_site'
+                    value={appUpdate.work_site}
+                    onChange={handleAppUpdate} 
+                    required>
+                    <option value="Remote">Remote</option>
+                    <option value="In-person">In-person</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+                <br />
+                <input
+                    placeholder='Job location'
+                    type='text'
+                    name='location'
+                    value={appUpdate.location}
+                    onChange={handleAppUpdate}
+                    required />
+                <br />
+                <input
+                    placeholder='Job URL'
+                    type='text'
+                    name='url'
+                    value={appUpdate.url}
+                    onChange={handleAppUpdate} 
+                    required/>
+                <br />
+                <button className="rounded-lg text-lg my-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-10">Submit</button>
+            </form>
+        </div>
+        </div>
+    )
 }
 
 export default ApplicationUpdate

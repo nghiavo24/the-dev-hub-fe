@@ -32,30 +32,29 @@ const MyHub = ({ uid }) => {
     
     const displayList = filteredList.map((app, index) =>{
     return(
-        <div key={index} className="flex justify-around border-box p-2 flex-col">
-        
-            <p className="text-lg text-gray-500 font-bold font-serif">{app.company}</p>
-            <p className="break-normal flex flex-wrap border-black border-4">{app.title}</p>
+        <div key={index} className="container gap-4 p-5 border text-center my-5 border-gray-300 bg-white shadow-lg shadow-air-blue rounded-lg">
+            <div class="p-5">
+            <p className="text-2xl font-bold text-dark-salmon">{app.company}</p>
+            <p className="text-lg my-4">{app.title}</p>
             <p>{app.applied}</p>
-            <button className="rounded-xl btn group flex items-center bg-slate-900 p-2 px-6 text-lg font-thin tracking-widest text-white">
-                <span className="relative pr-4 pb-1 text-white after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100">
-                </span>
-                <Link to={`/myhub/application/${app._id}`}>View details</Link>
-            </button>
+            <Link to={`/myhub/application/${app._id}`}>
+            <button className="bg-air-blue text-white group-hover:text-white rounded-lg py-2 px-4 my-4">View Details</button>
+            </Link>
         </div>
+    </div>
     )
 })
 
   return (
-    <div className='w-screen'>
-        <h1 className='text-4xl text-center border-black border-4 mx-44'>MyHub</h1>
+    <div>
+        <h1 className='text-4xl text-center mx-44'>MyHub</h1>
             <Link to='/myhub/application/create'>
-            <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
-                <div class="absolute inset-0 w-3 bg-blue-500 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+            <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow mx-14">
+                <div class="absolute inset-0 w-3 bg-paolo-green transition-all duration-[800ms] ease-out group-hover:w-full"></div>
                 <span class="relative text-black group-hover:text-white">Create application</span>
             </button>
             </Link>
-           <div className="w-screen flex flex-row gap-x-8 h-min p-1 border-box bg-white rounded xl ">{displayList}</div>
+           <div className="container grid grid-cols-1 gap-4 mx-auto py-9 justify-around md:grid-cols-2 lg:grid-cols-4">{displayList}</div>
     </div>
   )
 }
