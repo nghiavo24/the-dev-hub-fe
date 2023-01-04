@@ -65,13 +65,13 @@ export default function PostingDetails() {
     return(     
         <div>
             <h1 className='text-4xl text-center mx-44'>Posting Details</h1>
-            <div class="max-w-md mx-10 py-4 px-8 bg-amber-100 shadow-lg rounded-lg my-20">
+            <div class="max-w-md mx-10 py-4 px-8  shadow-lg rounded-lg my-20 ">
             
-               <p class="text-2xl">Company: <span class="text-base">{postDetails.company}</span></p> 
-               <p class="text-2xl">Title: < span class="text-base">{postDetails.title}</span></p> 
-               <p class="text-2xl">Posted: <span class="text-base">{postDetails.posted}</span></p> 
-               <p class="text-2xl">Url: <span class="text-base"> <a href={postDetails.url} target="_blank" >Click For Url</a></span></p> 
-               <p class="text-2xl">Note: <span class="text-base"> {postDetails.note}</span></p> 
+               <p class="text-2xl text-air-blue">Company: <span class="text-base text-black">{postDetails.company}</span></p> 
+               <p class="text-2xl  text-air-blue">Title: < span class="text-base  text-black">{postDetails.title}</span></p> 
+               <p class="text-2xl  text-air-blue">Posted: <span class="text-base  text-black">{postDetails.posted}</span></p> 
+               <p class="text-2xl  text-air-blue">Url: <span class="text-base  text-black"> <a href={postDetails.url} target="_blank" >Click For Url</a></span></p> 
+               <p class="text-2xl  text-air-blue">Note: <span class="text-base  text-black"> {postDetails.note}</span></p> 
             </div>
             <div class="flex justify-center">
             <form class="mx-4 my-4 px-3 flex flex-col w-3/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border" updatingPost={updatingPost}>
