@@ -43,7 +43,7 @@ function MainHub(){
             </Link>
 
 
-            <div class="flex flex-wrap box-border">{allPosting}</div>
+            <div class="flex flex-wrap ">{allPosting}</div>
 
             <div class="p-4">
             </div>
