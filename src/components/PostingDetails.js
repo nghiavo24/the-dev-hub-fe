@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export default function PostingDetails() {
+const PostingDetails= () => {
       
     const navigate = useNavigate();
     const { id } = useParams();
@@ -91,3 +91,5 @@ export default function PostingDetails() {
         </div>
     )
 }
+
+export default PostingDetails
