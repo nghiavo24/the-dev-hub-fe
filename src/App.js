@@ -61,7 +61,6 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
       {authorizedUser ? (
         <div>
           <p>Authorized User</p>
-          <MyHub token={sessionStorage.getItem("accessToken")}/>
           <button onClick={logOutUser}
           type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
             Sign Out
@@ -77,14 +76,13 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
         </button>
       </div>
       )}
-      
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/about' element={<About />} />
-          <Route path='/mainhub' element={<MainHub />}/>
+          <Route path='/mainhub' element={<MainHub token={sessionStorage.getItem("accessToken")}/>}/>
           <Route path='/mainhub/posting/create' element={<PostingCreate />}/> 
           <Route path='/mainhub/posting/:id' element={<PostingDetails />} /> 
-          <Route path='/' element={<MyHub token={sessionStorage.getItem("accessToken")}/>} />
+          <Route path='/myhub' element={<MyHub token={sessionStorage.getItem("accessToken")}/>} />
           <Route path='/myhub/application/:id' element={<ApplicationDetail />}/>
           <Route path='/myhub/application/create' element={<ApplicationCreate />}/>
           <Route path='/myhub/application/:id/update' element={<ApplicationUpdate />}/>

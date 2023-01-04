@@ -1,18 +1,27 @@
 import React, { useEffect, useState }  from "react";
-import { Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function MainHub(){
+const MainHub = ({token, authorizedUser}) => {
+    const navigate = useNavigate();
     const [posting, setPosting] = useState();
-    const getPostings =() => {
-            axios.get("https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting")
+    const getPostings = async (token) => {
+            await axios.get("https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting", {
+              headers:{
+                  'Authorization': `Bearer ${token}`
+              }
+          })
             .then((res) => {
                 setPosting(res.data)
             })
       };
       useEffect(() =>{
-        getPostings()
-        
+        if(token){
+          getPostings(token)
+        } else {
+          navigate('/')
+          alert ('You need to sign in!')
+        }
       } ,[] )
       if(posting === undefined) return;
       const allPosting = posting.map((post) => {
