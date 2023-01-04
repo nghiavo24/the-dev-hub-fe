@@ -49,7 +49,6 @@ if (allNotes === undefined) return;
   const noteData = allNotes.map((note, index) => {
     return(
       <div key ={index}>
-        <p>{note.date}</p>
         <p>{note.content}</p>
         <button onClick={() => deleteNote(note._id)}>Delete a note</button>
       </div>
