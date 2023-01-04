@@ -33,7 +33,7 @@ export default function PostingCreate() {
 
     return(
     <div>
-        <h3 className='text-4xl text-center border-black border-4 mx-44' > Create a Posting</h3>
+        <h3 className='text-4xl text-center mx-44' > Create a Posting</h3>
 
         <form class="mx-10 my-10"  onSubmit={createNewPost}>
                 <input class=" border-black border mx-7" type="text"  name='title' value={post.title}  onChange={createAPost} placeholder="add job title"/>
@@ -46,7 +46,7 @@ export default function PostingCreate() {
                 <br/>
                 <input class=" border-black border mx-7 "  type="text" name="note" value={post.note} onChange={createAPost} placeholder="notes" />
                 <br/>
-                <button class="rounded-lg bg-slate-500 text-lg mt-5 px-2 py-2 font-laonoto tracking-wider  hover:bg-indigo-500 outline-none mx-10"  type="submit"> Create Posting </button>
+                <button class="rounded-lg text-lg mt-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-10"  type="submit"> Create Posting </button>
         </form>
       </div>
     )

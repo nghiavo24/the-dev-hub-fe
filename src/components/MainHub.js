@@ -17,13 +17,14 @@ function MainHub(){
       if(posting === undefined) return;
       const allPosting = posting.map((post) => {
         return (
-          <div class="container grid grid-cols-2 gap-4 px-9 py-7 border mx-5 my-5 border-blond bg-white shadow-lg rounded-lg">
-                 <h3 class="text-2xl flex flex-wrap  text-dark-salmon" >{post.company}</h3>
-                <h3 class="text-lg flex flex-wrap" >{post.title}</h3>
- 
-                <h3 class="flex flex-wrap py-3" >{post.posted}</h3>
-              <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 font-laonoto tracking-wider bg-air-blue text-white outline-none"><Link to= {`/mainhub/posting/${post._id}`}  > View Details </Link> </button>
-          </div>
+        <div class="container gap-4 p-5 border text-center my-5 border-blonde bg-white shadow-lg rounded-lg">
+            <div class="p-5">
+                <p class="text-2xl  text-dark-salmon" >{post.company}</p>
+                <p class="text-lg my-4" >{post.title}</p>
+                <p class="" >{post.posted}</p>
+                <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 font-laonoto tracking-wider bg-air-blue text-white outline-none"><Link to= {`/mainhub/posting/${post._id}`}  > View Details </Link> </button>
+            </div>
+        </div>
         );
       });
 
@@ -32,10 +33,10 @@ function MainHub(){
     return(
         <div >
             <div class="p-4">
-                <h1 className='text-4xl text-center mx-44' >MainHub</h1>
+                <h1 className='text-4xl text-center mx-44' >Main Hub</h1>
             </div>
 
-            <Link to= '/mainhub/posting/add'>
+            <Link to= '/mainhub/posting/create'>
                 <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow" > 
                     <div class="absolute inset-0 w-3 bg-paolo-green transition-all duration-[800ms] ease-out group-hover:w-full"></div>
                     <span class="relative text-black group-hover:text-white">Create a Post</span>
@@ -43,15 +44,7 @@ function MainHub(){
             </Link>
 
 
-            <div class="flex flex-wrap ">{allPosting}</div>
-
-            <div class="p-4">
-            </div>
-
-        <div>
-
-
-        </div>
+            <div class="container grid grid-cols-1 gap-4 mx-auto py-9 md:grid-cols-2 lg:grid-cols-4 ">{allPosting}</div>
 
 
         </div>
