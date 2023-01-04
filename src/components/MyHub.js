@@ -3,7 +3,6 @@ import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 const MyHub = ({uid}) => {
-    console.log(uid)
 const [allApplications, setAllApplications] = useState();
 const token = sessionStorage.getItem("accessToken");
 const navigate = useNavigate();
@@ -53,7 +52,6 @@ const appList = allApplications.map((app, index) => {
             </button>
             </Link>
            <div className="w-screen flex flex-row gap-x-8 h-min p-1 border-box bg-white rounded xl ">{appList}</div>
-    
     </div>
   )
 }

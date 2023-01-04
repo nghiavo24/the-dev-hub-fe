@@ -20,7 +20,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
 
   const[authorizedUser, setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"));
-  const[uid, setUid] = useState('')
+  const[uid, setUid] = useState()
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
@@ -56,7 +56,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
       alert(error);
     })
   }
-
+console.log(uid);
   return (
     <div>
       <Navbar />
@@ -86,7 +86,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
           <Route path='/mainhub/posting/:id' element={<PostingDetails />} /> 
           <Route path='/myhub' element={<MyHub uid={uid}/>} />
           <Route path='/myhub/application/:id' element={<ApplicationDetail />}/>
-          <Route path='/myhub/application/create' element={<ApplicationCreate />}/>
+          <Route path='/myhub/application/create' element={<ApplicationCreate uid={uid}/>}/>
           <Route path='/myhub/application/:id/update' element={<ApplicationUpdate />}/>
           <Route path='/myhub/application/:id/note/add' element={<NoteCreate />}/>
       </Routes>
