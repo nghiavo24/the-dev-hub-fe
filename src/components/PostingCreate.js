@@ -36,9 +36,9 @@ const PostingCreate = () => {
         setPost(newPostInput);
     }
 
-    useEffect((e) =>{
+    useEffect(() =>{
       if(token){
-        createAPost(e)
+        <></>
       } else {
         navigate('/')
         alert ('You need to sign in!')
@@ -47,7 +47,7 @@ const PostingCreate = () => {
     
     return(
     <div>
-        <form  onSubmit={createNewPost}>
+        <form onSubmit={createNewPost}>
                 <h3> Create a Posting</h3>
                 <label>Title</label>
                 <input type="text" name='title' value={post.title} onChange={createAPost} placeholder="Job Title"/>
@@ -58,8 +58,8 @@ const PostingCreate = () => {
                 <label>URL</label>
                 <input name='url' value={post.url} onChange={createAPost} placeholder="URL"/>
                 <label>Note</label>
-                <input type="text" name="note" value={post.note} onChange={createAPost} placeholder="notes" />
-              <button  type="submit"> Create Posting </button>
+                <input type="text" name="note" value={post.note} onChange={createAPost} placeholder="Note" />
+                <button type="submit"> Create Posting </button>
         </form>
       </div>
     )

@@ -44,7 +44,7 @@ const MainHub = () => {
             </div>
             <div class="flex container">{allPosting}</div>
             <div class="p-4">
-               <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow" ><Link to= '/mainhub/posting/create'>Create a Post</Link></button>
+               <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow" ><Link to='/mainhub/posting/create'>Create a Post</Link></button>
             </div>
         </div>
     )
