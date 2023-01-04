@@ -2,8 +2,10 @@ import axios from 'axios'
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const MyHub = ({token}) => {
-const [allApplications, setAllApplications] = useState()
+const MyHub = () => {
+const [allApplications, setAllApplications] = useState();
+const token = sessionStorage.getItem("accessToken");
+const navigate = useNavigate();
 
 const fetchData = async (token) => {
         const res = await axios.get('http://localhost:8080/api/thedevhub/application', {
@@ -17,6 +19,9 @@ const fetchData = async (token) => {
 useEffect(()=>{
     if(token){
     fetchData(token);
+    } else{
+        navigate('/')
+        alert ('You need to sign in!')
     }
    },[]);
 
