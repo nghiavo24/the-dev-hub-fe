@@ -35,7 +35,7 @@ if (allNotes === undefined) return;
 
   const noteData = allNotes.map((note, index) => {
     return(
-      <div key ={index}>
+      <div key ={index} className='bg-yellow-crayola py-4 px-4 mb-5 rounded-lg shadow-lg text-center'>
         <p>{note.date}</p>
         <p>{note.content}</p>
         <button onClick={() => deleteNote(note._id)}>Delete a note</button>
@@ -67,9 +67,9 @@ return(
       </button>
         </div>
       <div className='w-1/4'>
-        <h1 className="my-20 text-2xl py-4 px-8 bg-amber-100 shadow-lg rounded-lg">Notes</h1>
+        <h1 className="my-20 text-2xl py-4 px-8 bg-white shadow-lg rounded-lg">Notes</h1>
         <button><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
-        <div className="py-4 px-8 bg-amber-100 shadow-lg rounded-lg">{noteData}</div>
+        <div>{noteData}</div>
       </div>
     </div>
 
