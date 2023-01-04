@@ -64,7 +64,7 @@ export default function PostingDetails() {
 
     return(     
         <div>
-            <h1 className='text-4xl text-center border-black border-4 mx-44'>Posting Details</h1>
+            <h1 className='text-4xl text-center mx-44'>Posting Details</h1>
             <div class="max-w-md mx-10 py-4 px-8 bg-amber-100 shadow-lg rounded-lg my-20">
             
                <p class="text-2xl">Company: <span class="text-base">{postDetails.company}</span></p> 
@@ -73,17 +73,19 @@ export default function PostingDetails() {
                <p class="text-2xl">Url: <span class="text-base"> <a href={postDetails.url} target="_blank" >Click For Url</a></span></p> 
                <p class="text-2xl">Note: <span class="text-base"> {postDetails.note}</span></p> 
             </div>
-            <form class=" p-10 flex flex-col" updatingPost={updatingPost}>
-            <h3 className='text-4xl text-center border-black border-4 mx-44 '> Update this Posting</h3>
-                <input class=" border-black border mx-7 w-1/4 text-center"  type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="add job title"/>
-                <input class=" border-black border mx-7 w-1/4 text-center"   type="text" name="company" value={postUpdate.company} onChange={updateAPost} placeholder="add company name" />
-                <input class=" border-black border mx-7 w-1/4 text-center"   type="date" name="posted" value={postUpdate.posted} onChange={updateAPost} placeholder="date" />
-                <input class=" border-black border mx-7 w-1/4 text-center"   type='url' name='url' value={postUpdate.url}  onChange={updateAPost} placeholder="url link"/>
-                <input class=" border-black border mx-7 w-1/4 text-center"   type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="notes" />
+            <div class="flex justify-center">
+            <form class="mx-4 my-4 px-3 flex flex-col w-3/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border" updatingPost={updatingPost}>
+            <h3 className='text-3xl text-center my-4 '> Update this Posting</h3>
+                <input class="mt-5"  type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="add job title"/>
+                <input    type="text" name="company" value={postUpdate.company} onChange={updateAPost} placeholder="add company name" />
+                <input    type="date" name="posted" value={postUpdate.posted} onChange={updateAPost} placeholder="date" />
+                <input    type='url' name='url' value={postUpdate.url}  onChange={updateAPost} placeholder="url link"/>
+                <input    type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="notes" />
 
-                <button class="rounded-lg bg-slate-500 text-lg mt-5 px-2 py-2 font-laonoto tracking-wider  hover:bg-indigo-500 outline-none mx-10" onClick={updatingPost}>Update Post</button>
-                <button class="rounded-lg bg-slate-500 text-lg mt-5 px-2 py-2 font-laonoto tracking-wider  hover:bg-indigo-500 outline-none mx-10" onClick={deletePost}>Delete a Post</button>
-            </form>    
+                <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 font-laonoto tracking-wider bg-air-blue text-white outline-none" onClick={updatingPost}>Update Post</button>
+                <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 font-laonoto tracking-wider bg-air-blue text-white outline-none" onClick={deletePost}>Delete a Post</button>
+            </form>   
+             </div>
         </div>
     )
 }
