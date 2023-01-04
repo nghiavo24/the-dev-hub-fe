@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 
 const NoteCreate = () => {
+    const token= sessionStorage.getItem("accessToken"); 
     const { id } = useParams();
     const navigate = useNavigate();
     const [newNote, setNewNote] = useState({
@@ -11,9 +12,15 @@ const NoteCreate = () => {
     })
 
     const createNewNote = async (e) => {
-        try {
-            await axios.post(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/create/${id}`, newNote)
-        } catch (err) {
+        try{
+            await axios.post(`http://localhost:8080/api/thedevhub/note/create/${id}`, newNote, {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            navigate(`/myhub/application/${id}`)
+            window.location.reload()
+        } catch (err){
             console.log(err)
         }
     }

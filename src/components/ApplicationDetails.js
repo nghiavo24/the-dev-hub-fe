@@ -3,23 +3,36 @@ import axios from 'axios';
 import { useParams, useNavigate, Link} from 'react-router-dom';
 
 const ApplicationDetails = () => {
+  const token= sessionStorage.getItem("accessToken"); 
   const navigate = useNavigate();
   const { id } = useParams();
   const[allApps, setAllApps] = useState();
   const[allNotes, setAllNotes] = useState();
 
   const getAllApp = () => {
-    axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/${id}`)
+    axios.get(`http://localhost:8080/api/thedevhub/application/${id}`, {
+      headers:{
+          'Authorization': `Bearer ${token}`
+      }
+  })
     .then((res) => {setAllApps(res.data)})
   }
 
   const getNotes = () => {
-    axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/${id}`)
+    axios.get(`http://localhost:8080/api/thedevhub/note/${id}`, {
+      headers:{
+          'Authorization': `Bearer ${token}`
+      }
+  })
     .then((res) => {setAllNotes(res.data)})
   }
 
   const deleteApp = () =>{
-    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/delete/${id}`)
+    axios.delete(`http://localhost:8080/api/thedevhub/application/delete/${id}`, {
+      headers:{
+          'Authorization': `Bearer ${token}`
+      }
+  })
     .then((res) => { navigate('/myhub')})
   }
 
@@ -35,8 +48,7 @@ if (allNotes === undefined) return;
 
   const noteData = allNotes.map((note, index) => {
     return(
-      <div key ={index} className='bg-yellow-crayola py-4 px-4 mb-5 rounded-lg shadow-lg text-center'>
-        <p>{note.date}</p>
+      <div key ={index} className='bg-yellow-crayola py-4 px-4 mb-5 rounded-lg shadow-lg text-center'> 
         <p>{note.content}</p>
         <button onClick={() => deleteNote(note._id)} className="bg-dark-salmon text-white tracking-wider rounded-lg py-2 px-4 mt-8">Delete</button>
       </div>
@@ -44,7 +56,11 @@ if (allNotes === undefined) return;
   })
 
   const deleteNote = (noteId) => {
-    axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/delete/${noteId}`)
+    axios.delete(`http://localhost:8080/api/thedevhub/note/delete/${noteId}`, {
+      headers:{
+          'Authorization': `Bearer ${token}`
+      }
+  })
     .then((res) => {window.location.reload()})
   }
 

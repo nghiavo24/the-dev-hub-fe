@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const ApplicationUpdate = () => {
+    const token= sessionStorage.getItem("accessToken"); 
     const { id } = useParams();
     const navigate = useNavigate();
     const [appUpdate, setAppUpdate] = useState({
@@ -18,8 +19,12 @@ const ApplicationUpdate = () => {
 
     const appUpdateCall = async (e) => {
         e.preventDefault()
-        try {
-            await axios.put(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/update/${id}`, appUpdate)
+        try{
+            await axios.put(`http://localhost:8080/api/thedevhub/application/update/${id}`, appUpdate, {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             navigate(`/myhub/application/${id}`)
         } catch (err) {
             console.log(err)

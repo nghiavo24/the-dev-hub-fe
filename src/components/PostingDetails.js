@@ -2,8 +2,8 @@ import React, { useEffect, useState} from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export default function PostingDetails() {
-      
+const PostingDetails= () => {
+    const token= sessionStorage.getItem("accessToken"); 
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -16,10 +16,13 @@ export default function PostingDetails() {
         note: "",
       });
     const getPostings = () => {
-        axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/${id}`)
+        axios.get(`http://localhost:8080/api/thedevhub/posting/${id}`, {
+            headers:{
+                'Authorization': `Bearer ${token}`
+            }
+        })
         .then(res => {
             setPostDetails(res.data)
-            console.log(res)
         })
         .catch(err => console.error(err))
     }
@@ -27,14 +30,18 @@ export default function PostingDetails() {
         getPostings()
       } ,[] )
     if(postDetails === undefined) return
-    console.log(postDetails)
+    
     
     const deletePost = () => {
-        axios.delete(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/delete/${id}` )
+        axios.delete(`http://localhost:8080/api/thedevhub/posting/delete/${id}`, {
+            headers:{
+                'Authorization': `Bearer ${token}`
+            }
+        })
         navigate('/mainhub')
     }
 
-    async function updatingPost(e) {
+    const updatingPost= async (e) => {
         e.preventDefault();
         const editedPost = {
           title: postUpdate.title,
@@ -45,7 +52,11 @@ export default function PostingDetails() {
         };
 
         try{
-            await axios.put(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/update/${id}`, editedPost )
+            await axios.put(`http://localhost:8080/api/thedevhub/posting/update/${id}`, editedPost, {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             window.location.reload()
         } catch(err){
             console.log(err)
@@ -58,9 +69,6 @@ export default function PostingDetails() {
         updatePostInput[e.target.name] = e.target.value;
         setPostUpdate(updatePostInput);
     }
-
-
-
 
     return(     
         <div>
@@ -90,4 +98,6 @@ export default function PostingDetails() {
         </div>
     )
 }
+
+export default PostingDetails
 

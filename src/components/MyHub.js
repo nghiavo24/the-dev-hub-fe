@@ -1,22 +1,36 @@
-import axios, { all } from 'axios'
+import axios from 'axios'
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const MyHub = () => {
-const [allApplications, setAllApplications] = useState()
+const MyHub = ({ uid }) => {
+    const [allApplications, setAllApplications] = useState();
+    const token = sessionStorage.getItem("accessToken");
+    const navigate = useNavigate();
 
-const fetchData = async () => {
-        const res = await axios.get('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application')
-        setAllApplications(res.data)
-    }
+    const fetchData = async (token) => {
+            const res = await axios.get('http://localhost:8080/api/thedevhub/application', {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            setAllApplications(res.data)
+        }
+    useEffect(()=>{
+            if(token){
+            fetchData(token);
+            } else{
+                navigate('/')
+                alert ('You need to sign in!')
+            }
+        },[]);
 
-useEffect(()=>{
-    fetchData();
-   },[]);
+    if (allApplications === undefined) return;
 
-if (allApplications === undefined) return;
-
-const appList = allApplications.map((app, index) => {
+    const filteredList = allApplications.filter(apps => {
+        return apps.user_id === uid
+    })
+    
+    const displayList = filteredList.map((app, index) =>{
     return(
         <div key={index} className="container gap-4 p-5 border text-center my-5 border-gray-300 bg-white shadow-lg shadow-air-blue rounded-lg">
             <div class="p-5">
@@ -30,6 +44,7 @@ const appList = allApplications.map((app, index) => {
     </div>
     )
 })
+
   return (
     <div>
         <h1 className='text-4xl text-center mx-44'>MyHub</h1>
@@ -39,8 +54,7 @@ const appList = allApplications.map((app, index) => {
                 <span class="relative text-black group-hover:text-white">Create application</span>
             </button>
             </Link>
-           <div className="container grid grid-cols-1 gap-4 mx-auto py-9 justify-around md:grid-cols-2 lg:grid-cols-4">{appList}</div>
-    
+           <div className="container grid grid-cols-1 gap-4 mx-auto py-9 justify-around md:grid-cols-2 lg:grid-cols-4">{displayList}</div>
     </div>
   )
 }
