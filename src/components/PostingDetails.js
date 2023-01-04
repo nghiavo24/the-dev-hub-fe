@@ -64,30 +64,30 @@ export default function PostingDetails() {
 
     return(     
         <div>
-            <h1 class="p-4">Posting Details</h1>
-            <div class="flex content-center p-4">
-                {postDetails.company}
-                {postDetails.title}
-                {postDetails.posted}
-                {postDetails.url}
-                {postDetails.note}
+            <h1 className='text-4xl text-center mx-44 mt-4 text-dark-salmon'>Posting Details</h1>
+            <div class="flex justify-center">
+            <div class="max-w-md mx-10 py-8 px-16  shadow-lg shadow-air-blue rounded-lg my-20">
+               <p class="text-3xl my-4 text-air-blue">Company: <span class="text-xl text-black">{postDetails.company}</span></p> 
+               <p class="text-3xl  text-air-blue">Title: < span class="text-xl  text-black">{postDetails.title}</span></p> 
+               <p class="text-3xl my-4 text-air-blue">Posted: <span class="text-xl  text-black">{postDetails.posted}</span></p> 
+               <p class="text-3xl  text-air-blue">Note: <span class="text-xl  text-black"> {postDetails.note}</span></p>                
+               <p class="text-3xl my-4 text-air-blue"> <span class="text-xl  text-black " > <a href={postDetails.url} target="_blank" class="mx-20 rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 font-laonoto tracking-wider bg-air-blue text-white outline-none" ><button>View Job Posting</button></a> </span></p> 
             </div>
-            <form class="p-10" updatingPost={updatingPost}>
-            <h3> Update this Posting</h3>
-                <label>Title</label>
-                <input type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="add job title"/>
-                <label>Company Name</label>
-                <input type="text" name="company" value={postUpdate.company} onChange={updateAPost} placeholder="add company name" />
-                <label >Date Posted</label>
-                <input type="date" name="posted" value={postUpdate.posted} onChange={updateAPost} placeholder="date" />
-                <label>URL</label>
-                <input  type='url' name='url' value={postUpdate.url}  onChange={updateAPost} placeholder="url link"/>
-                <label>Note</label>
-                <input type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="notes" />
+            </div>
+            <div class="flex justify-center ">
+            <form class="mx-4 my-4 px-3 flex flex-col w-2/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border" updatingPost={updatingPost}>
+            <h3 className='text-3xl text-center my-4 text-dark-salmon'> Update this Posting</h3>
+                <input class="my-4 mx-10" type="text" name="company" value={postUpdate.company} onChange={updateAPost} placeholder="add company name" />
+                <input class=" mx-10"  type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="add job title"/>
+                <input class="my-4 mx-10"  type="date" name="posted" value={postUpdate.posted} onChange={updateAPost} placeholder="date" />
+                <input class="mx-10"  type='url' name='url' value={postUpdate.url}  onChange={updateAPost} placeholder="url link"/>
+                <input  class="my-4 mx-10"  type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="notes" />
 
-                <button class="p-4" onClick={updatingPost}>Update Post</button>
-                <button class="p-4" onClick={deletePost}>Delete a Post</button>
-            </form>    
+                <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 mx-10 font-laonoto tracking-wider bg-air-blue text-white outline-none" onClick={updatingPost}>Update Post</button>
+                <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 mx-10 font-laonoto tracking-wider bg-air-blue text-white outline-none" onClick={deletePost}>Delete a Post</button>
+            </form>   
+             </div>
         </div>
     )
 }
+
