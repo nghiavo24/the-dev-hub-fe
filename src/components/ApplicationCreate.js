@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
-const ApplicationCreate = () => {
+const ApplicationCreate = ({uid}) => {
     const token = sessionStorage.getItem("accessToken");
     const navigate = useNavigate()
     const[newApp, setNewApp] = useState({
@@ -13,7 +13,8 @@ const ApplicationCreate = () => {
         compensation: "",
         work_site: "",
         location: "",
-        url:""
+        url:"",
+        user_id: uid
     })
 
     const createNewApp = async (e) => {
