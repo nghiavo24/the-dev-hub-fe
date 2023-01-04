@@ -13,7 +13,7 @@ const ApplicationUpdate = () => {
         compensation: "",
         work_site: "",
         location: "",
-        url: ""
+        url: "",
     })
 
     const appUpdateCall = async (e) => {
