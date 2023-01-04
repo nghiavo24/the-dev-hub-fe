@@ -36,9 +36,10 @@ const ApplicationUpdate = () => {
     return (
         <div>
             <div className='text-4xl text-center mx-44'>Update an Application</div>
-            <form onSubmit={appUpdateCall} className='mx-7 my-4 px-3 py-2'>
+            <div className="flex justify-center">
+            <form onSubmit={appUpdateCall} className='w-3/5 my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
                 <input
-                    className='mx-7'
+                    className='mt-5'
                     placeholder='Job title'
                     type='text'
                     name='title'
@@ -46,7 +47,6 @@ const ApplicationUpdate = () => {
                     onChange={handleAppUpdate} />
                 <br />
                 <input
-                    className='mx-7 my-3'
                     placeholder='Company'
                     type='text'
                     name='company'
@@ -54,7 +54,6 @@ const ApplicationUpdate = () => {
                     onChange={handleAppUpdate} />
                 <br />
                 <input
-                    className='mx-7'
                     placeholder='Date applied'
                     type='date'
                     name='applied'
@@ -62,7 +61,6 @@ const ApplicationUpdate = () => {
                     onChange={handleAppUpdate} />
                 <br />
                 <input
-                    className='mx-7 my-3'
                     placeholder='Name of recruiter/hiring manager'
                     type='text'
                     name='hiring_manager'
@@ -70,23 +68,22 @@ const ApplicationUpdate = () => {
                     onChange={handleAppUpdate} />
                 <br />
                 <input
-                    className='mx-7'
                     placeholder='Compensation'
                     type='text'
                     name='compensation'
                     value={appUpdate.compensation}
                     onChange={handleAppUpdate} />
                 <br />
-                <input
-                    className='mx-7 my-3'
-                    placeholder='Remote/In-person/Hybrid'
-                    type='text'
+                <select
                     name='work_site'
                     value={appUpdate.work_site}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate} >
+                    <option value="Remote">Remote</option>
+                    <option value="In-person">In-person</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
                 <br />
                 <input
-                    className='mx-7'
                     placeholder='Job location'
                     type='text'
                     name='location'
@@ -94,15 +91,15 @@ const ApplicationUpdate = () => {
                     onChange={handleAppUpdate} />
                 <br />
                 <input
-                    className='mx-7 my-3'
                     placeholder='Job URL'
                     type='text'
                     name='url'
                     value={appUpdate.url}
                     onChange={handleAppUpdate} />
                 <br />
-                <button>Submit</button>
+                <button className="rounded-lg text-lg my-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-10">Submit</button>
             </form>
+        </div>
         </div>
     )
 }
