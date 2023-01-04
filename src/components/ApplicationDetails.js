@@ -52,9 +52,9 @@ return(
   <div>
     <div className='flex flex-row row-span-2'>
       <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg rounded-lg border-air-blue border'>
-      <p className="text-2xl text-red-400">Job Title: </p><span className="text-base">{allApps.title}</span>
-      <p className="text-2xl">Company: </p><span className="text-base">{allApps.company}</span>
-      <p className="text-2xl">Date applied:</p> <span className="text-base">{allApps.applied}</span>
+      <p className="text-2xl text-dark-salmon">Job Title: </p><span className="text-base">{allApps.title}</span>
+      <p className="text-2xl text-paolo-green">Company: </p><span className="text-base">{allApps.company}</span>
+      <p className="text-2xl text-air-blue">Date applied:</p> <span className="text-base">{allApps.applied}</span>
       <p className="text-2xl">Recruiter/Hiring Manager:</p> <span className="text-base">{allApps.hiring_manager}</span>
       <p className="text-2xl">Work Site:</p> <span className="text-base">{allApps.work_site}</span>
       <p className="text-2xl">Location:</p> <span className="text-base">{allApps.location}</span>
