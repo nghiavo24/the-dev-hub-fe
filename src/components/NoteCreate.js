@@ -12,6 +12,7 @@ const NoteCreate = () => {
     })
 
     const createNewNote = async (e) => {
+        e.preventDefault()
         try{
             await axios.post(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/note/create/${id}`, newNote, {
                 headers:{
@@ -19,7 +20,6 @@ const NoteCreate = () => {
                 }
             })
             navigate(`/myhub/application/${id}`)
-            window.location.reload()
         } catch (err){
             console.log(err)
         }
@@ -47,7 +47,6 @@ const NoteCreate = () => {
                         required />
                     <br />
                     <button className="rounded-lg text-lg px-2 py-2 text-white tracking-wider bg-paolo-green outline-none mx-44"><Link to={`/myhub/application/${id}`}>Back</Link></button>
-
                     <button className="rounded-lg text-lg my-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-44">Submit</button>
                 </form>
             </div>
