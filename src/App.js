@@ -79,10 +79,10 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/about' element={<About />} />
-          <Route path='/mainhub' element={<MainHub token={sessionStorage.getItem("accessToken")}/>}/>
+          <Route path='/mainhub' element={<MainHub />}/>
           <Route path='/mainhub/posting/create' element={<PostingCreate />}/> 
           <Route path='/mainhub/posting/:id' element={<PostingDetails />} /> 
-          <Route path='/myhub' element={<MyHub token={sessionStorage.getItem("accessToken")}/>} />
+          <Route path='/myhub' element={<MyHub />} />
           <Route path='/myhub/application/:id' element={<ApplicationDetail />}/>
           <Route path='/myhub/application/create' element={<ApplicationCreate />}/>
           <Route path='/myhub/application/:id/update' element={<ApplicationUpdate />}/>

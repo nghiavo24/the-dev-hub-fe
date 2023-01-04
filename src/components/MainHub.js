@@ -2,10 +2,11 @@ import React, { useEffect, useState }  from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const MainHub = ({token, authorizedUser}) => {
+const MainHub = () => {
     const navigate = useNavigate();
+    const token= sessionStorage.getItem("accessToken");
     const [posting, setPosting] = useState();
-    const getPostings = async (token) => {
+    const getPostings = async () => {
             await axios.get("http://localhost:8080/api/thedevhub/posting", {
               headers:{
                   'Authorization': `Bearer ${token}`
