@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const MyHub = ({uid}) => {
+const MyHub = ({ uid }) => {
 const [allApplications, setAllApplications] = useState();
 const token = sessionStorage.getItem("accessToken");
 const navigate = useNavigate();
@@ -27,13 +27,11 @@ useEffect(()=>{
 
 if (allApplications === undefined) return;
 
-const appList = allApplications.filter((app) => {
-    return app.user_id === uid
+const filteredList = allApplications.filter(apps => {
+    return apps.user_id === uid
 })
-console.log(allApplications, 'unfiltered list')
-console.log(appList, 'filtered list')
 
-const filteredList = allApplications.map((app, index) =>{
+const displayList = filteredList.map((app, index) =>{
     return(
         <div key={index} className="flex justify-around border-box p-2 flex-col">
         
@@ -47,7 +45,6 @@ const filteredList = allApplications.map((app, index) =>{
             </button>
         </div>
     )
-
 })
   return (
     <div className='w-screen'>
@@ -58,7 +55,7 @@ const filteredList = allApplications.map((app, index) =>{
                 <span class="relative text-black group-hover:text-white">Create application</span>
             </button>
             </Link>
-           <div className="w-screen flex flex-row gap-x-8 h-min p-1 border-box bg-white rounded xl ">{filteredList}</div>
+           <div className="w-screen flex flex-row gap-x-8 h-min p-1 border-box bg-white rounded xl ">{displayList}</div>
     </div>
   )
 }

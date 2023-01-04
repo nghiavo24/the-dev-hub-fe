@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Routes, } from 'react-router-dom';
+import { Route, Routes, useNavigate, } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import MyHub from './components/MyHub';
 import MainHub from './components/MainHub';
@@ -14,6 +14,7 @@ import About from './components/About';
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 
 const App = () => {
+  const navigate = useNavigate()
   const provider = new GoogleAuthProvider();
 
 provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
@@ -32,7 +33,6 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
           user.getIdToken().then((tkn, uid) => {
             sessionStorage.setItem("accessToken", tkn);
             setAuthorizedUser(true);
-            setUid(user.uid)
             console.log(user)
           })
         }
@@ -50,13 +50,14 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
     signOut(auth).then(() => {
       sessionStorage.clear();
       setAuthorizedUser(false);
+      navigate('/')
       alert('Logged Out Successfully');
     })
     .catch((error) => {
       alert(error);
     })
   }
-  
+
   return (
     <div>
       <Navbar />
