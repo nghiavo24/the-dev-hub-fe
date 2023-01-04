@@ -56,7 +56,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
       alert(error);
     })
   }
-console.log(uid);
+  
   return (
     <div>
       <Navbar />

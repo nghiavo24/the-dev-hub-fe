@@ -27,7 +27,13 @@ useEffect(()=>{
 
 if (allApplications === undefined) return;
 
-const appList = allApplications.map((app, index) => {
+const appList = allApplications.filter((app) => {
+    return app.user_id === uid
+})
+console.log(allApplications, 'unfiltered list')
+console.log(appList, 'filtered list')
+
+const filteredList = allApplications.map((app, index) =>{
     return(
         <div key={index} className="flex justify-around border-box p-2 flex-col">
         
@@ -41,6 +47,7 @@ const appList = allApplications.map((app, index) => {
             </button>
         </div>
     )
+
 })
   return (
     <div className='w-screen'>
@@ -51,7 +58,7 @@ const appList = allApplications.map((app, index) => {
                 <span class="relative text-black group-hover:text-white">Create application</span>
             </button>
             </Link>
-           <div className="w-screen flex flex-row gap-x-8 h-min p-1 border-box bg-white rounded xl ">{appList}</div>
+           <div className="w-screen flex flex-row gap-x-8 h-min p-1 border-box bg-white rounded xl ">{filteredList}</div>
     </div>
   )
 }
