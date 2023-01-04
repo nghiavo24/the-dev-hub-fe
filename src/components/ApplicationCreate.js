@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
 const ApplicationCreate = () => {
+    const token = sessionStorage.getItem("accessToken");
     const navigate = useNavigate()
     const[newApp, setNewApp] = useState({
         title: "",
@@ -18,7 +19,11 @@ const ApplicationCreate = () => {
     const createNewApp = async (e) => {
         e.preventDefault();
         try{
-            await axios.post('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application/create', newApp)
+            await axios.post('http://localhost:8080/api/thedevhub/application/create', newApp, {
+                headers:{
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             navigate('/myhub')
         } catch(err){
             console.log(err)
@@ -31,7 +36,16 @@ const ApplicationCreate = () => {
         newAppInput[e.target.name] = e.target.value;
         setNewApp(newAppInput);
     }
-    
+
+    useEffect(() =>{
+        if(token){
+          <></>
+        } else {
+          navigate('/')
+          alert ('You need to sign in!')
+        }
+      } ,[] )
+
   return (
     <div>
         <div>Create New Application</div>
