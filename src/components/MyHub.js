@@ -6,7 +6,7 @@ const MyHub = ({token}) => {
 const [allApplications, setAllApplications] = useState()
 
 const fetchData = async (token) => {
-        const res = await axios.get('https://the-dev-hub-app.herokuapp.com/api/thedevhub/application', {
+        const res = await axios.get('http://localhost:8080/api/thedevhub/application', {
             headers:{
                 'Authorization': `Bearer ${token}`
             }
