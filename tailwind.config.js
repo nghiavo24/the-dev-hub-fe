@@ -8,7 +8,8 @@ module.exports = {
       'air-blue': '#7EA0B7',
       'yellow-crayola': '#FFEF9F',
       'paolo-green': '#409D78',
-      'blonde': '#F4F0BB'
+      'blonde': '#F4F0BB',
+      'off-white': '#FAF9F6'
     }
   },
   plugins: [

@@ -44,40 +44,46 @@ const ApplicationUpdate = () => {
                     type='text'
                     name='title'
                     value={appUpdate.title}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate}
+                    required />
                 <br />
                 <input
                     placeholder='Company'
                     type='text'
                     name='company'
                     value={appUpdate.company}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate} 
+                    required/>
                 <br />
                 <input
                     placeholder='Date applied'
                     type='date'
                     name='applied'
                     value={appUpdate.applied}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate} 
+                    required/>
                 <br />
                 <input
                     placeholder='Name of recruiter/hiring manager'
                     type='text'
                     name='hiring_manager'
                     value={appUpdate.hiring_manager}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate} 
+                    required/>
                 <br />
                 <input
                     placeholder='Compensation'
                     type='text'
                     name='compensation'
                     value={appUpdate.compensation}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate} 
+                    required/>
                 <br />
                 <select
                     name='work_site'
                     value={appUpdate.work_site}
-                    onChange={handleAppUpdate} >
+                    onChange={handleAppUpdate} 
+                    required>
                     <option value="Remote">Remote</option>
                     <option value="In-person">In-person</option>
                     <option value="Hybrid">Hybrid</option>
@@ -88,14 +94,16 @@ const ApplicationUpdate = () => {
                     type='text'
                     name='location'
                     value={appUpdate.location}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate}
+                    required />
                 <br />
                 <input
                     placeholder='Job URL'
                     type='text'
                     name='url'
                     value={appUpdate.url}
-                    onChange={handleAppUpdate} />
+                    onChange={handleAppUpdate} 
+                    required/>
                 <br />
                 <button className="rounded-lg text-lg my-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-10">Submit</button>
             </form>

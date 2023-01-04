@@ -38,7 +38,7 @@ if (allNotes === undefined) return;
       <div key ={index} className='bg-yellow-crayola py-4 px-4 mb-5 rounded-lg shadow-lg text-center'>
         <p>{note.date}</p>
         <p>{note.content}</p>
-        <button onClick={() => deleteNote(note._id)} className="bg-dark-salmon text-white tracking-wider rounded-lg py-2 px-4 mt-8">Delete a note</button>
+        <button onClick={() => deleteNote(note._id)} className="bg-dark-salmon text-white tracking-wider rounded-lg py-2 px-4 mt-8">Delete</button>
       </div>
     )
   })
@@ -60,7 +60,7 @@ return(
       <p className="text-2xl text-air-blue">Location:</p> <span className="text-base">{allApps.location}</span>
       <p className="text-2xl text-air-blue">Link:</p><a href={allApps.url} target="_blank"><button className="bg-air-blue text-white rounded-lg px-4 py-2 tracking-wider">Visit Site</button></a>
       <br />
-      <button className="bg-paolo-green text-white py-2 px-4 rounded-lg mt-5 tracking-wider">
+      <button className="bg-paolo-green text-white py-2 px-4 rounded-lg mt-20 tracking-wider">
         <Link to={`/myhub/application/${id}/update`}>
         Update
         </Link>
