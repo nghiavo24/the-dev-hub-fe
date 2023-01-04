@@ -76,9 +76,6 @@ return(
       <p className="text-2xl text-air-blue">Location:</p> <span className="text-base">{allApps.location}</span>
       <p className="text-2xl text-air-blue">Link:</p><a href={allApps.url} target="_blank"><button className="bg-air-blue text-white rounded-lg px-4 py-2 tracking-wider">Visit Site</button></a>
       <br />
-      <button className="bg-black text-white py-2 px-4 rounded-lg mt-5 tracking-wider mx-4">
-        <Link to='/myhub'>Back</Link>
-      </button>
       <button className="bg-paolo-green text-white py-2 px-4 rounded-lg mt-20 tracking-wider mx-14">
         <Link to={`/myhub/application/${id}/update`}>
         Update
