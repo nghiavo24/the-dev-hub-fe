@@ -33,7 +33,7 @@ const MainHub = () => {
                 <p className="italic text-2xl  text-dark-salmon" >{post.company}</p>
                 <p className="text-lg my-4" >{post.title}</p>
                 <p className="" >{post.posted}</p>
-                <button className="font-lobster rounded-lg text-lg px-4 py-2 my-4 tracking-wider bg-air-blue text-white outline-none"><Link to= {`/mainhub/posting/${post._id}`}> View Details </Link> </button>
+                <button className=" font-lobster rounded-lg text-lg px-4 py-2 my-4 tracking-wider bg-air-blue text-white outline-none"><Link to= {`/mainhub/posting/${post._id}`}> View Details </Link> </button>
             </div>
         </div>
         );
@@ -42,9 +42,9 @@ const MainHub = () => {
     return(
         <div >
             <div className="p-4">
-                <h1 className='font-lora text-4xl text-center mx-44' >Main Hub</h1>
+                <h1 className='flex justify-center font-lora text-4xl text-center' >Main Hub</h1>
             </div>
-            <div className="font-montserrat container grid grid-cols-1 gap-4 mx-auto py-9 md:grid-cols-2 lg:grid-cols-4 justify-around ">{allPosting}</div>
+            <div className="font-montserrat container grid grid-cols-1 gap-4 mx-auto  py-9 px-10 sm:px-20 md:px-20  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-around ">{allPosting}</div>
         </div>
     )
 }
