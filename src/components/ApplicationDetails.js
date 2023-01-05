@@ -89,15 +89,13 @@ return(
         Delete
       </button>
         </div>
-      <div className='w-1/4'>
+      <div className=''>
         <h1 className="font-lora mt-20 text-4xl py-4 px-8">Notes:</h1>
         <button className="font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
-        <div className="">
-        <div className="">{noteData}</div>
-      </div>
+  
+        <div className="w-1/2 grid grid-cols-2 justify-between">{noteData}</div>
       </div>
     </div>
-
   </div>
 )
 }
