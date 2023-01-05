@@ -11,6 +11,7 @@ import PostingDetails from './components/PostingDetails';
 import ApplicationCreate from './components/ApplicationCreate';
 import ApplicationUpdate from './components/ApplicationUpdate';
 import About from './components/About';
+import Footer from './components/Footer'
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 
 const App = () => {
@@ -91,6 +92,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
           <Route path='/myhub/application/:id/update' element={<ApplicationUpdate />}/>
           <Route path='/myhub/application/:id/note/add' element={<NoteCreate />}/>
       </Routes>
+      <Footer />
     </div>
   )
 }
