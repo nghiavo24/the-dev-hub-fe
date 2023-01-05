@@ -92,11 +92,11 @@ return(
       </div>
         </div>
       <div className='border-2 border-red-500'>
-        <h1 className="font-lora mt-20 text-4xl py-4 px-8">Notes:</h1>
-        <div className="border border-green-400">
+        <h1 className="font-lora mt-14 text-4xl flex justify-center">Notes</h1>
+        <div className="flex justify-center">
           <button className=" font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         </div>
-        <div className="border border-blue-600 w-1/2 grid grid-cols-2 mx-32 justify-between">{noteData}</div>
+        <div className="w-3/4 grid grid-row gap-5 mx-12 md:mx-24">{noteData}</div>
       </div>
     </div>
   </div>
