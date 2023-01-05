@@ -79,8 +79,8 @@ const ApplicationCreate = ({uid}) => {
                         onChange={handleAppCreate} />
                     <br />
                     <input
-                        type='text'
-                        placeholder='Compensation'
+                        type='number'
+                        placeholder='Compensation (ex. 95000)'
                         name='compensation'
                         value={newApp.compensation}
                         onChange={handleAppCreate} />

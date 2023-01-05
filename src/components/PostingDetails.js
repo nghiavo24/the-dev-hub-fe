@@ -70,6 +70,7 @@ const PostingDetails= () => {
         setPostUpdate(updatePostInput);
     }
 
+ 
     return(     
         <div>
             <h1 className='text-4xl text-center mx-44 mt-4 text-dark-salmon'>Posting Details</h1>
@@ -85,11 +86,11 @@ const PostingDetails= () => {
             <div class="flex justify-center ">
             <form class="mx-4 my-4 px-3 flex flex-col w-2/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border" updatingPost={updatingPost}>
             <h3 className='text-3xl text-center my-4 text-dark-salmon'> Update this Posting</h3>
-                <input class="my-4 mx-10" type="text" name="company" value={postUpdate.company} onChange={updateAPost} placeholder="add company name" />
-                <input class=" mx-10"  type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="add job title"/>
-                <input class="my-4 mx-10"  type="date" name="posted" value={postUpdate.posted} onChange={updateAPost} placeholder="date" />
-                <input class="mx-10"  type='url' name='url' value={postUpdate.url}  onChange={updateAPost} placeholder="url link"/>
-                <input  class="my-4 mx-10"  type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="notes" />
+                <input class="my-4 mx-10" type="text" name="company" value={postUpdate.company} onChange={updateAPost} placeholder="Company Name" required/>
+                <input class=" mx-10"  type="text" name='title' value={postUpdate.title}  onChange={updateAPost} placeholder="Job Title" required/>
+                <input class="my-4 mx-10" type="date" name="posted" value={postUpdate.posted} onChange={updateAPost} placeholder="date" />
+                <input class="mx-10"  type='url' name='url' value={postUpdate.url}  onChange={updateAPost} placeholder="URL"/>
+                <input class="my-4 mx-10"  type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="Note/Comment" />
 
                 <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 mx-10 font-laonoto tracking-wider bg-air-blue text-white outline-none" onClick={updatingPost}>Update Post</button>
                 <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 mx-10 font-laonoto tracking-wider bg-air-blue text-white outline-none" onClick={deletePost}>Delete a Post</button>
