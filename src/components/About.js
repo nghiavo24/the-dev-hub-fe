@@ -15,12 +15,12 @@ const About = () => {
       </div> 
       <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
           <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-              <a>
+              <div>
                   <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={morgan} alt="Morgan"/>
-              </a>
+              </div>
               <div className="p-5">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a className='font-lora'>Morgan Arancibia</a>
+                      <div className='font-lora'>Morgan Arancibia</div>
                   </h3>
                   <span className="font-montaga text-gray-500 dark:text-gray-400">Full-stack Software Engineer</span>
                   <p className="font-montserrat mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Morgan drives the design and builds many core functionalities of this application.</p>
@@ -32,19 +32,19 @@ const About = () => {
                       </li>
                       <li>
                           <a href="https://www.linkedin.com/in/morgan-arancibia/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <img src={linkedin} className='w-5 h-5'/>
+                              <img src={linkedin} alt='linkedin' className='w-5 h-5'/>
                           </a>
                       </li>
                   </ul>
               </div>
           </div> 
           <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-              <a>
+              <div>
                   <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={jeffrey} alt="Jeffrey"/>
-              </a>
+              </div>
               <div className="p-5">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a className='font-lora'>Jeffrey Koshy</a>
+                      <div className='font-lora'>Jeffrey Koshy</div>
                   </h3>
                   <span className="font-montaga text-gray-500 dark:text-gray-400">Full-stack Software Engineer</span>
                   <p className="font-montserrat mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Jeffrey collaborates with other developer to design and build many of essential components of this application.</p>
@@ -56,19 +56,19 @@ const About = () => {
                       </li>
                       <li>
                           <a href="https://www.linkedin.com/in/jeffrey-koshy/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                          <img src={linkedin} className='w-5 h-5'/>
+                          <img src={linkedin} alt='linkedin' className='w-5 h-5'/>
                           </a>
                       </li>
                   </ul>
               </div>
           </div> 
           <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-              <a>
+              <div>
                   <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={nathan} alt="Nathan"/>
-              </a>
+              </div>
               <div className="p-5">
                   <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a className='font-lora'>Nathan Vo</a>
+                      <div className='font-lora'>Nathan Vo</div>
                   </h3>
                   <span className="font-montaga text-gray-500 dark:text-gray-400">Full-stack Software Engineer</span>
                   <p className="font-montserrat mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Nathan supports and collaborates with other developers on many aspects of this application.</p>
@@ -80,7 +80,7 @@ const About = () => {
                       </li>
                       <li>
                           <a href="https://www.linkedin.com/in/nghia-vo/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                          <img src={linkedin} className='w-5 h-5'/>
+                          <img src={linkedin} alt='linkedin' className='w-5 h-5'/>
                           </a>
                       </li>
                   </ul>
