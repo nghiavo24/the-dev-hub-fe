@@ -19,7 +19,7 @@ const Homepage = () => {
                 </a> 
             </div>
             <div className="p-4 first-line:lg:mt-0 lg:col-span-5  lg:flex">
-                <img src={logo} alt="mockup" className='rounded-2xl'/>
+                <img src={logo} alt="mockup" className='rounded-2xl animate-bounce'/>
             </div>                
         </div>
     </section>
