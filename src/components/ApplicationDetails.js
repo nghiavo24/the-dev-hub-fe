@@ -69,9 +69,9 @@ if (allNotes === undefined) return;
 
 return(
   <div>
-    <div className='font-lora flex justify-center text-4xl'>Application Details</div>
-    <div className='flex flex-row row-span-2'>
-      <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
+    <div className='font-lora flex justify-center text-4xl border'>Application Details</div>
+    <div className='mt-0'>
+      <div className='w-3/4 max-w-md mx-10 mt-10 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
       <p className="font-lora text-2xl text-air-blue">Company: </p><span className="font-montserrat text-base">{allApps.company}</span>
       <p className="font-lora text-2xl text-air-blue">Job Title: </p><span className="font-montserrat text-base">{allApps.title}</span>
       <p className="font-lora text-2xl text-air-blue">Date applied:</p> <span className="font-montserrat text-base">{allApps.applied}</span>
@@ -80,20 +80,23 @@ return(
       <p className="font-lora text-2xl text-air-blue">Location:</p> <span className="font-montserrat text-base">{allApps.location}</span>
       <p className="font-lora text-2xl text-air-blue">Link:</p><a href={allApps.url}><FaExternalLinkAlt/></a>
       <br />
-      <button className="font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg mt-20 tracking-wider mx-14">
-        <Link to={`/myhub/application/${id}/update`}>
-        Update
-        </Link>
-      </button>
-      <button className="font-lobster bg-dark-salmon text-white py-2 px-4 rounded-lg mt-5 tracking-wider mx-4" onClick={deleteApp}>
-        Delete
-      </button>
+      <div className="flex justify-between justify-items-center">
+        <button className="font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg tracking-wider">
+          <Link to={`/myhub/application/${id}/update`}>
+          Update
+          </Link>
+        </button>
+        <button className="font-lobster bg-dark-salmon text-white py-2 px-5 rounded-lg tracking-wider" onClick={deleteApp}>
+          Delete
+        </button>
+      </div>
         </div>
-      <div className=''>
+      <div className='border-2 border-red-500'>
         <h1 className="font-lora mt-20 text-4xl py-4 px-8">Notes:</h1>
-        <button className="font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
-  
-        <div className="w-1/2 grid grid-cols-2 justify-between">{noteData}</div>
+        <div className="border border-green-400">
+          <button className=" font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
+        </div>
+        <div className="border border-blue-600 w-1/2 grid grid-cols-2 mx-32 justify-between">{noteData}</div>
       </div>
     </div>
   </div>
