@@ -69,6 +69,7 @@ if (allNotes === undefined) return;
 
 return(
   <div>
+    <div className='font-lora flex justify-center text-4xl'>Application Details</div>
     <div className='flex flex-row row-span-2'>
       <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
       <p className="font-lora text-2xl text-air-blue">Company: </p><span className="font-montserrat text-base">{allApps.company}</span>
@@ -89,7 +90,7 @@ return(
       </button>
         </div>
       <div className='w-1/4'>
-        <h1 className="font-lora mt-20 text-2xl py-4 px-8 bg-white shadow-lg rounded-lg border-gray-300 border">Notes</h1>
+        <h1 className="font-lora mt-20 text-4xl py-4 px-8">Notes:</h1>
         <button className="font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         <div className="">
         <div className="">{noteData}</div>
