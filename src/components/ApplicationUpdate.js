@@ -40,7 +40,7 @@ const ApplicationUpdate = () => {
 
     return (
         <div>
-            <div className='font-lora text-4xl text-center mx-44'>Update Application</div>
+            <div className='font-lora flex text-4xl text-center justify-center'>Update Application</div>
             <div className="flex justify-center">
             <form onSubmit={appUpdateCall} className='font-montserrat w-3/4 md:w-1/2 lg:w-1/3 my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
                 <input
