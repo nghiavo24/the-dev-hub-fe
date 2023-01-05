@@ -62,10 +62,10 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   }
 
   return (
-    <div>
+    <div className='min-h-screen'>
       <Navbar displayName={displayName} logOutUser={logOutUser} signInWithGoogle={signInWithGoogle} authorizedUser={authorizedUser}/>
       
-        <Routes>
+      <Routes className='flex-grow'>
           <Route path='/' element={<Homepage />} />
           <Route path='/about' element={<About />} />
           <Route path='/mainhub' element={<MainHub />}/>
