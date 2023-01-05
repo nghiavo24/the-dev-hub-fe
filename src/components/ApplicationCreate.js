@@ -51,7 +51,7 @@ const ApplicationCreate = ({uid}) => {
         <div>
             <div className='font-lora flex justify-center text-4xl overflow-hidden text-center'>Create New Application</div>
             <div className="flex justify-center">
-                <form onSubmit={createNewApp} className='font-montserrat w-3/5 my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border '>
+                <form onSubmit={createNewApp} className='font-montserrat w-1/3 my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
                     <input
                         className="mt-5"
                         type='text'
