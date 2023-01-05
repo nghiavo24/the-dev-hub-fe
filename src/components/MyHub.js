@@ -32,13 +32,13 @@ const MyHub = ({ uid }) => {
     
     const displayList = filteredList.map((app, index) =>{
     return(
-        <div key={index} className="container gap-4 p-5 border text-center my-5 border-gray-300 bg-white shadow-lg shadow-air-blue rounded-lg">
-            <div class="p-5">
-            <p className="text-2xl font-bold text-dark-salmon">{app.company}</p>
+        <div key={index} className="font-montserrat container gap-4 p-5 border text-center my-5 border-gray-300 bg-white shadow-lg shadow-air-blue rounded-lg">
+            <div className="p-5">
+            <p className="italic text-2xl font-bold text-dark-salmon">{app.company}</p>
             <p className="text-lg my-4">{app.title}</p>
             <p>{app.applied}</p>
             <Link to={`/myhub/application/${app._id}`}>
-            <button className="bg-air-blue text-white group-hover:text-white rounded-lg py-2 px-4 my-4">View Details</button>
+            <button className="font-lobster bg-air-blue text-white group-hover:text-white rounded-lg py-2 px-4 my-4">View Details</button>
             </Link>
         </div>
     </div>
@@ -47,7 +47,7 @@ const MyHub = ({ uid }) => {
 
   return (
     <div>
-        <h1 className='text-4xl text-center mx-44'>My Hub</h1>
+        <h1 className='font-lora text-4xl text-center mx-44'>My Hub</h1>
            <div className="container grid grid-cols-1 gap-4 mx-auto py-9 justify-around md:grid-cols-2 lg:grid-cols-4">{displayList}</div>
     </div>
   )
