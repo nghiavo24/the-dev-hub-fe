@@ -48,7 +48,7 @@ const MyHub = ({ uid }) => {
   return (
     <div>
         <h1 className='font-lora flex justify-center text-4xl'>My Hub</h1>
-           <div className="container grid grid-cols-1 gap-4 mx-auto px-5 py-9 justify-around md:grid-cols-2 lg:grid-cols-4">{displayList}</div>
+           <div className="container grid grid-cols-1 gap-2 gap-x-8 mx-auto px-5 py-9 justify-around md:grid-cols-2 lg:grid-cols-4">{displayList}</div>
     </div>
   )
 }
