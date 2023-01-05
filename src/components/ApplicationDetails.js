@@ -69,8 +69,9 @@ if (allNotes === undefined) return;
 
 return(
   <div>
-    <div className='font-lora flex justify-center text-4xl border'>Application Details</div>
-    <div className='mt-0'>
+    <div className='font-lora flex justify-center text-4xl'>Application Details</div>
+    <div className=''>
+      <div className="flex justify-center">
       <div className='w-3/4 max-w-md mx-10 mt-10 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
       <p className="font-lora text-2xl text-air-blue">Company: </p><span className="font-montserrat text-base">{allApps.company}</span>
       <p className="font-lora text-2xl text-air-blue">Job Title: </p><span className="font-montserrat text-base">{allApps.title}</span>
@@ -80,6 +81,7 @@ return(
       <p className="font-lora text-2xl text-air-blue">Location:</p> <span className="font-montserrat text-base">{allApps.location}</span>
       <p className="font-lora text-2xl text-air-blue">Link:</p><a href={allApps.url}><FaExternalLinkAlt/></a>
       <br />
+      
       <div className="flex justify-between justify-items-center">
         <button className="font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg tracking-wider">
           <Link to={`/myhub/application/${id}/update`}>
@@ -89,6 +91,7 @@ return(
         <button className="font-lobster bg-dark-salmon text-white py-2 px-5 rounded-lg tracking-wider" onClick={deleteApp}>
           Delete
         </button>
+        </div>
       </div>
         </div>
       <div className='border-2 border-red-500'>
@@ -96,7 +99,7 @@ return(
         <div className="flex justify-center">
           <button className=" font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         </div>
-        <div className="w-3/4 grid grid-row gap-5 mx-12 md:mx-24">{noteData}</div>
+        <div className="w-3/4 grid grid-row gap-5 mx-12 md:mx-28 md: md:grid md:grid-cols-2">{noteData}</div>
       </div>
     </div>
   </div>
