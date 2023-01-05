@@ -77,7 +77,7 @@ return(
       <p className="font-lora text-2xl text-air-blue">Recruiter/Hiring Manager:</p> <span className="font-montserrat text-base">{allApps.hiring_manager}</span>
       <p className="font-lora text-2xl text-air-blue">Work Site:</p> <span className="font-montserrat text-base">{allApps.work_site}</span>
       <p className="font-lora text-2xl text-air-blue">Location:</p> <span className="font-montserrat text-base">{allApps.location}</span>
-      <p className="font-lora text-2xl text-air-blue">Link:</p><a href={allApps.url} target="_blank"><FaExternalLinkAlt/></a>
+      <p className="font-lora text-2xl text-air-blue">Link:</p><a href={allApps.url}><FaExternalLinkAlt/></a>
       <br />
       <button className="font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg mt-20 tracking-wider mx-14">
         <Link to={`/myhub/application/${id}/update`}>
