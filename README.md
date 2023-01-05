@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Project 4 - The Dev Hub - A web-based organization tool (Front-end)
+<div align="center">A web-based organization tool <strong>Morgan Arancibia</strong>, <strong>Jeffrey Koshy</strong>, and <strong>Nghia (Nathan) Vo</strong>
+<br></br>
+<img src="https://i.imgur.com/ySdkLpv.png"/>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+**_(Put your name here)_**
 
-## Available Scripts
+**_Nathan_**
++ This repository is the front-end respository for the app.
++ The back-end is deployed on Heroku: 
++ The front-end is deployed on Vercel: 
++ The associated back-end repository can be found: 
 
-In the project directory, you can run:
+## Installation
+1. Clone this repository to your labs folder and change directory into it.
+2. Run `npm i` to download required dependencies.
+3. Run `npm start` to run localhost
+**_Nathan_**
 
-### `npm start`
+## Deployment
+The front-end of our application uses ReactJS as our library. The front-end follows the best practice in naming the components to be semantic. The front-end composes the following technologies/platforms:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Vercel:
+Vercel is the most accessible platform to deploy websites. By connecting the ** your GitHub repository** to Vercel, you can simply deploy the main branch to Vercel domains — and it does all the heavy lifting for you. **(Julian Wallis)**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width=10% height=10%><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" width=10% height=10%> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" width=10% height=10%><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" width=10% height=10%>
+- Axios
 
-### `npm test`
+## Wireframes
+### Before
+**_(Put your name here)_**
+### After
+**_(Put your name here)_**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## React Component Hierarchy
+### Before
+**_(Put your name here)_**
 
-### `npm run build`
+### After
+**_(Put your name here)_**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## MVP
++ AAU, I want to be able to 
++ AAU, I want to be able to 
++ AAU, I want to be able to 
++ AAU, I want to be able to 
++ AAU, I want to be able to 
++ AAU, I want to be able to 
++ AAU, I want to be able to 
+**_(Put your name here)_**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Post MVP
+**_(Put your name here)_**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future features
+**_(Put your name here)_**
 
-### `npm run eject`
+## Project Management
+**_Nathan_**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Issues & Resolutions
+**_(Put your name here)_**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Resources:
+**_(Anyone can put the resources they used here)_**
++ [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
++ [Inline HTML](https://stackoverflow.com/questions/12090472/how-do-i-center-an-image-in-the-readme-md-file-on-github)
++ [Jullian Wallis - What Is VERCEL? Is It The Right Platform For Front-End Developers?](https://webo.digital/blog/what-is-vercel-is-it-the-right-platform-for-front-end-developers/)
++ [Whimsical - Used for the Req-Res Diagram](https://whimsical.com)
++ [ESlint](https://stackoverflow.com/questions/41604162/eslint-throws-is-assigned-a-value-but-never-used-webpack-module)
++ [useEffect Hook missing dependencies](https://bobbyhadz.com/blog/react-hook-useeffect-has-missing-dependency)
++ [Validate form before submit fix](https://stephencharlesweiss.com/form-validation-prevent-default-and-on-submit-vs-on-click)
++ [Only number in input field](https://www.geeksforgeeks.org/how-to-force-input-field-to-enter-numbers-only-using-javascript/#:~:text=By%20default%2C%20HTML%205%20input,numeric%20keyboard%20on%20mobile%20devices.)
++ [Drop File feature/package](https://www.npmjs.com/package/react-file-base64?activeTab=readme)
++ [How to Create a Dark Mode Component in React](https://www.youtube.com/watch?v=6s_MkSKKV0c&ab_channel=AlexEagleson)
