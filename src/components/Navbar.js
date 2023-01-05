@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../media/thedevhub.png'
 
-const Navbar = ({authorizedUser, logOutUser, signInWithGoogle}) => {
+const Navbar = ({authorizedUser, logOutUser, signInWithGoogle, displayName}) => {
   return ( 
     <nav className="font-lora bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
@@ -36,6 +36,7 @@ const Navbar = ({authorizedUser, logOutUser, signInWithGoogle}) => {
             </li>
             {authorizedUser ? (
                 <div>
+                  <p>{displayName}</p>
                   <button onClick={logOutUser}
                   type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Sign Out

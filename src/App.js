@@ -22,7 +22,8 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
 
   const[authorizedUser, setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"));
-  const[uid, setUid] = useState()
+  const[uid, setUid] = useState();
+  const[displayName, setDisplayName] = useState();
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
@@ -38,6 +39,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
           })
         }
         setUid(user.uid)
+        setDisplayName(user.displayName)
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -61,7 +63,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
 
   return (
     <div>
-      <Navbar logOutUser={logOutUser} signInWithGoogle={signInWithGoogle} authorizedUser={authorizedUser}/>
+      <Navbar displayName={displayName} logOutUser={logOutUser} signInWithGoogle={signInWithGoogle} authorizedUser={authorizedUser}/>
       
         <Routes>
           <Route path='/' element={<Homepage />} />
