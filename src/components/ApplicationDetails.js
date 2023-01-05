@@ -47,7 +47,7 @@ if (allNotes === undefined) return;
 
   const noteData = allNotes.map((note, index) => {
     return(
-      <div key ={index} className='bg-yellow-crayola py-4 px-4 mb-5 rounded-lg shadow-lg text-center'> 
+      <div key ={index} className='bg-yellow-note py-4 px-4 mb-5 rounded-lg shadow-lg text-center'> 
         <p className="font-montserrat">{note.content}</p>
         <button 
           onClick={() => deleteNote(note._id)} 
@@ -79,7 +79,7 @@ return(
       <p className="font-lora text-2xl text-air-blue">Location:</p> <span className="font-montserrat text-base">{allApps.location}</span>
       <p className="font-lora text-2xl text-air-blue">Link:</p><a href={allApps.url}><FaExternalLinkAlt/></a>
       <br />
-      <button className="font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg mt-20 tracking-wider mx-14">
+      <button className="font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg mt-20 tracking-wider mx-14">
         <Link to={`/myhub/application/${id}/update`}>
         Update
         </Link>

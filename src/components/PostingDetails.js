@@ -92,7 +92,7 @@ const PostingDetails= () => {
                 <input className="font-montserrat mx-10"  type='url' name='url' value={postUpdate.url}  onChange={updateAPost} placeholder="URL"/>
                 <input className="font-montserrat my-4 mx-10"  type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="Note/Comment" />
 
-                <button className="font-lobster rounded-lg text-lg px-4 py-2 my-4 mx-10 tracking-wider bg-yellow-crayola text-black outline-none" onClick={updatingPost}>Update Post</button>
+                <button className="font-lobster rounded-lg text-lg px-4 py-2 my-4 mx-10 tracking-wider bg-yellow-crayola text-white outline-none" onClick={updatingPost}>Update Post</button>
                 <button className="font-lobster rounded-lg text-lg px-4 py-2 my-4 mx-10 tracking-wider bg-dark-salmon text-white outline-none" onClick={deletePost}>Delete a Post</button>
             </form>   
              </div>

@@ -3,12 +3,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark-salmon': '#E89475',
-        'air-blue': '#7EA0B7',
-        'yellow-crayola': '#FFEF9F',
-        'paolo-green': '#409D78',
+        'dark-salmon': '#D94141',
+        'air-blue': '#5096F2',
+        'yellow-crayola': '#F2A516',
+        'paolo-green': '#41A65A',
         'blonde': '#F4F0BB',
-        'off-white': '#FAF9F6'
+        'off-white': '#FAF9F6',
+        'yellow-note':'#FFEF9F',
       },
     },
     fontFamily: {
