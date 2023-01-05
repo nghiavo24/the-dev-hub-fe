@@ -69,7 +69,7 @@ const ApplicationUpdate = () => {
                     required/>
                 <br />
                 <input
-                    placeholder='Name of recruiter/hiring manager'
+                    placeholder='Name of Recruiter/Hiring Manager'
                     type='text'
                     name='hiring_manager'
                     value={appUpdate.hiring_manager}
