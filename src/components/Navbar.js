@@ -49,7 +49,7 @@ const Navbar = ({authorizedUser, logOutUser, signInWithGoogle, displayName}) => 
                 </div>
               </li>
               </>
-              ): (
+              ) : (
               <li>
               <div 
               onClick={signInWithGoogle}
