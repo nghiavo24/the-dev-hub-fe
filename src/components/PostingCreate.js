@@ -47,9 +47,11 @@ const PostingCreate = () => {
     
     return(
     <div>
-        <h3 className='font-lora text-4xl text-center mx-44' > Create a Posting</h3>
+        < div className="flex justify-center ">
+        <h3 className='font-lora text-3xl text-center py-5' > Create a Posting</h3>
+        </div>
         <div className="flex justify-center ">
-        <form className="font-montserrat mx-4 my-4 px-3 flex flex-col w-3/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border"  onSubmit={createNewPost}>
+        <form className="font-montserrat px-6 md:w-2/5    flex flex-col lg:w-2/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border "  onSubmit={createNewPost}>
                 <input className="mt-5"type="text"  name='title' value={post.title}  onChange={createAPost} placeholder="Job title"/>
                 <br/>
                 <input  type="text" name="company" value={post.company} onChange={createAPost} placeholder="Company" />
@@ -60,7 +62,9 @@ const PostingCreate = () => {
                 <br/>
                 <input   type="text" name="note" value={post.note} onChange={createAPost} placeholder="Notes" />
                 <br/>
-                <button className="font-lobster rounded-lg text-lg my-5 px-2 py-2 text-white tracking-wider bg-air-blue outline-none mx-10"  type="submit"> Create Posting </button>
+                <div className="flex justify-center">
+                <button className="font-lobster rounded-lg mb-5 text-lg px-4 py-2 text-white tracking-wider bg-air-blue outline-none hover:bg-paolo-green"  type="submit"> Create  </button>
+                </div>
         </form>
         </div>
       </div>
