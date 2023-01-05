@@ -28,12 +28,12 @@ const MainHub = () => {
       if(posting === undefined) return;
       const allPosting = posting.map((post) => {
         return (
-        <div class="container gap-4 p-5 border text-center my-5  border-air-blue bg-white shadow-lg shadow-air-blue rounded-lg">
-            <div class="p-5">
-                <p class="text-2xl  text-dark-salmon" >{post.company}</p>
-                <p class="text-lg my-4" >{post.title}</p>
-                <p class="" >{post.posted}</p>
-                <button class="rounded-lg bg-slate-500 text-lg px-4 py-2 my-4 font-laonoto tracking-wider bg-air-blue text-white outline-none"><Link to= {`/mainhub/posting/${post._id}`}> View Details </Link> </button>
+        <div className="container gap-4 p-5 border text-center my-5  border-air-blue bg-white shadow-lg shadow-air-blue rounded-lg">
+            <div className="p-5">
+                <p className="italic text-2xl  text-dark-salmon" >{post.company}</p>
+                <p className="text-lg my-4" >{post.title}</p>
+                <p className="" >{post.posted}</p>
+                <button className="font-lobster rounded-lg text-lg px-4 py-2 my-4 tracking-wider bg-air-blue text-white outline-none"><Link to= {`/mainhub/posting/${post._id}`}> View Details </Link> </button>
             </div>
         </div>
         );
@@ -41,10 +41,10 @@ const MainHub = () => {
 
     return(
         <div >
-            <div class="p-4">
-                <h1 className='text-4xl text-center mx-44' >Main Hub</h1>
+            <div className="p-4">
+                <h1 className='font-lora text-4xl text-center mx-44' >Main Hub</h1>
             </div>
-            <div class="container grid grid-cols-1 gap-4 mx-auto py-9 md:grid-cols-2 lg:grid-cols-4 justify-around ">{allPosting}</div>
+            <div className="font-montserrat container grid grid-cols-1 gap-4 mx-auto py-9 md:grid-cols-2 lg:grid-cols-4 justify-around ">{allPosting}</div>
         </div>
     )
 }
