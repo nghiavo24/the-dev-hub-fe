@@ -5,6 +5,7 @@
 </div>
 
 ## Project Overview
+The Dev Hub was created for people who need a little extra help with finding and tracking which jobs they have applied for. The Dev Hub allows you to sign in and add the jobs you have applied for, you can then view all the companies you have applied for, when you applied and which position you applied to. You are able to add notes, to help stay organized! There is also an option for users to add job postings they have seen, but don't necessarily want to apply to. That feature is there so you can see what others are posting, to feel supported but also get the opportunity to give support!
 **_Morgan A_**
 
 **_Nathan_**
@@ -30,17 +31,13 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 
 ## Wireframes
 ### Before
-![image](https://user-images.githubusercontent.com/47038229/210908959-350b74b0-7e66-4dd9-b99f-2a252fe8d45b.png)
-
-
+**Jeffrey Koshy**
 ### After
-
 **Jeffrey Koshy**
 
 ## React Component Hierarchy
 ### Before
-![image](https://user-images.githubusercontent.com/47038229/210909107-52bcaf04-41a5-450a-9bf9-32dfd733f118.png)
-
+**Jeffrey Koshy**
 
 ### After
 **Jeffrey Koshy**
@@ -59,12 +56,20 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 **_Jeffrey Koshy_**
 
 ## Future features
+- Add an option for light and dark mode
+- Add an option to set reminders for interviews
+- Add the option to be able to apply from the website and not have to go to an external page
+- Add the option to alphabetically sort your Jobs or Applications
+- Add the option to sort by any field
+- Re-design the logged-in/logged-out pop-up
 **_Morgan A_**
 
 ## Project Management
 **_Nathan_**
 
 ## Issues & Resolutions
+We had the opportunity to learn Tailwind.css in this project, though it was fun it did come with some challenges. It was mainly time consuming when it came to styling because it is a new syntax we had to learn and had to go back and forth to different resources to get it right. But the more we added the easier and faster styling became!
+We did have an issue with the date not displaying as we were intending it to, we fixed it but it then broke again unfortunately. But after several hours of different sets of eyes looking at it and reading through different documents... we put it to the side. But after much time the team attended office hours and we were able to work with our TAs to get the date displayed properly.
 **_Morgan A_**
 
 ## Resources:
