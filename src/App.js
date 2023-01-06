@@ -1,69 +1,83 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { Route, Routes, useNavigate, } from 'react-router-dom';
+import Homepage from './components/Homepage';
+import MyHub from './components/MyHub';
+import MainHub from './components/MainHub';
+import ApplicationDetail from './components/ApplicationDetails'
+import NoteCreate from './components/NoteCreate';
+import Navbar from './components/Navbar';
+import PostingCreate from './components/PostingCreate';
+import PostingDetails from './components/PostingDetails';
+import ApplicationCreate from './components/ApplicationCreate';
+import ApplicationUpdate from './components/ApplicationUpdate';
+import About from './components/About';
+import Footer from './components/Footer'
 import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
-import Tasks from "./components/Tasks";
 
 const App = () => {
-
+  const navigate = useNavigate()
   const provider = new GoogleAuthProvider();
-  provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+
+provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
   const auth = getAuth();
 
-  const [authorizedUser,setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"))
+  const[authorizedUser, setAuthorizedUser] = useState(false || sessionStorage.getItem("accessToken"));
+  const[uid, setUid] = useState();
+  const[displayName, setDisplayName] = useState();
 
-  const signInwithGoogle = () => {
+  const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
-        // The signed-in user info.
         const user = result.user;
         if(user){
-          user.getIdToken().then((tkn)=>{
-            // set access token in session storage
+          user.getIdToken().then((tkn, uid) => {
             sessionStorage.setItem("accessToken", tkn);
             setAuthorizedUser(true);
+            console.log(user)
           })
         }
-        console.log(user);
+        setUid(user.uid)
+        setDisplayName(user.displayName)
       })
       .catch((error) => {
-        // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
-        // The email of the user's account used.
         const email = error.customData.email;
-        // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
-      });
-    }
+      })
+  }
 
-    const logoutUser = () => {
-      signOut(auth).then(() => {      
-        // clear session storage
-        sessionStorage.clear();
-        setAuthorizedUser(false);
-        // window.location.replace("/");
-        alert('Logged Out Successfully');
-      }).catch((error) => {
-        // An error happened.
-        alert(error);
-      });
-    }
+  const logOutUser = () => {
+    signOut(auth).then(() => {
+      sessionStorage.clear();
+      setAuthorizedUser(false);
+      navigate('/')
+      alert('Logged Out Successfully');
+    })
+    .catch((error) => {
+      alert(error);
+    })
+  }
+
   return (
-    <div>
-      {authorizedUser ? (
-        <div>
-          <p>Authorized user</p>
-          <h1>Tasks</h1>
-          <Tasks token={sessionStorage.getItem("accessToken")}/>
-          <button onClick={logoutUser}>Logout Button</button>
-        </div>
-      ): (
-        <div>
-      <button onClick={signInwithGoogle}>SignWithGoogle</button>
-        </div>
-      )}
+    <div className='min-h-screen'>
+      <Navbar displayName={displayName} logOutUser={logOutUser} signInWithGoogle={signInWithGoogle} authorizedUser={authorizedUser}/>
+      
+      <Routes className='flex-grow'>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/mainhub' element={<MainHub />}/>
+          <Route path='/mainhub/posting/create' element={<PostingCreate />}/> 
+          <Route path='/mainhub/posting/:id' element={<PostingDetails />} /> 
+          <Route path='/myhub' element={<MyHub uid={uid}/>} />
+          <Route path='/myhub/application/:id' element={<ApplicationDetail />}/>
+          <Route path='/myhub/application/create' element={<ApplicationCreate uid={uid}/>}/>
+          <Route path='/myhub/application/:id/update' element={<ApplicationUpdate />}/>
+          <Route path='/myhub/application/:id/note/add' element={<NoteCreate />}/>
+      </Routes>
+      <Footer />
     </div>
   )
 }
