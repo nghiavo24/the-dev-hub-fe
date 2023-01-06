@@ -47,8 +47,8 @@ const NoteCreate = () => {
                         required />
                     <br />
                     <div className="flex justify-center my-8 mt-0">
-                        <button className="font-lobster rounded-lg text-lg mx-2 px-5 py-2  text-white tracking-wider bg-paolo-green outline-none"><Link to={`/myhub/application/${id}`}>Back</Link></button>
-                        <button className="font-lobster rounded-lg text-lg mx-2 px-3 py-2  text-white tracking-wider bg-air-blue outline-none">Submit</button>
+                        <button className="hover:bg-black font-lobster rounded-lg text-lg mx-2 px-5 py-2  text-white tracking-wider bg-paolo-green outline-none"><Link to={`/myhub/application/${id}`}>Back</Link></button>
+                        <button className="hover:bg-black font-lobster rounded-lg text-lg mx-2 px-3 py-2  text-white tracking-wider bg-air-blue outline-none">Create</button>
                     </div>
                 </form>
             </div>
