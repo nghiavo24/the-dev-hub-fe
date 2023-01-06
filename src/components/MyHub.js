@@ -30,6 +30,12 @@ const MyHub = ({ uid }) => {
         return apps.user_id === uid
     })
 
+    const formatDate = (dateStr) => {
+        const [year, month, day] = dateStr.split('-');
+        let newDate = `${month}-${day}-${year}`;
+        return newDate;
+      };
+
     const displayList = filteredList.map((app, index) => {
         return (
             <div key={index} className="flex flex-col items-center font-montserrat container gap-4 p-5 border text-center my-5 border-gray-300 bg-white shadow-lg shadow-air-blue rounded-lg ">
@@ -37,7 +43,7 @@ const MyHub = ({ uid }) => {
                     <div className="">
                         <p className="italic text-2xl font-bold text-dark-salmon">{app.company}</p>
                         <p className="text-lg my-4">{app.title}</p>
-                        <p>{app.applied}</p>
+                        <p>{formatDate(app.applied)}</p>
                     </div>
                 </div>
                 <Link to={`/myhub/application/${app._id}`}>
