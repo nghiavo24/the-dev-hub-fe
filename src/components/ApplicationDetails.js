@@ -67,6 +67,12 @@ if (allNotes === undefined) return;
     .then((res) => {window.location.reload()})
   }
 
+  const formatDate = (dateStr) => {
+    const [year, month, day] = dateStr.split('-');
+    let newDate = `${month}-${day}-${year}`;
+    return newDate;
+  };
+
 return(
   <div>
     <div className='font-lora flex justify-center text-4xl'>Application Details</div>
@@ -75,7 +81,7 @@ return(
       <div className='w-3/4 md:w-2/3 mx-10 mt-10 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
       <p className="font-lora text-2xl text-air-blue lg:text-3xl">Company: </p><span className="font-montserrat text-base lg:text-lg">{allApps.company}</span>
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Job Title: </p><span className="font-montserrat text-base lg:text-lg">{allApps.title}</span>
-      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Date applied:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.applied}</span>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Date applied:</p> <span className="font-montserrat text-base lg:text-lg">{formatDate(allApps.applied)}</span>
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Recruiter/Hiring Manager:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.hiring_manager}</span>
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Work Site:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.work_site}</span>
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Location:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.location}</span>

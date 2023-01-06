@@ -70,6 +70,12 @@ const PostingDetails = () => {
         setPostUpdate(updatePostInput);
     }
 
+    const formatDate = (dateStr) => {
+        const [year, month, day] = dateStr.split('-');
+        let newDate = `${month}-${day}-${year}`;
+        return newDate;
+      };
+
     return (
         <div>
             <h1 className='flex justify-center mt-8 font-lora text-3xl text-center'>Posting Details</h1>
@@ -77,7 +83,7 @@ const PostingDetails = () => {
                 <div className="w-4/8 px-10 mx-5 py-8 flex flex-col  sm:w-10/12 md:w-8/12 lg:w-5/12 xl:w-5/12 2xl:w-5/12     shadow-lg shadow-air-blue  border-gray-300 border rounded-lg mt-10">
                     <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl  text-air-blue">Company: </p> <span className="font-montserrat text-lg  lg:text-lg text-black">{postDetails.company}</span>
                     <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl  mt-4  text-air-blue">Title: </p> < span className="font-montserrat text-lg lg:text-lg  text-black">{postDetails.title}</span>
-                    <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl mt-4 text-air-blue">Posted: </p> <span className="font-montserrat text-lg lg:text-lg text-black">{postDetails.posted}</span>
+                    <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl mt-4 text-air-blue">Posted: </p> <span className="font-montserrat text-lg lg:text-lg text-black">{formatDate(postDetails.posted)}</span>
                     <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl mt-4  text-air-blue">Note: </p>  <span className="font-montserrat text-lg lg:text-lg text-black"> {postDetails.note}</span>
                     <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl my-4 text-air-blue">Link:<a target='_blank' href={postDetails.url}><FaExternalLinkAlt className='text-black mt-4 mx-2' /></a></p>
                     <div className=" flex justify-center  ">
