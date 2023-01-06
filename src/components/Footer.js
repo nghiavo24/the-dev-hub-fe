@@ -4,7 +4,7 @@ import logo from '../media/thedevhub.png';
 
 const Footer = () => {
   return (
-    <div className="font-montserrat dark:bg-gray-800 sticky bottom-0">
+    <div className="font-montserrat dark:bg-gray-800">
         <div className="mx-auto max-w-screen text-center">
            <div className='flex justify-center items-center'>
            <div className="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
