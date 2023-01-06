@@ -26,13 +26,20 @@ const MainHub = () => {
         }
     }, [])
     if (posting === undefined) return;
+
+    const formatDate = (dateStr) => {
+        const [year, month, day] = dateStr.split('-');
+        let newDate = `${month}-${day}-${year}`;
+        return newDate;
+      };
+
     const allPosting = posting.map((post) => {
         return (
             <div className="container gap-4  p-5 border text-center my-5  border-air-blue bg-white shadow-lg shadow-air-blue rounded-lg">
                 <div className="p-4">
                     <p className="italic text-2xl  text-dark-salmon" >{post.company}</p>
                     <p className="text-lg my-4" >{post.title}</p>
-                    <p className="" >{post.posted}</p>
+                    <p className="" >{formatDate(post.posted)}</p>
                     <div className="flex justify-center">
                         <button className="flex mt-10 font-lobster rounded-lg text-lg px-4 py-2  tracking-wider bg-air-blue text-white outline-none"><Link to={`/mainhub/posting/${post._id}`}> View Details </Link> </button>
                     </div>
