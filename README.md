@@ -5,7 +5,7 @@
 </div>
 
 ## Project Overview
-**_(Put your name here)_**
+**_Morgan A_**
 
 **_Nathan_**
 + This repository is the front-end respository for the app.
@@ -30,16 +30,16 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 
 ## Wireframes
 ### Before
-**_(Put your name here)_**
+**Jeffrey Koshy**
 ### After
-**_(Put your name here)_**
+**Jeffrey Koshy**
 
 ## React Component Hierarchy
 ### Before
-**_(Put your name here)_**
+**Jeffrey Koshy**
 
 ### After
-**_(Put your name here)_**
+**Jeffrey Koshy**
 
 ## MVP
 + AAU, I want to be able to 
@@ -49,19 +49,19 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 + AAU, I want to be able to 
 + AAU, I want to be able to 
 + AAU, I want to be able to 
-**_(Put your name here)_**
+**_Jeffrey Koshy_**
 
 ## Post MVP
-**_(Put your name here)_**
+**_Jeffrey Koshy_**
 
 ## Future features
-**_(Put your name here)_**
+**_Morgan A_**
 
 ## Project Management
 **_Nathan_**
 
 ## Issues & Resolutions
-**_(Put your name here)_**
+**_Morgan A_**
 
 ## Resources:
 **_(Anyone can put the resources they used here)_**
