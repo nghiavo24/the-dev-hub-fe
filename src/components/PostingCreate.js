@@ -48,7 +48,7 @@ const PostingCreate = () => {
     return(
     <div>
         < div className="flex justify-center ">
-        <h3 className='font-lora text-3xl text-center py-5' > Create a Posting</h3>
+        <h3 className='font-lora text-3xl text-center py-5' >New Position</h3>
         </div>
         <div className="flex justify-center ">
         <form className="font-montserrat px-6 md:w-2/5    flex flex-col lg:w-2/5 shadow-lg shadow-air-blue rounded-lg border-gray-300 border "  onSubmit={createNewPost}>
