@@ -81,7 +81,7 @@ const PostingDetails = () => {
                     <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl mt-4  text-air-blue">Note: </p>  <span className="font-montserrat text-lg lg:text-lg text-black"> {postDetails.note}</span>
                     <p className="font-lora text-2xl md:text-3xl lg:text-3xl xl:text-3xl my-4 text-air-blue">Link:<a href={postDetails.url}><FaExternalLinkAlt className='text-black mt-4 mx-2' /></a></p>
                     <div className=" flex justify-center  ">
-                        <button className="font-lobster rounded-lg text-lg tracking-wider px-10 py-2  bg-dark-salmon text-white outline-none " onClick={deletePost}>Delete</button>
+                        <button className="hover:bg-black font-lobster rounded-lg text-lg tracking-wider px-10 py-2  bg-dark-salmon text-white outline-none " onClick={deletePost}>Delete</button>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@ const PostingDetails = () => {
                         <input className="font-montserrat my-4 " type="text" name="note" value={postUpdate.note} onChange={updateAPost} placeholder="Note/Comment" />
                     </div>
                     <div className="flex justify-center"> 
-                        <button className="font-lobster rounded-lg text-lg px-10 py-2 my-3 mb-5 tracking-wider bg-yellow-crayola text-white outline-none" onClick={updatingPost}>Update</button>
+                        <button className="hover:bg-paolo-green font-lobster rounded-lg text-lg px-10 py-2 my-3 mb-5 tracking-wider bg-yellow-crayola text-white outline-none" onClick={updatingPost}>Update</button>
                     </div>
                 </form>
             </div>

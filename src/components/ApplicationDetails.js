@@ -51,7 +51,7 @@ if (allNotes === undefined) return;
         <p className="font-montserrat">{note.content}</p>
         <button 
           onClick={() => deleteNote(note._id)} 
-          className="font-lobster bg-dark-salmon text-white tracking-wider rounded-lg py-2 px-4 mt-8">
+          className="hover:bg-black font-lobster bg-dark-salmon text-white tracking-wider rounded-lg py-2 px-4 mt-8">
             Delete
         </button>
       </div>
@@ -82,12 +82,12 @@ return(
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Link:</p><a href={allApps.url} className="lg:text-lg"><FaExternalLinkAlt/></a>
       <br />
       <div className="flex justify-between justify-items-center">
-        <button className="font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg tracking-wider">
+        <button className="hover:bg-paolo-green font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg tracking-wider">
           <Link to={`/myhub/application/${id}/update`}>
           Update
           </Link>
         </button>
-        <button className="font-lobster bg-dark-salmon text-white py-2 px-5 rounded-lg tracking-wider" onClick={deleteApp}>
+        <button className="hover:bg-black font-lobster bg-dark-salmon text-white py-2 px-5 rounded-lg tracking-wider" onClick={deleteApp}>
           Delete
         </button>
         </div>
@@ -96,7 +96,7 @@ return(
       <div className=''>
         <h1 className="font-lora mt-14 text-4xl flex justify-center lg:mt-8">Notes</h1>
         <div className="flex justify-center">
-          <button className=" font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5 lg:mt-10"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
+          <button className="hover:bg-black font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5 lg:mt-10"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
         </div>
         <div className="w-3/4 grid grid-row gap-5 mx-12 md:mx-28 md: md:grid md:grid-cols-2">{noteData}</div>
       </div>
