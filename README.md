@@ -83,13 +83,11 @@ We did have an issue with the date not displaying as we were intending it to, we
 
 ## Resources:
 **_(Anyone can put the resources they used here)_**
-+ [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-+ [Inline HTML](https://stackoverflow.com/questions/12090472/how-do-i-center-an-image-in-the-readme-md-file-on-github)
-+ [Jullian Wallis - What Is VERCEL? Is It The Right Platform For Front-End Developers?](https://webo.digital/blog/what-is-vercel-is-it-the-right-platform-for-front-end-developers/)
 + [Whimsical - Used for the Req-Res Diagram](https://whimsical.com)
 + [ESlint](https://stackoverflow.com/questions/41604162/eslint-throws-is-assigned-a-value-but-never-used-webpack-module)
 + [useEffect Hook missing dependencies](https://bobbyhadz.com/blog/react-hook-useeffect-has-missing-dependency)
 + [Validate form before submit fix](https://stephencharlesweiss.com/form-validation-prevent-default-and-on-submit-vs-on-click)
 + [Only number in input field](https://www.geeksforgeeks.org/how-to-force-input-field-to-enter-numbers-only-using-javascript/#:~:text=By%20default%2C%20HTML%205%20input,numeric%20keyboard%20on%20mobile%20devices.)
-+ [Drop File feature/package](https://www.npmjs.com/package/react-file-base64?activeTab=readme)
-+ [How to Create a Dark Mode Component in React](https://www.youtube.com/watch?v=6s_MkSKKV0c&ab_channel=AlexEagleson)
+[Tailwind](tailwind help https://tailwindcomponents.com/cheatsheet/)
+[Tailwind Media Queries](https://tailwindcss.com/docs/responsive-design)
+[Color Scheme](https://coolors.co/c3a995-307473-12664f-2dc2bd-805d93)
