@@ -108,7 +108,7 @@ const ApplicationCreate = ({uid}) => {
                         onChange={handleAppCreate} />
                     <br />
                     <div className="flex justify-center">
-                        <button type="submit" className="hover:bg-paolo-green font-lobster rounded-lg text-lg my-5 px-6 py-2 text-white tracking-wider bg-air-blue outline-none mx-10">Submit</button>
+                        <button type="submit" className="hover:bg-paolo-green font-lobster rounded-lg text-lg my-5 px-6 py-2 text-white tracking-wider bg-air-blue outline-none mx-10">Create</button>
                     </div>
                 </form>
             </div>
