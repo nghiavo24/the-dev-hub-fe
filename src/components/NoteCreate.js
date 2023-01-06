@@ -34,11 +34,11 @@ const NoteCreate = () => {
 
     return (
         <div>
-            <div className='font-lora text-4xl text-center mx-44'>Add Note</div>
+            <div className='font-lora text-4xl text-center flex justify-center'>Add Note</div>
             <div className="flex justify-center">
-                <form onSubmit={createNewNote} className='font-montserrat w-1/2 my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
+                <form onSubmit={createNewNote} className='font-montserrat w-3/4 md:w-1/2 lg:w-1/4  my-4 px-3 flex flex-col bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
                     <input
-                        className="mt-5 caret-pink-500"
+                        className="mt-5"
                         type='text'
                         placeholder='Content'
                         name='content'
@@ -46,8 +46,10 @@ const NoteCreate = () => {
                         onChange={handleInput}
                         required />
                     <br />
-                    <button className="font-lobster rounded-lg text-lg my-5 px-4 py-4 text-white tracking-wider bg-paolo-green outline-none mx-44"><Link to={`/myhub/application/${id}`}>Back</Link></button>
-                    <button className="font-lobster rounded-lg text-lg my-5 px-4 py-4 text-white tracking-wider bg-air-blue outline-none mx-44">Submit</button>
+                    <div className="flex justify-center my-8 mt-0">
+                        <button className="font-lobster rounded-lg text-lg mx-2 px-5 py-2  text-white tracking-wider bg-paolo-green outline-none"><Link to={`/myhub/application/${id}`}>Back</Link></button>
+                        <button className="font-lobster rounded-lg text-lg mx-2 px-3 py-2  text-white tracking-wider bg-air-blue outline-none">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -69,34 +69,38 @@ if (allNotes === undefined) return;
 
 return(
   <div>
-    <div className='flex flex-row row-span-2'>
-      <div className='w-3/4 max-w-md mx-10 my-20 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
-      <p className="font-lora text-2xl text-air-blue">Company: </p><span className="font-montserrat text-base">{allApps.company}</span>
-      <p className="font-lora text-2xl text-air-blue">Job Title: </p><span className="font-montserrat text-base">{allApps.title}</span>
-      <p className="font-lora text-2xl text-air-blue">Date applied:</p> <span className="font-montserrat text-base">{allApps.applied}</span>
-      <p className="font-lora text-2xl text-air-blue">Recruiter/Hiring Manager:</p> <span className="font-montserrat text-base">{allApps.hiring_manager}</span>
-      <p className="font-lora text-2xl text-air-blue">Work Site:</p> <span className="font-montserrat text-base">{allApps.work_site}</span>
-      <p className="font-lora text-2xl text-air-blue">Location:</p> <span className="font-montserrat text-base">{allApps.location}</span>
-      <p className="font-lora text-2xl text-air-blue">Link:</p><a href={allApps.url}><FaExternalLinkAlt/></a>
+    <div className='font-lora flex justify-center text-4xl'>Application Details</div>
+    <div className='lg:grid lg:grid-cols-2'>
+      <div className="flex justify-center">
+      <div className='w-3/4 md:w-2/3 mx-10 mt-10 py-4 px-8 bg-white shadow-lg shadow-air-blue rounded-lg border-gray-300 border'>
+      <p className="font-lora text-2xl text-air-blue lg:text-3xl">Company: </p><span className="font-montserrat text-base lg:text-lg">{allApps.company}</span>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Job Title: </p><span className="font-montserrat text-base lg:text-lg">{allApps.title}</span>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Date applied:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.applied}</span>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Recruiter/Hiring Manager:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.hiring_manager}</span>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Work Site:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.work_site}</span>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Location:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.location}</span>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Link:</p><a href={allApps.url} className="lg:text-lg"><FaExternalLinkAlt/></a>
       <br />
-      <button className="font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg mt-20 tracking-wider mx-14">
-        <Link to={`/myhub/application/${id}/update`}>
-        Update
-        </Link>
-      </button>
-      <button className="font-lobster bg-dark-salmon text-white py-2 px-4 rounded-lg mt-5 tracking-wider mx-4" onClick={deleteApp}>
-        Delete
-      </button>
+      <div className="flex justify-between justify-items-center">
+        <button className="font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg tracking-wider">
+          <Link to={`/myhub/application/${id}/update`}>
+          Update
+          </Link>
+        </button>
+        <button className="font-lobster bg-dark-salmon text-white py-2 px-5 rounded-lg tracking-wider" onClick={deleteApp}>
+          Delete
+        </button>
         </div>
-      <div className='w-1/4'>
-        <h1 className="font-lora mt-20 text-2xl py-4 px-8 bg-white shadow-lg rounded-lg border-gray-300 border">Notes</h1>
-        <button className="font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
-        <div className="">
-        <div className="">{noteData}</div>
       </div>
+        </div>
+      <div className=''>
+        <h1 className="font-lora mt-14 text-4xl flex justify-center lg:mt-8">Notes</h1>
+        <div className="flex justify-center">
+          <button className=" font-lobster bg-paolo-green text-white py-2 px-4 rounded-lg tracking-wider mb-4 mt-5 lg:mt-10"><Link to={`/myhub/application/${id}/note/add`} >Add Note</Link></button>
+        </div>
+        <div className="w-3/4 grid grid-row gap-5 mx-12 md:mx-28 md: md:grid md:grid-cols-2">{noteData}</div>
       </div>
     </div>
-
   </div>
 )
 }
