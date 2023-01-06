@@ -30,13 +30,17 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 
 ## Wireframes
 ### Before
-**Jeffrey Koshy**
+![image](https://user-images.githubusercontent.com/47038229/210908959-350b74b0-7e66-4dd9-b99f-2a252fe8d45b.png)
+
+
 ### After
+
 **Jeffrey Koshy**
 
 ## React Component Hierarchy
 ### Before
-**Jeffrey Koshy**
+![image](https://user-images.githubusercontent.com/47038229/210909107-52bcaf04-41a5-450a-9bf9-32dfd733f118.png)
+
 
 ### After
 **Jeffrey Koshy**
