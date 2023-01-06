@@ -20,7 +20,7 @@ const MyHub = ({ uid }) => {
             fetchData(token);
         } else {
             navigate('/')
-            alert('You need to sign in!')
+            alert('Please sign in!❗❗❗')
         }
     }, []);
 

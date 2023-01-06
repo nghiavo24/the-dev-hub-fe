@@ -54,7 +54,7 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
       sessionStorage.clear();
       setAuthorizedUser(false);
       navigate('/')
-      alert('Logged Out Successfully');
+      alert('Byeee! 👋👋👋');
     })
     .catch((error) => {
       alert(error);

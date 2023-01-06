@@ -41,7 +41,7 @@ const PostingCreate = () => {
         <></>
       } else {
         navigate('/')
-        alert ('You need to sign in!')
+        alert ('Please sign in!❗❗❗')
       }
     } ,[] )
     

@@ -22,7 +22,7 @@ const MainHub = () => {
             getPostings(token)
         } else {
             navigate('/')
-            alert('You need to sign in!')
+            alert('Please sign in!❗❗❗')
         }
     }, [])
     if (posting === undefined) return;

@@ -43,7 +43,7 @@ const ApplicationCreate = ({uid}) => {
           <></>
         } else {
           navigate('/')
-          alert ('You need to sign in!')
+          alert ('Please sign in!❗❗❗')
         }
       } ,[] )
 
