@@ -4,6 +4,7 @@ import axios from "axios";
 
 
 const PostingCreate = () => {
+    const navigate = useNavigate();
     const token = sessionStorage.getItem("accessToken");
     const [post, setPost] = useState({ 
         title: "", 
@@ -12,7 +13,7 @@ const PostingCreate = () => {
         url: "",
         note: "" 
     });
-    const navigate = useNavigate();
+    
 
     const createNewPost = async (e) => {
       e.preventDefault();
@@ -23,7 +24,6 @@ const PostingCreate = () => {
           }
       })
       navigate('/mainhub')
-      window.location.reload()
       } catch(err) {
         console.log(err);
       }  

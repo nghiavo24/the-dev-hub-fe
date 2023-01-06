@@ -15,8 +15,8 @@ const PostingDetails = () => {
         url: "",
         note: "",
     });
-    const getPostings = () => {
-        axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/${id}`, {
+    const getPostings = async(token) => {
+        await axios.get(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/${id}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -27,7 +27,12 @@ const PostingDetails = () => {
             .catch(err => console.error(err))
     }
     useEffect(() => {
-        getPostings()
+        if (token){
+            getPostings(token);
+        } else {
+            navigate('/')
+            alert('Please sign in!❗❗❗')
+        }
     }, [])
     if (postDetails === undefined) return
 
@@ -38,26 +43,18 @@ const PostingDetails = () => {
                 'Authorization': `Bearer ${token}`
             }
         })
-        navigate('/mainhub')
+        .then(() => {window.history.back()})
     }
 
     const updatingPost = async (e) => {
         e.preventDefault();
-        const editedPost = {
-            title: postUpdate.title,
-            company: postUpdate.company,
-            posted: postUpdate.posted,
-            url: postUpdate.url,
-            note: postUpdate.note,
-        };
-
         try {
-            await axios.put(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/update/${id}`, editedPost, {
+            await axios.put(`https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting/update/${id}`, postUpdate, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
             })
-            window.location.reload()
+            navigate('/mainhub')
         } catch (err) {
             console.log(err)
         }

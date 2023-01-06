@@ -64,7 +64,7 @@ if (allNotes === undefined) return;
           'Authorization': `Bearer ${token}`
       }
   })
-    .then((res) => {window.location.reload()})
+    .then((res) => {navigate('/myhub')})
   }
 
   const formatDate = (dateStr) => {
