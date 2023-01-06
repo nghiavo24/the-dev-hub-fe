@@ -31,28 +31,32 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 
 ## Wireframes
 ### Before
-**Jeffrey Koshy**
+
 ### After
 **Jeffrey Koshy**
 
 ## React Component Hierarchy
 ### Before
-**Jeffrey Koshy**
+
 
 ### After
 **Jeffrey Koshy**
 
 ## MVP
-+ AAU, I want to be able to 
-+ AAU, I want to be able to 
-+ AAU, I want to be able to 
-+ AAU, I want to be able to 
-+ AAU, I want to be able to 
-+ AAU, I want to be able to 
-+ AAU, I want to be able to 
++ AAU, I want to be able to sign into the app with my google email.
++ AAU, I want to be able to view all of the job postings on the Mainhub page.
++ AAU, I want to be able to view all of the job applications on the Myhub page.
++ AAU, I want to be able to edit and delete both postings after logging in.
++ AAU, I want to be able to click on a link that will take me to a current job posting.
++ AAU, I want to be able to add notes after applying for a job, to keep myself updated on any recent news.
++ AAU, I want to be able to view the aboutme page, and homepage without logging in.
+
 **_Jeffrey Koshy_**
 
 ## Post MVP
+-We can add a filter feature, so the user can filter all the applications or postings.
+-We can also an help page on each of the create pages, to help make user experience better. 
+-We can also add alerts to each input box, so the user will know if they missed something when trying to create a posting or application.
 **_Jeffrey Koshy_**
 
 ## Future features
