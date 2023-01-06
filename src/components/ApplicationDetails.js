@@ -79,7 +79,7 @@ return(
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Recruiter/Hiring Manager:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.hiring_manager}</span>
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Work Site:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.work_site}</span>
       <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Location:</p> <span className="font-montserrat text-base lg:text-lg">{allApps.location}</span>
-      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Link:</p><a href={allApps.url} className="lg:text-lg"><FaExternalLinkAlt/></a>
+      <p className="font-lora text-2xl text-air-blue mt-5 lg:text-3xl">Link:</p><a target='_blank'href={allApps.url} className="lg:text-lg"><FaExternalLinkAlt/></a>
       <br />
       <div className="flex justify-between justify-items-center">
         <button className="hover:bg-paolo-green font-lobster bg-yellow-crayola text-white py-2 px-4 rounded-lg tracking-wider">
