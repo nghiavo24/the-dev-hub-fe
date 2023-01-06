@@ -41,7 +41,7 @@ const MainHub = () => {
                     <p className="text-lg my-4" >{post.title}</p>
                     <p className="" >{formatDate(post.posted)}</p>
                     <div className="flex justify-center">
-                        <button className="flex mt-10 font-lobster rounded-lg text-lg px-4 py-2  tracking-wider bg-air-blue text-white outline-none"><Link to={`/mainhub/posting/${post._id}`}> View Details </Link> </button>
+                        <button className="flex mt-10 font-lobster rounded-lg text-lg px-4 py-2  tracking-wider bg-air-blue hover:bg-paolo-green text-white outline-none"><Link to={`/mainhub/posting/${post._id}`}> View Details </Link> </button>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ const MainHub = () => {
             <div className="pt-4">
                 <h1 className='flex justify-center font-lora text-3xl text-center' >Main Hub</h1>
             </div>
-            <div className="font-montserrat container grid gap-x-10 grid-cols-1 gap-4 mx-auto  py-9 px-10  sm:mx-10 sm:px-20 md:px-20  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-around ">{allPosting}</div>
+            <div className="font-montserrat grid gap-x-10 grid-cols-1 gap-4 mx-auto  py-9 px-10 sm:mx-10 sm:px-20 md:px-20  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-around ">{allPosting}</div>
         </div>
     )
 }
