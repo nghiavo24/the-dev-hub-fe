@@ -7,7 +7,7 @@
 ## Project Overview
 The Dev Hub was created for people who need a little extra help with finding and tracking which jobs they have applied for. The Dev Hub allows you to sign in and add the jobs you have applied for, you can then view all the companies you have applied for, when you applied and which position you applied to. You are able to add notes, to help stay organized! There is also an option for users to add job postings they have seen, but don't necessarily want to apply to. That feature is there so you can see what others are posting, to feel supported but also get the opportunity to give support!
 
-+ This repository is the front-end respository for the app.
++ This repository is the front-end respository for the app
 + The back-end is deployed on Heroku: [here](the-dev-hub-app.herokuapp.com/api/thedevhub)
 + The front-end is deployed on Vercel: [here](the-dev-hub.vercel.app)
 + The associated back-end repository can be found: [here](https://github.com/nghiavo24/the-dev-hub-be) 
